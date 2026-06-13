@@ -51,7 +51,12 @@
     "backToProjects": "← Voltar aos projetos"
   },
   "skills": {
-    "title": "Skills"
+    "title": "Skills",
+    "subtitle": "O mapa alterna entre setores sozinho. Clique para explorar no seu ritmo.",
+    "coreLabel": "Full-Stack",
+    "autoHint": "Alternando setores · clique para controlar",
+    "clickHint": "Setor selecionado manualmente",
+    "fullStackToggle": "Ver stack completo"
   },
   "ai": {
     "title": "AI & Machine Learning",

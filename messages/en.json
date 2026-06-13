@@ -51,7 +51,12 @@
     "backToProjects": "← Back to projects"
   },
   "skills": {
-    "title": "Skills"
+    "title": "Skills",
+    "subtitle": "The map cycles through sectors on its own. Click to explore at your pace.",
+    "coreLabel": "Full-Stack",
+    "autoHint": "Cycling sectors · click to take control",
+    "clickHint": "Sector selected manually",
+    "fullStackToggle": "View full stack"
   },
   "ai": {
     "title": "AI & Machine Learning",

@@ -55,6 +55,7 @@ export function getProject(id: string, locale: Locale) {
 
 export function getSkills(locale: Locale) {
   return skills.map((item) => ({
+    id: item.id,
     category: item.category[locale],
     items: item.items,
   }));

@@ -132,6 +132,50 @@ body {
   letter-spacing: -0.01em;
 }
 
+@keyframes skill-node-pulse {
+  0%,
+  100% {
+    opacity: 0.12;
+    transform: scale(1);
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes skill-node-pulse-next {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.25);
+  }
+}
+
+.skill-node-pulse {
+  animation: skill-node-pulse 2.5s ease-in-out infinite;
+}
+
+.skill-node-pulse-next {
+  animation: skill-node-pulse-next 1.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-node-pulse,
+  .skill-node-pulse-next {
+    animation: none;
+    stroke-opacity: 0.25;
+  }
+}
+
 @media print {
   .theme-portfolio {
     background: white !important;
