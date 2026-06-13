@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { getExperience } from "@/lib/portfolio";
 
@@ -12,10 +13,8 @@ interface ExperienceLogProps {
   items: ExperienceItem[];
   presentLabel: string;
   logPrompt: string;
-  archiveToggle: string;
   archiveCount: string;
   liveLabel: string;
-  receivingLabel: string;
   scanHint: string;
   lockedHint: string;
   telemetryLock: string;
@@ -449,16 +448,15 @@ export function ExperienceLog({
   items,
   presentLabel,
   logPrompt,
-  archiveToggle,
   archiveCount,
   liveLabel,
-  receivingLabel,
   scanHint,
   lockedHint,
   telemetryLock,
   telemetrySnr,
   telemetryCoords,
 }: ExperienceLogProps) {
+  const t = useTranslations("experience");
   const reducedMotion = useReducedMotion();
   const containerRef = useRef<HTMLDivElement>(null);
   const [scanned, setScanned] = useState(false);
@@ -512,7 +510,7 @@ export function ExperienceLog({
           <span className="text-[var(--text-muted)]">$</span> {logPrompt}
         </p>
         <p className="font-[family-name:var(--font-mono)] text-[10px] text-[var(--text-muted)]/50">
-          {receivingLabel.replace("{count}", String(recent.length))}
+          {t("receivingLabel", { count: recent.length })}
         </p>
       </div>
 
@@ -562,7 +560,7 @@ export function ExperienceLog({
           <summary className="cursor-pointer list-none text-center [&::-webkit-details-marker]:hidden">
             <span className="inline-flex items-center gap-1.5 font-[family-name:var(--font-mono)] text-xs text-[var(--text-muted)]/45 transition-colors hover:text-[var(--accent-primary)]/70">
               <span className="text-[var(--text-muted)]">$</span>
-              {archiveToggle.replace("{count}", String(archived.length))}
+              {t("archiveToggle", { count: archived.length })}
               <span className="inline-block transition-transform duration-300 group-open:rotate-180">
                 ↓
               </span>

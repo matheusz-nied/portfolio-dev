@@ -31,10 +31,8 @@ export function ExperienceSection({ items }: ExperienceSectionProps) {
             items={items}
             presentLabel={t("present")}
             logPrompt={t("logPrompt")}
-            archiveToggle={t("archiveToggle")}
             archiveCount={t("archiveCount")}
             liveLabel={t("liveLabel")}
-            receivingLabel={t("receivingLabel")}
             scanHint={t("scanHint")}
             lockedHint={t("lockedHint")}
             telemetryLock={t("telemetryLock")}
