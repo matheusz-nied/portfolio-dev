@@ -237,6 +237,24 @@ body {
   color: var(--accent-primary);
 }
 
+.contact-uplink-beam {
+  animation: experience-beam 2.4s ease-in-out infinite;
+}
+
+.contact-channel-row:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(143, 186, 160, 0.05) 0%,
+    transparent 70%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-uplink-beam {
+    animation: none;
+  }
+}
+
 @keyframes experience-scan {
   0% {
     top: 0;

@@ -80,7 +80,16 @@
   },
   "contact": {
     "title": "Contato",
-    "subtitle": "Aberto a conversas sobre oportunidades, colaborações e ideias.",
+    "subtitle": "Canais abertos para oportunidades, colaborações e conversas técnicas.",
+    "contactPrompt": "contact --open",
+    "statusLabel": "STATUS ::",
+    "locationLabel": "LOC ::",
+    "channelsLabel": "CANAIS ::",
+    "channelsActive": "ativos",
+    "channelReady": "ok",
+    "openLabel": "open",
+    "pingPrompt": "ping --all",
+    "pingOk": "· ok",
     "email": "Email",
     "github": "GitHub",
     "linkedin": "LinkedIn"

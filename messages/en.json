@@ -80,7 +80,16 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Open to conversations about opportunities, collaborations, and ideas.",
+    "subtitle": "Open channels for opportunities, collaborations, and technical conversations.",
+    "contactPrompt": "contact --open",
+    "statusLabel": "STATUS ::",
+    "locationLabel": "LOC ::",
+    "channelsLabel": "CHANNELS ::",
+    "channelsActive": "active",
+    "channelReady": "ok",
+    "openLabel": "open",
+    "pingPrompt": "ping --all",
+    "pingOk": "· ok",
     "email": "Email",
     "github": "GitHub",
     "linkedin": "LinkedIn"
