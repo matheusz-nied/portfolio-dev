@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { PortfolioNav } from "@/components/portfolio/PortfolioNav";
+import { PortfolioFooter } from "@/components/portfolio/PortfolioFooter";
 import { StarfieldBackground } from "@/components/portfolio/StarfieldBackground";
 import { Hero } from "@/components/portfolio/Hero";
 import { ExperienceSection } from "@/components/portfolio/ExperienceSection";
@@ -9,7 +10,7 @@ import { SkillsSection } from "@/components/portfolio/SkillsSection";
 import { AiSection } from "@/components/portfolio/AiSection";
 import { ContactSection } from "@/components/portfolio/ContactSection";
 import { RecruiterMode } from "@/components/easter-eggs/RecruiterMode";
-import { SecretTerminal } from "@/components/easter-eggs/SecretTerminal";
+import { SecretTerminalProvider } from "@/components/easter-eggs/SecretTerminal";
 import {
   getExperience,
   getProjects,
@@ -63,18 +64,20 @@ export default async function PortfolioPage({
       />
       <StarfieldBackground />
       <div className="relative z-10">
-        <PortfolioNav />
-        <main className="mx-auto max-w-5xl">
-          <Hero />
-          <ExperienceSection items={experience} />
-          <ProjectsSection items={projects} />
-          <SkillsSection items={skills} />
-          <AiSection items={aiProjects} />
-          <ContactSection />
-        </main>
+        <SecretTerminalProvider>
+          <PortfolioNav />
+          <main className="mx-auto max-w-5xl">
+            <Hero />
+            <ExperienceSection items={experience} />
+            <ProjectsSection items={projects} />
+            <SkillsSection items={skills} />
+            <AiSection items={aiProjects} />
+            <ContactSection />
+          </main>
+          <PortfolioFooter />
+          <RecruiterMode locale={loc} />
+        </SecretTerminalProvider>
       </div>
-      <RecruiterMode locale={loc} />
-      <SecretTerminal />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { BlogPortalLinks } from "@/components/portfolio/BlogPortalLinks";
 import type { getProjects } from "@/lib/portfolio";
 
 type Project = ReturnType<typeof getProjects>[number];
@@ -74,6 +75,13 @@ export function ProjectsSection({ items }: ProjectsSectionProps) {
             </Link>
           </motion.article>
         ))}
+      </div>
+
+      <div className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-[var(--border-subtle)]/80 pt-6">
+        <p className="font-[family-name:var(--font-mono)] text-xs text-[var(--accent-primary)]">
+          <span className="text-[var(--text-muted)]">$</span> {t("blogsPrompt")}
+        </p>
+        <BlogPortalLinks />
       </div>
     </section>
   );

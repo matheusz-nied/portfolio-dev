@@ -14,8 +14,16 @@ const CHANNELS = [
     external: false,
   },
   {
-    id: "github",
+    id: "whatsapp",
     code: "CH-02",
+    labelKey: "whatsapp" as const,
+    value: profile.whatsapp,
+    href: `https://wa.me/${profile.whatsapp.replace(/\D/g, "")}`,
+    external: true,
+  },
+  {
+    id: "github",
+    code: "CH-03",
     labelKey: "github" as const,
     value: profile.github.replace("https://github.com/", ""),
     href: profile.github,
@@ -23,7 +31,7 @@ const CHANNELS = [
   },
   {
     id: "linkedin",
-    code: "CH-03",
+    code: "CH-04",
     labelKey: "linkedin" as const,
     value: profile.linkedin.replace("https://linkedin.com", ""),
     href: profile.linkedin,

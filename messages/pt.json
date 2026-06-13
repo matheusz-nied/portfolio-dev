@@ -59,7 +59,8 @@
     "viewProject": "Ver projeto",
     "viewCode": "Código",
     "readTechPost": "Ler no Tech Log",
-    "backToProjects": "← Voltar aos projetos"
+    "backToProjects": "← Voltar aos projetos",
+    "blogsPrompt": "ls --blogs"
   },
   "skills": {
     "title": "Skills",
@@ -91,13 +92,14 @@
     "pingPrompt": "ping --all",
     "pingOk": "· ok",
     "email": "Email",
+    "whatsapp": "WhatsApp",
     "github": "GitHub",
     "linkedin": "LinkedIn"
   },
   "footer": {
-    "techPortal": "→ Transmission Log",
-    "reflectionsPortal": "→ Cosmic Journal",
-    "hint": "Dica: tente o código Konami"
+    "techPortal": "Transmission Log",
+    "reflectionsPortal": "Cosmic Journal",
+    "blogsNav": "Blogs"
   },
   "resume": {
     "title": "Currículo",
@@ -129,12 +131,15 @@
     "scrollHint": "Continue até o fim..."
   },
   "terminal": {
+    "openTrigger": "terminal",
+    "shortcutHint": "Atalho: Ctrl+` (ou Cmd+` no Mac)",
+    "close": "Fechar",
     "help": "Comandos: help, resume, projects, contact, clear, exit",
-    "welcome": "Terminal secreto ativado. Digite 'help' para ver comandos.",
+    "welcome": "Terminal aberto. Digite 'help' para ver comandos.",
     "unknown": "Comando desconhecido. Digite 'help'.",
     "resume": "Engenheiro Full-Stack · AI · 5+ anos · kaizen@email.com",
     "projects": "1. AI Agent Platform  2. RAG Pipeline  3. Real-time Dashboard",
-    "contact": "Email: kaizen@email.com | GitHub: github.com/kaizen | LinkedIn: /in/kaizen"
+    "contact": "Email: kaizen@email.com | WhatsApp: +55 11 99999-9999 | GitHub: github.com/kaizen | LinkedIn: /in/kaizen"
   },
   "constellation": {
     "revealed": "Curiosidade é a melhor skill de um engenheiro."

@@ -59,7 +59,8 @@
     "viewProject": "View project",
     "viewCode": "Code",
     "readTechPost": "Read on Tech Log",
-    "backToProjects": "← Back to projects"
+    "backToProjects": "← Back to projects",
+    "blogsPrompt": "ls --blogs"
   },
   "skills": {
     "title": "Skills",
@@ -91,13 +92,14 @@
     "pingPrompt": "ping --all",
     "pingOk": "· ok",
     "email": "Email",
+    "whatsapp": "WhatsApp",
     "github": "GitHub",
     "linkedin": "LinkedIn"
   },
   "footer": {
-    "techPortal": "→ Transmission Log",
-    "reflectionsPortal": "→ Cosmic Journal",
-    "hint": "Hint: try the Konami code"
+    "techPortal": "Transmission Log",
+    "reflectionsPortal": "Cosmic Journal",
+    "blogsNav": "Blogs"
   },
   "resume": {
     "title": "Resume",
@@ -129,12 +131,15 @@
     "scrollHint": "Keep scrolling to the end..."
   },
   "terminal": {
+    "openTrigger": "terminal",
+    "shortcutHint": "Shortcut: Ctrl+` (or Cmd+` on Mac)",
+    "close": "Close",
     "help": "Commands: help, resume, projects, contact, clear, exit",
-    "welcome": "Secret terminal activated. Type 'help' for commands.",
+    "welcome": "Terminal open. Type 'help' for commands.",
     "unknown": "Unknown command. Type 'help'.",
     "resume": "Full-Stack Engineer · AI · 5+ years · kaizen@email.com",
     "projects": "1. AI Agent Platform  2. RAG Pipeline  3. Real-time Dashboard",
-    "contact": "Email: kaizen@email.com | GitHub: github.com/kaizen | LinkedIn: /in/kaizen"
+    "contact": "Email: kaizen@email.com | WhatsApp: +55 11 99999-9999 | GitHub: github.com/kaizen | LinkedIn: /in/kaizen"
   },
   "constellation": {
     "revealed": "Curiosity is the best skill of an engineer."
