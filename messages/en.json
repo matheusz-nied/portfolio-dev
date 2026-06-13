@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "siteName": "Kaizen",
+    "title": "Kaizen — Full-Stack & AI Engineer",
+    "description": "Portfolio of a full-stack engineer focused on AI. Projects, experience, and contact for recruiters."
+  },
+  "nav": {
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "ai": "AI",
+    "contact": "Contact",
+    "resume": "Resume",
+    "techBlog": "Tech Log",
+    "reflectionsBlog": "Cosmic Journal"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "headline": "Full-Stack Engineer",
+    "headlineAccent": "focused on AI",
+    "subtitle": "I build end-to-end products — from backend to UI — with AI pipelines, agents, and systems that scale.",
+    "available": "Open to opportunities",
+    "location": "Brazil · Remote",
+    "pressR": "Press R for recruiter mode"
+  },
+  "recruiter": {
+    "title": "Recruiter Mode",
+    "yearsExp": "Years of experience",
+    "topStack": "Core stack",
+    "languages": "Languages",
+    "availability": "Availability",
+    "downloadCv": "Download CV",
+    "viewResume": "View full resume",
+    "close": "Close"
+  },
+  "experience": {
+    "title": "Experience",
+    "present": "Present"
+  },
+  "projects": {
+    "title": "Projects",
+    "problem": "Problem",
+    "stack": "Stack",
+    "result": "Result",
+    "viewProject": "View project",
+    "viewCode": "Code"
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "ai": {
+    "title": "AI & Machine Learning",
+    "subtitle": "Projects and tools I use to build intelligent systems.",
+    "readMore": "Read on Tech Log"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Open to conversations about opportunities, collaborations, and ideas.",
+    "email": "Email",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "techPortal": "→ Transmission Log",
+    "reflectionsPortal": "→ Cosmic Journal",
+    "hint": "Hint: try the Konami code"
+  },
+  "resume": {
+    "title": "Resume",
+    "download": "Download PDF",
+    "print": "Print",
+    "summary": "Summary",
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Skills"
+  },
+  "tech": {
+    "siteName": "Transmission Log",
+    "tagline": "Technical transmissions from deep space",
+    "backToPortfolio": "← Command Center",
+    "allPosts": "All transmissions",
+    "readTime": "{minutes} min read",
+    "tags": "Tags",
+    "noPosts": "No transmissions found.",
+    "footerHint": "Type sudo cat to access hidden transmissions"
+  },
+  "reflections": {
+    "siteName": "Cosmic Journal",
+    "tagline": "Reflections, thoughts, and notes from the void",
+    "backToPortfolio": "← Command Center",
+    "allPosts": "All entries",
+    "readTime": "{minutes} min read",
+    "noPosts": "No entries found.",
+    "footnote": "Personal note",
+    "scrollHint": "Keep scrolling to the end..."
+  },
+  "terminal": {
+    "help": "Commands: help, resume, projects, contact, clear, exit",
+    "welcome": "Secret terminal activated. Type 'help' for commands.",
+    "unknown": "Unknown command. Type 'help'.",
+    "resume": "Full-Stack Engineer · AI · 5+ years · kaizen@email.com",
+    "projects": "1. AI Agent Platform  2. RAG Pipeline  3. Real-time Dashboard",
+    "contact": "Email: kaizen@email.com | GitHub: github.com/kaizen | LinkedIn: /in/kaizen"
+  },
+  "constellation": {
+    "revealed": "Curiosity is the best skill of an engineer."
+  },
+  "language": {
+    "switch": "PT"
+  }
+}

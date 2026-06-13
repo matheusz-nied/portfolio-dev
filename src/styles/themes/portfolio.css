@@ -1,0 +1,23 @@
+.theme-portfolio {
+  --bg-space: #0b0d0c;
+  --bg-surface: #121614;
+  --bg-card: rgba(18, 24, 20, 0.55);
+  --text-primary: #dde3df;
+  --text-muted: #8a948c;
+  --accent-primary: #8fbaa0;
+  --accent-secondary: #6d9f7e;
+  --accent-cyan: var(--accent-primary);
+  --accent-magenta: var(--accent-secondary);
+  --accent-purple: var(--accent-secondary);
+  --border-subtle: rgba(143, 186, 160, 0.16);
+  --glow-cyan: 0 4px 24px rgba(143, 186, 160, 0.07);
+  --glow-magenta: 0 4px 24px rgba(109, 159, 126, 0.06);
+  --border-glow: 1px solid var(--border-subtle);
+  background:
+    radial-gradient(
+      ellipse 90% 60% at 50% -10%,
+      rgba(80, 120, 95, 0.08),
+      transparent 55%
+    ),
+    var(--bg-space);
+}

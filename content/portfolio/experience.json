@@ -1,0 +1,56 @@
+[
+  {
+    "id": "senior-fullstack",
+    "company": "TechCorp",
+    "role": { "pt": "Engenheiro Full-Stack Sênior", "en": "Senior Full-Stack Engineer" },
+    "period": { "start": "2023", "end": null },
+    "highlights": {
+      "pt": [
+        "Liderou migração para arquitetura event-driven, reduzindo latência em 40%",
+        "Implementou pipeline RAG para suporte interno com 85% de precisão",
+        "Mentorou 3 devs júnior em práticas de code review e testes"
+      ],
+      "en": [
+        "Led migration to event-driven architecture, reducing latency by 40%",
+        "Implemented RAG pipeline for internal support with 85% accuracy",
+        "Mentored 3 junior devs on code review and testing practices"
+      ]
+    }
+  },
+  {
+    "id": "fullstack",
+    "company": "StartupXYZ",
+    "role": { "pt": "Engenheiro Full-Stack", "en": "Full-Stack Engineer" },
+    "period": { "start": "2021", "end": "2023" },
+    "highlights": {
+      "pt": [
+        "Construiu MVP do zero até 10k usuários em 8 meses",
+        "Desenvolveu API REST e GraphQL com autenticação OAuth2",
+        "Integrou pagamentos Stripe e analytics em tempo real"
+      ],
+      "en": [
+        "Built MVP from scratch to 10k users in 8 months",
+        "Developed REST and GraphQL APIs with OAuth2 authentication",
+        "Integrated Stripe payments and real-time analytics"
+      ]
+    }
+  },
+  {
+    "id": "junior",
+    "company": "DevAgency",
+    "role": { "pt": "Desenvolvedor Júnior", "en": "Junior Developer" },
+    "period": { "start": "2019", "end": "2021" },
+    "highlights": {
+      "pt": [
+        "Desenvolveu interfaces React para clientes enterprise",
+        "Automatizou deploys com CI/CD (GitHub Actions)",
+        "Contribuiu para biblioteca interna de componentes"
+      ],
+      "en": [
+        "Built React interfaces for enterprise clients",
+        "Automated deploys with CI/CD (GitHub Actions)",
+        "Contributed to internal component library"
+      ]
+    }
+  }
+]

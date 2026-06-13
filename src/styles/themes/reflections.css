@@ -1,0 +1,16 @@
+.theme-reflections {
+  --refl-bg: #0f0e11;
+  --refl-surface: #161418;
+  --refl-text: #ddd8e2;
+  --refl-muted: #9690a0;
+  --refl-accent: #b0a0c4;
+  --refl-warm: #c4a894;
+  --refl-border: rgba(176, 160, 196, 0.12);
+  background:
+    radial-gradient(
+      ellipse 80% 50% at 50% -15%,
+      rgba(140, 120, 160, 0.05),
+      transparent 55%
+    ),
+    var(--refl-bg);
+}

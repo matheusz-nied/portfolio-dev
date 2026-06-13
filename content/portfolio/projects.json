@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ai-agent-platform",
+    "title": { "pt": "Plataforma de AI Agents", "en": "AI Agent Platform" },
+    "problem": {
+      "pt": "Equipes precisavam automatizar workflows complexos sem escrever código para cada caso.",
+      "en": "Teams needed to automate complex workflows without writing code for each case."
+    },
+    "stack": ["Python", "FastAPI", "LangChain", "PostgreSQL", "Redis", "React"],
+    "result": {
+      "pt": "Redução de 60% no tempo de tarefas repetitivas; 12 agents em produção.",
+      "en": "60% reduction in repetitive task time; 12 agents in production."
+    },
+    "links": { "demo": "#", "github": "https://github.com/kaizen" },
+    "featured": true,
+    "relatedTechPost": "building-rag-pipeline"
+  },
+  {
+    "id": "rag-pipeline",
+    "title": { "pt": "Pipeline RAG Enterprise", "en": "Enterprise RAG Pipeline" },
+    "problem": {
+      "pt": "Base de conhecimento dispersa impedia respostas rápidas do suporte.",
+      "en": "Scattered knowledge base prevented fast support responses."
+    },
+    "stack": ["Python", "Pinecone", "OpenAI", "Next.js", "Docker"],
+    "result": {
+      "pt": "Tempo médio de resposta caiu de 4h para 15min; 85% de precisão.",
+      "en": "Average response time dropped from 4h to 15min; 85% accuracy."
+    },
+    "links": { "demo": "#", "github": "https://github.com/kaizen" },
+    "featured": true,
+    "relatedTechPost": "building-rag-pipeline"
+  },
+  {
+    "id": "realtime-dashboard",
+    "title": { "pt": "Dashboard em Tempo Real", "en": "Real-time Dashboard" },
+    "problem": {
+      "pt": "Operações precisavam de visibilidade instantânea de métricas críticas.",
+      "en": "Operations needed instant visibility into critical metrics."
+    },
+    "stack": ["Next.js", "WebSockets", "PostgreSQL", "Grafana", "TypeScript"],
+    "result": {
+      "pt": "Latência < 200ms; adotado por 3 equipes internas.",
+      "en": "Latency < 200ms; adopted by 3 internal teams."
+    },
+    "links": { "demo": "#", "github": "https://github.com/kaizen" },
+    "featured": true,
+    "relatedTechPost": "nextjs-performance-tips"
+  }
+]

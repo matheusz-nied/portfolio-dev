@@ -1,0 +1,41 @@
+---
+title: "Next.js: dicas de performance que realmente importam"
+description: "Técnicas práticas para melhorar Core Web Vitals em apps Next.js — do bundle splitting ao streaming."
+date: 2026-04-20
+locale: pt
+translationSlug: nextjs-performance-tips
+tags: [nextjs, performance, react]
+published: true
+hidden: false
+---
+
+Performance não é otimização prematura quando recrutadores abrem seu portfólio no celular. Aqui estão as técnicas que mais impactaram meus projetos Next.js.
+
+## 1. Server Components por padrão
+
+Mova interatividade para as bordas. A maioria das páginas do meu portfólio são Server Components — zero JavaScript no client para conteúdo estático.
+
+## 2. Dynamic imports com intenção
+
+```tsx
+const Starfield = dynamic(() => import("@/components/Starfield"), {
+  ssr: false,
+  loading: () => null,
+});
+```
+
+Animações pesadas carregam só quando necessário. O conteúdo principal renderiza instantaneamente.
+
+## 3. Fontes com `display: swap`
+
+Google Fonts via `next/font` elimina layout shift. Escolha no máximo 2 famílias.
+
+## 4. Imagens com prioridade correta
+
+Apenas o hero usa `priority`. Todo o resto lazy-loads. Formato WebP/AVIF quando possível.
+
+## Resultado
+
+Lighthouse Performance: **96** no mobile. LCP abaixo de 1.2s em 4G simulado.
+
+A regra de ouro: meça antes de otimizar. Use o Performance tab, não achismos.

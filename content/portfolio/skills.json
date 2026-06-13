@@ -1,0 +1,18 @@
+[
+  {
+    "category": { "pt": "Frontend", "en": "Frontend" },
+    "items": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"]
+  },
+  {
+    "category": { "pt": "Backend", "en": "Backend" },
+    "items": ["Node.js", "Python", "FastAPI", "GraphQL", "REST APIs"]
+  },
+  {
+    "category": { "pt": "Dados & Infra", "en": "Data & Infra" },
+    "items": ["PostgreSQL", "Redis", "Docker", "AWS", "CI/CD"]
+  },
+  {
+    "category": { "pt": "AI / ML", "en": "AI / ML" },
+    "items": ["OpenAI API", "LangChain", "RAG", "Vector DBs", "Fine-tuning", "Agents"]
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "name": "Kaizen",
+  "title": "Full-Stack Engineer",
+  "email": "kaizen@email.com",
+  "github": "https://github.com/kaizen",
+  "linkedin": "https://linkedin.com/in/kaizen",
+  "yearsExperience": 5,
+  "availability": {
+    "pt": "Aberto a oportunidades · Remoto",
+    "en": "Open to opportunities · Remote"
+  },
+  "location": {
+    "pt": "Brasil · Remoto",
+    "en": "Brazil · Remote"
+  },
+  "languages": {
+    "pt": "Português (nativo), Inglês (fluente)",
+    "en": "Portuguese (native), English (fluent)"
+  },
+  "topStack": ["TypeScript", "Next.js", "Python", "PostgreSQL", "OpenAI / LLMs"],
+  "summary": {
+    "pt": "Engenheiro full-stack com 5+ anos construindo produtos web e sistemas de AI. Experiência em arquitetura de APIs, interfaces performáticas, pipelines RAG e agentes autônomos.",
+    "en": "Full-stack engineer with 5+ years building web products and AI systems. Experience in API architecture, performant interfaces, RAG pipelines, and autonomous agents."
+  },
+  "education": {
+    "pt": [
+      {
+        "institution": "Universidade Exemplo",
+        "degree": "Bacharelado em Ciência da Computação",
+        "period": "2016 — 2020"
+      }
+    ],
+    "en": [
+      {
+        "institution": "Example University",
+        "degree": "Bachelor's in Computer Science",
+        "period": "2016 — 2020"
+      }
+    ]
+  }
+}

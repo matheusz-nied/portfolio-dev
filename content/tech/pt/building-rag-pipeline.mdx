@@ -1,0 +1,44 @@
+---
+title: "Construindo um pipeline RAG do zero"
+description: "Como montei um sistema de retrieval-augmented generation para documentação interna com chunking semântico, embeddings e re-ranking."
+date: 2026-05-15
+locale: pt
+translationSlug: building-rag-pipeline
+tags: [ai, rag, python, langchain]
+published: true
+hidden: false
+---
+
+Quando a base de conhecimento da empresa cresce além do controle, busca keyword deixa de funcionar. Foi nesse cenário que decidi construir um pipeline RAG completo.
+
+## O problema
+
+Documentos espalhados em Confluence, Notion e PDFs. O suporte levava em média **4 horas** para encontrar respostas. Precisávamos de algo que entendesse contexto, não apenas palavras-chave.
+
+## Arquitetura
+
+O pipeline segue quatro etapas:
+
+1. **Ingestão** — crawlers customizados normalizam HTML, Markdown e PDF
+2. **Chunking** — divisão semântica com overlap de 128 tokens
+3. **Embedding** — `text-embedding-3-small` com cache Redis
+4. **Retrieval + Generation** — busca híbrida (dense + BM25) com re-ranking
+
+```python
+def retrieve(query: str, top_k: int = 5) -> list[Document]:
+    dense = vector_store.similarity_search(query, k=top_k * 2)
+    sparse = bm25_index.search(query, k=top_k * 2)
+    return rerank(merge(dense, sparse))[:top_k]
+```
+
+## Resultados
+
+- Tempo de resposta: **4h → 15min**
+- Precisão avaliada: **85%** em 200 queries de teste
+- Custo mensal: ~$120 em APIs
+
+## Lições aprendidas
+
+O chunking é 80% do trabalho. Testamos três estratégias antes de encontrar a ideal para documentação técnica. Re-ranking com cross-encoder adicionou 12% de precisão com custo mínimo.
+
+O próximo passo é adicionar feedback loop: quando o usuário marca uma resposta como incorreta, o chunk entra em fila de revisão.

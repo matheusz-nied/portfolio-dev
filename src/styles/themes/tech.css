@@ -1,0 +1,18 @@
+.theme-tech {
+  --tech-bg: #0e1011;
+  --tech-surface: #141618;
+  --tech-border: rgba(143, 184, 154, 0.12);
+  --tech-text: #c8cfcc;
+  --tech-muted: #7a8480;
+  --tech-accent: #8fb89a;
+  --tech-accent-soft: rgba(143, 184, 154, 0.85);
+  --tech-dim: rgba(20, 24, 22, 0.6);
+  --tech-glow: none;
+  background:
+    radial-gradient(
+      ellipse 70% 40% at 50% 0%,
+      rgba(143, 184, 154, 0.04),
+      transparent 50%
+    ),
+    var(--tech-bg);
+}
