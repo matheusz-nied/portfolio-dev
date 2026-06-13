@@ -13,7 +13,7 @@ export default async function TechLayout({
   return (
     <div className="theme-tech flex min-h-screen flex-col">
       <header className="border-b border-[var(--tech-border)] px-6 py-6">
-        <div className="mx-auto flex max-w-2xl items-center justify-between">
+        <div className="mx-auto flex max-w-5xl items-center justify-between">
           <div>
             <Link
               href="/tech"
@@ -34,7 +34,7 @@ export default async function TechLayout({
           </div>
         </div>
       </header>
-      <main className="mx-auto w-full max-w-2xl flex-1 px-6 py-12">{children}</main>
+      <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-12">{children}</main>
       <TechFooterEasterEgg />
     </div>
   );

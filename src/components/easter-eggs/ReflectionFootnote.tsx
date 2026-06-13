@@ -30,7 +30,7 @@ export function ReflectionFootnote() {
   }
 
   return (
-    <aside className="mx-auto max-w-lg px-6 py-12 text-center">
+    <aside className="mx-auto max-w-4xl px-6 py-12 text-center">
       <p className="font-[family-name:var(--font-serif)] text-sm italic text-[var(--refl-muted)]">
         {t("footnote")}: {tc("revealed")}
       </p>

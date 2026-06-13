@@ -13,7 +13,7 @@ export default async function ReflectionsLayout({
   return (
     <div className="theme-reflections min-h-screen">
       <header className="border-b border-[var(--refl-border)] px-6 py-8">
-        <div className="mx-auto flex max-w-xl items-center justify-between">
+        <div className="mx-auto flex max-w-5xl items-center justify-between">
           <div>
             <Link
               href="/reflections"
@@ -34,7 +34,7 @@ export default async function ReflectionsLayout({
           </div>
         </div>
       </header>
-      <main className="mx-auto max-w-xl px-6 py-14">{children}</main>
+      <main className="mx-auto w-full max-w-5xl px-6 py-14">{children}</main>
       <ReflectionFootnote />
     </div>
   );

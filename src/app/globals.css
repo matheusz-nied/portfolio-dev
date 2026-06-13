@@ -115,13 +115,15 @@ body {
 }
 
 .prose-tech {
-  max-width: 65ch;
+  max-width: none;
+  width: 100%;
   line-height: 1.8;
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
 .prose-reflections {
-  max-width: 65ch;
+  max-width: none;
+  width: 100%;
   line-height: 1.85;
   font-family: var(--font-serif), Georgia, serif;
 }
