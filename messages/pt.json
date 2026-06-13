@@ -35,7 +35,18 @@
   },
   "experience": {
     "title": "Experiência",
-    "present": "Atual"
+    "subtitle": "Log de carreira — transmissões recebidas do setor profissional.",
+    "present": "Atual",
+    "logPrompt": "career --log",
+    "liveLabel": "Live",
+    "receivingLabel": "recebendo {count} sinais",
+    "scanHint": "varredura automática — passe o mouse para fixar",
+    "lockedHint": "sinal fixado",
+    "telemetryLock": "LOCK",
+    "telemetrySnr": "SNR",
+    "telemetryCoords": "COORD",
+    "archiveToggle": "decrypt --archive ({count})",
+    "archiveCount": "// sinais recuperados do arquivo profundo"
   },
   "projects": {
     "title": "Projetos",

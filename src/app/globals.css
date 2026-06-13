@@ -168,11 +168,238 @@ body {
   animation: skill-node-pulse-next 1.2s ease-in-out infinite;
 }
 
+.experience-node-next {
+  animation: skill-node-pulse-next 1.2s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .skill-node-pulse,
-  .skill-node-pulse-next {
+  .skill-node-pulse-next,
+  .experience-node-next {
     animation: none;
     stroke-opacity: 0.25;
+  }
+
+  .contact-cursor-blink {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.contact-cursor-blink {
+  animation: cursor-blink 1.2s step-end infinite;
+  color: var(--accent-primary);
+}
+
+@keyframes experience-scan {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.85;
+  }
+  92% {
+    opacity: 0.85;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.experience-scan-line {
+  animation: experience-scan 1.8s ease-out forwards;
+}
+
+.experience-entry-live {
+  background: linear-gradient(
+    90deg,
+    rgba(143, 186, 160, 0.04) 0%,
+    transparent 55%
+  );
+}
+
+.experience-entry-active {
+  background: linear-gradient(
+    90deg,
+    rgba(143, 186, 160, 0.07) 0%,
+    transparent 65%
+  );
+}
+
+.experience-lock-bracket {
+  pointer-events: none;
+  position: absolute;
+  z-index: 5;
+  width: 14px;
+  height: 14px;
+  border-color: var(--accent-primary);
+  opacity: 0.45;
+  transition: opacity 0.3s ease;
+}
+
+.experience-entry-active:hover .experience-lock-bracket {
+  opacity: 0.7;
+}
+
+.experience-lock-bracket-tl {
+  top: 10px;
+  left: 3.25rem;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.experience-lock-bracket-tr {
+  top: 10px;
+  right: 8px;
+  border-top: 1px solid;
+  border-right: 1px solid;
+}
+
+.experience-lock-bracket-bl {
+  bottom: 10px;
+  left: 3.25rem;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+}
+
+.experience-lock-bracket-br {
+  bottom: 10px;
+  right: 8px;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+.experience-year-ring {
+  animation: experience-ring-spin 12s linear infinite;
+}
+
+@keyframes experience-ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.experience-node-active {
+  animation: experience-node-glow 2s ease-in-out infinite;
+}
+
+@keyframes experience-node-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(143, 186, 160, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(143, 186, 160, 0.6);
+  }
+}
+
+.experience-spine-flow {
+  animation: experience-spine-flow 2.5s linear infinite;
+}
+
+@keyframes experience-spine-flow {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+
+.experience-spine-node-active {
+  animation: experience-spine-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes experience-spine-pulse {
+  0%,
+  100% {
+    fill-opacity: 0.55;
+  }
+  50% {
+    fill-opacity: 0.95;
+  }
+}
+
+.experience-wave-bar {
+  animation: experience-wave 0.9s ease-in-out infinite;
+  transform-origin: center bottom;
+  transform-box: fill-box;
+}
+
+@keyframes experience-wave {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.experience-telemetry-beam {
+  animation: experience-beam 2.2s ease-in-out infinite;
+}
+
+@keyframes experience-beam {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(400%);
+    opacity: 0;
+  }
+}
+
+.experience-archive[open] .experience-archive-content {
+  animation: experience-decrypt 0.5s ease-out;
+}
+
+@keyframes experience-decrypt {
+  from {
+    opacity: 0;
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-scan-line {
+    animation: none;
+    display: none;
+  }
+
+  .experience-archive[open] .experience-archive-content {
+    animation: none;
+  }
+
+  .experience-year-ring,
+  .experience-node-active,
+  .experience-spine-flow,
+  .experience-spine-node-active,
+  .experience-wave-bar,
+  .experience-telemetry-beam {
+    animation: none;
   }
 }
 
