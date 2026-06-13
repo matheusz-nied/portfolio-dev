@@ -40,10 +40,15 @@
   "projects": {
     "title": "Projects",
     "problem": "Problem",
+    "solution": "Solution",
+    "role": "My role",
+    "highlights": "Highlights",
     "stack": "Stack",
     "result": "Result",
     "viewProject": "View project",
-    "viewCode": "Code"
+    "viewCode": "Code",
+    "readTechPost": "Read on Tech Log",
+    "backToProjects": "← Back to projects"
   },
   "skills": {
     "title": "Skills"

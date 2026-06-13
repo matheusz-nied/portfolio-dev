@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { techPosts, reflectionPosts } from "#site/content";
 import { routing } from "@/i18n/routing";
 import { getSiteUrl } from "@/lib/seo";
+import { projects } from "@/lib/portfolio";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();
@@ -36,6 +37,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     });
+  }
+
+  for (const locale of routing.locales) {
+    for (const project of projects) {
+      entries.push({
+        url: `${base}/${locale}/projects/${project.id}`,
+        changeFrequency: "monthly",
+        priority: 0.75,
+      });
+    }
   }
 
   return entries;

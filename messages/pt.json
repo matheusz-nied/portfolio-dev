@@ -40,10 +40,15 @@
   "projects": {
     "title": "Projetos",
     "problem": "Problema",
+    "solution": "Solução",
+    "role": "Meu papel",
+    "highlights": "Destaques",
     "stack": "Stack",
     "result": "Resultado",
     "viewProject": "Ver projeto",
-    "viewCode": "Código"
+    "viewCode": "Código",
+    "readTechPost": "Ler no Tech Log",
+    "backToProjects": "← Voltar aos projetos"
   },
   "skills": {
     "title": "Skills"

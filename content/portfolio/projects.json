@@ -1,10 +1,40 @@
 [
   {
     "id": "ai-agent-platform",
+    "thumbnail": "/projects/ai-agent-platform/thumb.svg",
+    "images": [
+      "/projects/ai-agent-platform/1.svg",
+      "/projects/ai-agent-platform/2.svg",
+      "/projects/ai-agent-platform/3.svg"
+    ],
     "title": { "pt": "Plataforma de AI Agents", "en": "AI Agent Platform" },
+    "summary": {
+      "pt": "Orquestração de agents autônomos com tool-calling e memória persistente.",
+      "en": "Autonomous agent orchestration with tool-calling and persistent memory."
+    },
     "problem": {
       "pt": "Equipes precisavam automatizar workflows complexos sem escrever código para cada caso.",
       "en": "Teams needed to automate complex workflows without writing code for each case."
+    },
+    "solution": {
+      "pt": "Plataforma visual para definir agents, conectar ferramentas internas e monitorar execuções em tempo real. Backend em FastAPI com filas Redis e persistência PostgreSQL.",
+      "en": "Visual platform to define agents, connect internal tools, and monitor executions in real time. FastAPI backend with Redis queues and PostgreSQL persistence."
+    },
+    "role": {
+      "pt": "Arquitetura end-to-end, implementação do runtime de agents, UI de monitoramento e deploy em produção.",
+      "en": "End-to-end architecture, agent runtime implementation, monitoring UI, and production deployment."
+    },
+    "highlights": {
+      "pt": [
+        "12 agents em produção atendendo 3 departamentos",
+        "Tool-calling com 20+ integrações internas",
+        "Dashboard de observabilidade com traces por execução"
+      ],
+      "en": [
+        "12 agents in production serving 3 departments",
+        "Tool-calling with 20+ internal integrations",
+        "Observability dashboard with per-execution traces"
+      ]
     },
     "stack": ["Python", "FastAPI", "LangChain", "PostgreSQL", "Redis", "React"],
     "result": {
@@ -13,14 +43,45 @@
     },
     "links": { "demo": "#", "github": "https://github.com/kaizen" },
     "featured": true,
-    "relatedTechPost": "building-rag-pipeline"
+    "relatedTechPost": "building-rag-pipeline",
+    "year": "2024"
   },
   {
     "id": "rag-pipeline",
+    "thumbnail": "/projects/rag-pipeline/thumb.svg",
+    "images": [
+      "/projects/rag-pipeline/1.svg",
+      "/projects/rag-pipeline/2.svg",
+      "/projects/rag-pipeline/3.svg"
+    ],
     "title": { "pt": "Pipeline RAG Enterprise", "en": "Enterprise RAG Pipeline" },
+    "summary": {
+      "pt": "Busca semântica e geração aumentada para documentação interna.",
+      "en": "Semantic search and augmented generation for internal documentation."
+    },
     "problem": {
       "pt": "Base de conhecimento dispersa impedia respostas rápidas do suporte.",
       "en": "Scattered knowledge base prevented fast support responses."
+    },
+    "solution": {
+      "pt": "Pipeline de ingestão multi-fonte, chunking semântico, busca híbrida (dense + BM25) e interface de chat para o time de suporte.",
+      "en": "Multi-source ingestion pipeline, semantic chunking, hybrid search (dense + BM25), and chat interface for the support team."
+    },
+    "role": {
+      "pt": "Design do pipeline, implementação do retrieval, avaliação de qualidade e integração com Slack.",
+      "en": "Pipeline design, retrieval implementation, quality evaluation, and Slack integration."
+    },
+    "highlights": {
+      "pt": [
+        "85% de precisão em 200 queries de avaliação",
+        "Ingestão de Confluence, Notion e PDFs",
+        "Re-ranking com cross-encoder (+12% precisão)"
+      ],
+      "en": [
+        "85% accuracy on 200 evaluation queries",
+        "Ingestion from Confluence, Notion, and PDFs",
+        "Cross-encoder re-ranking (+12% accuracy)"
+      ]
     },
     "stack": ["Python", "Pinecone", "OpenAI", "Next.js", "Docker"],
     "result": {
@@ -29,14 +90,45 @@
     },
     "links": { "demo": "#", "github": "https://github.com/kaizen" },
     "featured": true,
-    "relatedTechPost": "building-rag-pipeline"
+    "relatedTechPost": "building-rag-pipeline",
+    "year": "2025"
   },
   {
     "id": "realtime-dashboard",
+    "thumbnail": "/projects/realtime-dashboard/thumb.svg",
+    "images": [
+      "/projects/realtime-dashboard/1.svg",
+      "/projects/realtime-dashboard/2.svg",
+      "/projects/realtime-dashboard/3.svg"
+    ],
     "title": { "pt": "Dashboard em Tempo Real", "en": "Real-time Dashboard" },
+    "summary": {
+      "pt": "Painel operacional com métricas ao vivo e alertas configuráveis.",
+      "en": "Operational panel with live metrics and configurable alerts."
+    },
     "problem": {
       "pt": "Operações precisavam de visibilidade instantânea de métricas críticas.",
       "en": "Operations needed instant visibility into critical metrics."
+    },
+    "solution": {
+      "pt": "Dashboard Next.js com WebSockets, agregação server-side e widgets customizáveis por equipe. Integração com Grafana para métricas históricas.",
+      "en": "Next.js dashboard with WebSockets, server-side aggregation, and customizable widgets per team. Grafana integration for historical metrics."
+    },
+    "role": {
+      "pt": "Frontend, camada de tempo real, API de agregação e onboarding de equipes.",
+      "en": "Frontend, real-time layer, aggregation API, and team onboarding."
+    },
+    "highlights": {
+      "pt": [
+        "Latência média abaixo de 200ms",
+        "Adotado por 3 equipes internas",
+        "Alertas via webhook e email"
+      ],
+      "en": [
+        "Average latency under 200ms",
+        "Adopted by 3 internal teams",
+        "Alerts via webhook and email"
+      ]
     },
     "stack": ["Next.js", "WebSockets", "PostgreSQL", "Grafana", "TypeScript"],
     "result": {
@@ -45,6 +137,7 @@
     },
     "links": { "demo": "#", "github": "https://github.com/kaizen" },
     "featured": true,
-    "relatedTechPost": "nextjs-performance-tips"
+    "relatedTechPost": "nextjs-performance-tips",
+    "year": "2023"
   }
 ]

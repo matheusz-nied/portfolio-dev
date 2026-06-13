@@ -11,6 +11,19 @@ export function t(obj: LocalizedString, locale: Locale): string {
   return obj[locale];
 }
 
+function localizeProject(item: (typeof projects)[number], locale: Locale) {
+  return {
+    ...item,
+    title: item.title[locale],
+    summary: item.summary[locale],
+    problem: item.problem[locale],
+    solution: item.solution[locale],
+    role: item.role[locale],
+    highlights: item.highlights[locale],
+    result: item.result[locale],
+  };
+}
+
 export function getProfile(locale: Locale) {
   return {
     ...profile,
@@ -31,12 +44,13 @@ export function getExperience(locale: Locale) {
 }
 
 export function getProjects(locale: Locale) {
-  return projects.map((item) => ({
-    ...item,
-    title: item.title[locale],
-    problem: item.problem[locale],
-    result: item.result[locale],
-  }));
+  return projects.map((item) => localizeProject(item, locale));
+}
+
+export function getProject(id: string, locale: Locale) {
+  const item = projects.find((p) => p.id === id);
+  if (!item) return null;
+  return localizeProject(item, locale);
 }
 
 export function getSkills(locale: Locale) {

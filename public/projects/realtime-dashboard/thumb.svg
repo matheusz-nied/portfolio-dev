@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#121614"/>
+  <rect x="40" y="40" width="720" height="420" rx="12" fill="#1a211c" stroke="#8fbaa0" stroke-opacity="0.25"/>
+  <rect x="60" y="60" width="680" height="40" rx="6" fill="#0f1411"/>
+  <rect x="80" y="75" width="120" height="10" rx="2" fill="#8fbaa0" fill-opacity="0.4"/>
+  <rect x="60" y="120" width="160" height="320" rx="6" fill="#0f1411"/>
+  <rect x="240" y="120" width="500" height="320" rx="6" fill="#0f1411"/>
+  <rect x="260" y="140" width="460" height="140" rx="6" fill="#121614" stroke="#8fbaa0" stroke-opacity="0.2"/>
+  <path d="M280 250 L340 200 L400 230 L460 180 L520 210 L580 190 L680 220" stroke="#8fbaa0" stroke-width="2" stroke-opacity="0.5" fill="none"/>
+  <rect x="260" y="300" width="140" height="120" rx="6" fill="#121614" stroke="#6d9f7e" stroke-opacity="0.15"/>
+  <rect x="420" y="300" width="140" height="120" rx="6" fill="#121614" stroke="#6d9f7e" stroke-opacity="0.15"/>
+  <rect x="580" y="300" width="140" height="120" rx="6" fill="#121614" stroke="#8fbaa0" stroke-opacity="0.25"/>
+  <text x="400" y="480" text-anchor="middle" fill="#6d9f7e" fill-opacity="0.5" font-family="system-ui" font-size="14">Real-time Dashboard</text>
+</svg>
