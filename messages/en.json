@@ -59,6 +59,8 @@
     "viewProject": "View project",
     "viewCode": "Code",
     "readTechPost": "Read on Tech Log",
+    "backPrompt": "cd ../projects",
+    "backLabel": "Back to projects",
     "backToProjects": "← Back to projects",
     "blogsPrompt": "ls --blogs"
   },

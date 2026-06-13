@@ -50,7 +50,8 @@ export default async function ProjectPage({
     <ProjectDetail
       project={project}
       labels={{
-        back: t("backToProjects"),
+        backPrompt: t("backPrompt"),
+        backLabel: t("backLabel"),
         problem: t("problem"),
         solution: t("solution"),
         role: t("role"),
