@@ -66,13 +66,15 @@ export default async function PortfolioPage({
       <div className="relative z-10">
         <SecretTerminalProvider>
           <PortfolioNav />
-          <main className="mx-auto max-w-5xl">
+          <main>
             <Hero />
-            <ExperienceSection items={experience} />
-            <ProjectsSection items={projects} />
-            <SkillsSection items={skills} />
-            <AiSection items={aiProjects} />
-            <ContactSection />
+            <div className="mx-auto max-w-5xl">
+              <ExperienceSection items={experience} />
+              <ProjectsSection items={projects} />
+              <SkillsSection items={skills} />
+              <AiSection items={aiProjects} />
+              <ContactSection />
+            </div>
           </main>
           <PortfolioFooter />
           <RecruiterMode locale={loc} />

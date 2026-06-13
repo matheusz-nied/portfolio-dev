@@ -15,13 +15,18 @@
     "reflectionsBlog": "Cosmic Journal"
   },
   "hero": {
-    "greeting": "Olá, sou",
-    "headline": "Engenheiro Full-Stack",
-    "headlineAccent": "com foco em AI",
-    "subtitle": "Construo produtos end-to-end — do backend à interface — com pipelines de AI, agents e sistemas que escalam.",
-    "available": "Disponível para oportunidades",
-    "location": "Brasil · Remoto",
-    "pressR": "Pressione R para modo recrutador"
+    "ctaProjects": "Ver projetos",
+    "scanRole": "Cargo",
+    "scanStatus": "Disponibilidade",
+    "scanLocation": "Local",
+    "scanLanguages": "Idiomas",
+    "scanYears": "Experiência",
+    "scanStack": "Stack",
+    "statusLabel": "Status",
+    "languagesLabel": "Idiomas",
+    "stackLabel": "Stack",
+    "expValue": "{years}+ anos",
+    "layerExperience": "Experiência"
   },
   "recruiter": {
     "title": "Modo Recrutador",
