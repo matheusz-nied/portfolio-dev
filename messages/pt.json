@@ -63,11 +63,15 @@
   },
   "skills": {
     "title": "Skills",
-    "subtitle": "O mapa alterna entre setores sozinho. Clique para explorar no seu ritmo.",
+    "subtitle": "Mapa de competências em formato radar — setores alternam sozinhos até você assumir o controle.",
     "coreLabel": "Full-Stack",
-    "autoHint": "Alternando setores · clique para controlar",
-    "clickHint": "Setor selecionado manualmente",
-    "fullStackToggle": "Ver stack completo"
+    "mapPrompt": "skills --map",
+    "sectorLabel": "SECTOR",
+    "modulesLabel": "{count} módulos",
+    "loadLabel": "$ load --sector {sector}",
+    "autoHint": "varredura automática · clique para fixar",
+    "clickHint": "setor fixado manualmente",
+    "fullStackToggle": "cat --full-stack"
   },
   "ai": {
     "title": "AI & Machine Learning",

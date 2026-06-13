@@ -63,11 +63,15 @@
   },
   "skills": {
     "title": "Skills",
-    "subtitle": "The map cycles through sectors on its own. Click to explore at your pace.",
+    "subtitle": "Competency radar map — sectors auto-scan until you take control.",
     "coreLabel": "Full-Stack",
-    "autoHint": "Cycling sectors · click to take control",
-    "clickHint": "Sector selected manually",
-    "fullStackToggle": "View full stack"
+    "mapPrompt": "skills --map",
+    "sectorLabel": "SECTOR",
+    "modulesLabel": "{count} modules",
+    "loadLabel": "$ load --sector {sector}",
+    "autoHint": "auto-scan · click to lock",
+    "clickHint": "sector locked manually",
+    "fullStackToggle": "cat --full-stack"
   },
   "ai": {
     "title": "AI & Machine Learning",

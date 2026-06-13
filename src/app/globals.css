@@ -160,6 +160,42 @@ body {
   }
 }
 
+.skill-module-chip {
+  border-radius: 2px;
+}
+
+.skill-radar-sweep::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 1px;
+  transform-origin: left center;
+  background: linear-gradient(
+    90deg,
+    rgba(143, 186, 160, 0.55),
+    transparent
+  );
+  animation: skill-radar-sweep 4s linear infinite;
+}
+
+@keyframes skill-radar-sweep {
+  from {
+    transform: rotate(200deg);
+  }
+  to {
+    transform: rotate(-20deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-radar-sweep::after,
+  .skill-panel-beam {
+    animation: none !important;
+  }
+}
+
 .skill-node-pulse {
   animation: skill-node-pulse 2.5s ease-in-out infinite;
 }

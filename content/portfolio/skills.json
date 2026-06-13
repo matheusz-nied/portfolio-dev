@@ -5,6 +5,11 @@
     "items": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"]
   },
   {
+    "id": "mobile",
+    "category": { "pt": "Mobile", "en": "Mobile" },
+    "items": ["React Native", "Expo", "TypeScript", "Swift", "Kotlin"]
+  },
+  {
     "id": "backend",
     "category": { "pt": "Backend", "en": "Backend" },
     "items": ["Node.js", "Python", "FastAPI", "GraphQL", "REST APIs"]

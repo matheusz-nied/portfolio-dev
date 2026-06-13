@@ -18,29 +18,29 @@ export function SkillsSection({ items }: SkillsSectionProps) {
     <section id="skills" className="px-6 py-20">
       <div className="mx-auto max-w-5xl">
         <h2 className="section-title">{t("title")}</h2>
-        <p className="mt-3 max-w-md text-sm text-[var(--text-muted)]">
-          {t("subtitle")}
-        </p>
+        <p className="mt-4 max-w-2xl text-[var(--text-muted)]">{t("subtitle")}</p>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-14"
+          className="mt-12"
         >
           <SkillOrbit
             groups={items}
             coreLabel={t("coreLabel")}
             autoHint={t("autoHint")}
             clickHint={t("clickHint")}
+            mapPrompt={t("mapPrompt")}
+            sectorLabel={t("sectorLabel")}
           />
         </motion.div>
 
-        {/* Full stack — discreet, for users who prefer not to interact */}
-        <details className="group mx-auto mt-16 max-w-2xl">
-          <summary className="cursor-pointer list-none text-center text-xs text-[var(--text-muted)]/45 transition-colors hover:text-[var(--text-muted)]/70 [&::-webkit-details-marker]:hidden">
-            <span className="inline-flex items-center gap-1.5 border-b border-dotted border-[var(--border-subtle)] pb-0.5">
+        <details className="group mt-14 border-t border-[var(--border-subtle)] pt-10">
+          <summary className="cursor-pointer list-none text-center [&::-webkit-details-marker]:hidden">
+            <span className="inline-flex items-center gap-1.5 font-[family-name:var(--font-mono)] text-xs text-[var(--text-muted)]/45 transition-colors hover:text-[var(--accent-primary)]/70">
+              <span className="text-[var(--text-muted)]">$</span>
               {t("fullStackToggle")}
               <span
                 className="inline-block transition-transform group-open:rotate-180"
@@ -50,18 +50,32 @@ export function SkillsSection({ items }: SkillsSectionProps) {
               </span>
             </span>
           </summary>
-          <div className="mt-6 space-y-5 rounded-xl border border-[var(--border-subtle)]/50 bg-[var(--bg-card)]/40 px-5 py-5">
-            {items.map((group) => (
-              <div key={group.id}>
-                <p className="text-xs uppercase tracking-wider text-[var(--text-muted)]/60">
+          <ul className="mt-6 divide-y divide-[var(--border-subtle)] border-y border-[var(--border-subtle)]">
+            {items.map((group, i) => (
+              <motion.li
+                key={group.id}
+                initial={{ opacity: 0, x: -8 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                className="grid gap-3 py-5 sm:grid-cols-[140px_1fr] sm:gap-8 sm:py-6"
+              >
+                <span className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-wider text-[var(--text-muted)]">
                   {group.category}
+                </span>
+                <p className="font-[family-name:var(--font-mono)] text-sm leading-relaxed text-[var(--text-muted)]">
+                  {group.items.map((skill, j) => (
+                    <span key={skill}>
+                      {j > 0 && (
+                        <span className="mx-2 text-[var(--border-subtle)]">·</span>
+                      )}
+                      <span className="text-[var(--text-primary)]">{skill}</span>
+                    </span>
+                  ))}
                 </p>
-                <p className="mt-1.5 text-sm leading-relaxed text-[var(--text-muted)]">
-                  {group.items.join(" · ")}
-                </p>
-              </div>
+              </motion.li>
             ))}
-          </div>
+          </ul>
         </details>
 
         <ul className="sr-only">
