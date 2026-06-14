@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { PortfolioNav } from "@/components/portfolio/PortfolioNav";
 import { PortfolioFooter } from "@/components/portfolio/PortfolioFooter";
-import { StarfieldBackground } from "@/components/portfolio/StarfieldBackground";
+import { SignalMeshBackground } from "@/components/portfolio/SignalMeshBackground";
 import { Hero } from "@/components/portfolio/Hero";
 import { ExperienceSection } from "@/components/portfolio/ExperienceSection";
 import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
@@ -62,7 +62,7 @@ export default async function PortfolioPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <StarfieldBackground />
+      <SignalMeshBackground />
       <div className="relative z-10">
         <SecretTerminalProvider>
           <PortfolioNav />

@@ -1,5 +1,6 @@
 import { Link } from "@/i18n/navigation";
 import { ProjectCarousel } from "@/components/portfolio/ProjectCarousel";
+import { SignalMeshBackground } from "@/components/portfolio/SignalMeshBackground";
 import type { getProject } from "@/lib/portfolio";
 
 type Project = NonNullable<ReturnType<typeof getProject>>;
@@ -29,7 +30,9 @@ export function ProjectDetail({ project, labels }: ProjectDetailProps) {
   const hasLinks = hasDemo || project.links.github || project.relatedTechPost;
 
   return (
-    <div className="theme-portfolio min-h-screen">
+    <div className="theme-portfolio relative min-h-screen">
+      <SignalMeshBackground />
+      <div className="relative z-10">
       <nav className="sticky top-0 z-40 border-b border-[var(--border-subtle)] bg-[var(--bg-space)]/80 backdrop-blur-lg">
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-4 px-6 py-3.5">
           <Link
@@ -170,6 +173,7 @@ export function ProjectDetail({ project, labels }: ProjectDetailProps) {
             )}
           </footer>
         )}
+      </div>
       </div>
     </div>
   );

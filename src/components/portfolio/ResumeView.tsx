@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { SignalMeshBackground } from "@/components/portfolio/SignalMeshBackground";
 import {
   getExperience,
   getProfile,
@@ -16,8 +17,9 @@ export function ResumeView({ locale }: { locale: Locale }) {
   const skills = getSkills(locale);
 
   return (
-    <div className="theme-portfolio min-h-screen px-6 py-12 print:bg-white print:text-black">
-      <div className="mx-auto max-w-2xl">
+    <div className="theme-portfolio relative min-h-screen px-6 py-12 print:bg-white print:text-black">
+      <SignalMeshBackground />
+      <div className="relative z-10 mx-auto max-w-2xl">
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4 print:hidden">
           <Link
             href="/"

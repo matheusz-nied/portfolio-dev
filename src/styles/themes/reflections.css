@@ -6,6 +6,7 @@
   --refl-accent: #b0a0c4;
   --refl-warm: #c4a894;
   --refl-border: rgba(176, 160, 196, 0.12);
+  --signal-accent-rgb: 176, 160, 196;
   background:
     radial-gradient(
       ellipse 80% 50% at 50% -15%,

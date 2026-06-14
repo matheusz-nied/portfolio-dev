@@ -1,6 +1,7 @@
 import { Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
 import { ReflectionFootnote } from "@/components/easter-eggs/ReflectionFootnote";
+import { SignalMeshBackground } from "@/components/portfolio/SignalMeshBackground";
 import { getTranslations } from "next-intl/server";
 
 export default async function ReflectionsLayout({
@@ -11,7 +12,9 @@ export default async function ReflectionsLayout({
   const t = await getTranslations("reflections");
 
   return (
-    <div className="theme-reflections min-h-screen">
+    <div className="theme-reflections relative min-h-screen">
+      <SignalMeshBackground />
+      <div className="relative z-10">
       <header className="border-b border-[var(--refl-border)] px-6 py-8">
         <div className="mx-auto flex max-w-5xl items-center justify-between">
           <div>
@@ -36,6 +39,7 @@ export default async function ReflectionsLayout({
       </header>
       <main className="mx-auto w-full max-w-5xl px-6 py-14">{children}</main>
       <ReflectionFootnote />
+      </div>
     </div>
   );
 }
