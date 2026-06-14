@@ -2,7 +2,7 @@
 
 import {
   motion,
-  AnimatePresence,
+  AnimatePresence, 
   useReducedMotion,
 } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";

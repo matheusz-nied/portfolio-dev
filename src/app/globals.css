@@ -47,10 +47,20 @@ body {
   color: var(--refl-text);
 }
 
-.signal-mesh-canvas {
-  opacity: 0.72;
+.signal-mesh-canvas,
+.netrun-canvas {
+  opacity: 0.78;
 }
 
+.netrun-noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+}
+
+.netrun-aura,
 .signal-mesh-aura {
   position: absolute;
   border-radius: 50%;
@@ -59,6 +69,7 @@ body {
   will-change: transform, opacity;
 }
 
+.netrun-aura-a,
 .signal-mesh-aura-a {
   width: min(52vw, 520px);
   height: min(52vw, 520px);
@@ -66,12 +77,13 @@ body {
   left: -8%;
   background: radial-gradient(
     circle,
-    rgba(var(--signal-accent-rgb), 0.11),
+    rgba(var(--signal-accent-rgb), 0.1),
     transparent 68%
   );
-  animation: signal-mesh-drift-a 22s ease-in-out infinite;
+  animation: netrun-drift-a 22s ease-in-out infinite;
 }
 
+.netrun-aura-b,
 .signal-mesh-aura-b {
   width: min(44vw, 440px);
   height: min(44vw, 440px);
@@ -79,13 +91,13 @@ body {
   bottom: -10%;
   background: radial-gradient(
     circle,
-    rgba(var(--signal-accent-rgb), 0.08),
+    rgba(var(--signal-accent-rgb), 0.07),
     transparent 70%
   );
-  animation: signal-mesh-drift-b 28s ease-in-out infinite;
+  animation: netrun-drift-b 28s ease-in-out infinite;
 }
 
-@keyframes signal-mesh-drift-a {
+@keyframes netrun-drift-a {
   0%,
   100% {
     transform: translate(0, 0) scale(1);
@@ -97,7 +109,7 @@ body {
   }
 }
 
-@keyframes signal-mesh-drift-b {
+@keyframes netrun-drift-b {
   0%,
   100% {
     transform: translate(0, 0) scale(1);
@@ -109,25 +121,265 @@ body {
   }
 }
 
-.signal-mesh-vignette {
-  background: radial-gradient(
-    ellipse 72% 58% at 50% 44%,
-    transparent 32%,
-    rgba(0, 0, 0, 0.42) 100%
-  );
+.netrun-bracket {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  opacity: 0.42;
+}
+
+.netrun-bracket-tl {
+  top: 20px;
+  left: 20px;
+  border-top: 1.5px solid rgba(var(--signal-accent-rgb), 0.45);
+  border-left: 1.5px solid rgba(var(--signal-accent-rgb), 0.45);
+}
+
+.netrun-bracket-tr {
+  top: 20px;
+  right: 20px;
+  border-top: 1.5px solid rgba(var(--signal-accent-rgb), 0.45);
+  border-right: 1.5px solid rgba(var(--signal-accent-rgb), 0.45);
+}
+
+.netrun-bracket-bl {
+  bottom: 20px;
+  left: 20px;
+  border-bottom: 1.5px solid rgba(var(--signal-accent-rgb), 0.45);
+  border-left: 1.5px solid rgba(var(--signal-accent-rgb), 0.45);
+}
+
+.netrun-bracket-br {
+  bottom: 20px;
+  right: 20px;
+  border-bottom: 1.5px solid rgba(var(--signal-accent-rgb), 0.45);
+  border-right: 1.5px solid rgba(var(--signal-accent-rgb), 0.45);
+}
+
+.netrun-statusbar {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.5625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(var(--signal-accent-rgb), 0.45);
+  opacity: 0.85;
+}
+
+.netrun-statusbar-tag {
+  color: rgba(var(--signal-accent-rgb), 0.75);
+  font-weight: 600;
+}
+
+.netrun-statusbar-sep {
+  opacity: 0.35;
+}
+
+.netrun-statusbar-ice {
+  padding: 0.1rem 0.35rem;
+  border: 1px solid rgba(var(--signal-accent-rgb), 0.25);
+  font-size: 0.5rem;
   opacity: 0.7;
 }
 
+.netrun-feed {
+  position: absolute;
+  left: 28px;
+  bottom: 18%;
+  width: min(220px, 28vw);
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.35rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.5625rem;
+  line-height: 1.45;
+  color: rgba(var(--signal-accent-rgb), 0.55);
+  mask-image: linear-gradient(to top, transparent, black 25%, black 85%, transparent);
+}
+
+.netrun-feed-line {
+  opacity: 0;
+  transform: translateX(-6px);
+  animation: netrun-feed-in 0.45s ease forwards;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.netrun-feed-line.is-fading {
+  animation: netrun-feed-out 1.2s ease forwards;
+}
+
+@keyframes netrun-feed-in {
+  to {
+    opacity: 0.65;
+    transform: translateX(0);
+  }
+}
+
+@keyframes netrun-feed-out {
+  to {
+    opacity: 0;
+    transform: translateX(4px);
+  }
+}
+
+.netrun-ice-panel {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.12em;
+  color: rgba(var(--signal-accent-rgb), 0.45);
+  opacity: 0.7;
+}
+
+.netrun-ice-bars {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 3px;
+}
+
+.netrun-ice-bars span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: rgba(var(--signal-accent-rgb), 0.2);
+}
+
+.netrun-ice-bars span.is-bypassed {
+  background: rgba(var(--signal-accent-rgb), 0.55);
+  box-shadow: 0 0 8px rgba(var(--signal-accent-rgb), 0.35);
+  animation: netrun-ice-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes netrun-ice-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.netrun-ice-status {
+  font-size: 0.4375rem;
+  opacity: 0.55;
+}
+
+.netrun-diamond {
+  position: absolute;
+  right: 12%;
+  bottom: 16%;
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(var(--signal-accent-rgb), 0.35);
+  transform: rotate(45deg);
+  opacity: 0.35;
+  animation: netrun-diamond-spin 12s linear infinite;
+}
+
+.netrun-diamond::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border: 1px solid rgba(var(--signal-accent-rgb), 0.2);
+}
+
+@keyframes netrun-diamond-spin {
+  to {
+    transform: rotate(405deg);
+  }
+}
+
+.netrun-glitch-burst {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 48%,
+    rgba(var(--signal-accent-rgb), 0.06) 49%,
+    rgba(255, 60, 80, 0.04) 50%,
+    rgba(60, 200, 255, 0.04) 51%,
+    transparent 52%
+  );
+  animation: netrun-glitch-burst 9s steps(1) infinite;
+}
+
+@keyframes netrun-glitch-burst {
+  0%,
+  96%,
+  100% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  97% {
+    opacity: 0.7;
+    transform: translateX(-3%);
+  }
+  98% {
+    opacity: 0.5;
+    transform: translateX(2%);
+  }
+}
+
+.netrun-vignette,
+.signal-mesh-vignette {
+  background: radial-gradient(
+    ellipse 72% 58% at 50% 44%,
+    transparent 30%,
+    rgba(0, 0, 0, 0.48) 100%
+  );
+  opacity: 0.75;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .signal-mesh-aura {
+  .netrun-aura,
+  .signal-mesh-aura,
+  .netrun-diamond,
+  .netrun-glitch-burst,
+  .netrun-ice-bars span.is-bypassed {
     animation: none;
-    opacity: 0.48;
+  }
+
+  .netrun-feed {
+    display: none;
   }
 }
 
 @media print {
-  .signal-mesh-root {
+  .signal-mesh-root,
+  .netrun-root {
     display: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .netrun-feed,
+  .netrun-ice-panel,
+  .netrun-diamond,
+  .netrun-statusbar {
+    display: none;
+  }
+
+  .netrun-bracket {
+    width: 28px;
+    height: 28px;
+    opacity: 0.28;
   }
 }
 
