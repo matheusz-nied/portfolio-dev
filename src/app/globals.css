@@ -217,42 +217,144 @@ body {
     animation: none;
     stroke-opacity: 0.25;
   }
-
-  .contact-cursor-blink {
-    animation: none;
-    opacity: 1;
-  }
 }
 
-@keyframes cursor-blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
-.contact-cursor-blink {
-  animation: cursor-blink 1.2s step-end infinite;
-  color: var(--accent-primary);
-}
-
-.contact-uplink-beam {
-  animation: experience-beam 2.4s ease-in-out infinite;
-}
-
-.contact-channel-row:hover {
+.contact-bus-sweep {
   background: linear-gradient(
     90deg,
-    rgba(143, 186, 160, 0.05) 0%,
-    transparent 70%
+    transparent,
+    rgba(143, 186, 160, 0.07),
+    transparent
   );
+  animation: contact-bus-sweep 3.5s ease-in-out infinite;
+}
+
+@keyframes contact-bus-sweep {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(420%);
+  }
+}
+
+.contact-bus-scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.05) 2px,
+    rgba(0, 0, 0, 0.05) 3px
+  );
+  pointer-events: none;
+}
+
+.contact-bus-line {
+  animation: contact-bus-line 2.2s ease-in-out infinite;
+}
+
+@keyframes contact-bus-line {
+  0%,
+  100% {
+    stroke-opacity: 0.14;
+  }
+  50% {
+    stroke-opacity: 0.32;
+  }
+}
+
+.contact-sync-dot {
+  animation: contact-sync-dot 1.4s ease-in-out infinite;
+}
+
+@keyframes contact-sync-dot {
+  0%,
+  100% {
+    opacity: 0.45;
+    box-shadow: 0 0 0 rgba(143, 186, 160, 0);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(143, 186, 160, 0.55);
+  }
+}
+
+.contact-bus-node {
+  position: relative;
+  display: block;
+  min-width: 0;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contact-bus-open {
+  color: var(--accent-primary);
+  opacity: 0.38;
+  transition: opacity 0.2s ease;
+}
+
+.contact-bus-node:hover .contact-bus-open,
+.contact-bus-node:focus-visible .contact-bus-open,
+.contact-bus-node.is-active .contact-bus-open {
+  opacity: 0.9;
+}
+
+.contact-bus-value {
+  border-bottom: 1px dashed rgba(143, 186, 160, 0.22);
+  padding-bottom: 1px;
+  width: fit-content;
+  max-width: 100%;
+  transition: border-color 0.2s ease;
+}
+
+.contact-bus-node:hover .contact-bus-value,
+.contact-bus-node:focus-visible .contact-bus-value,
+.contact-bus-node.is-active .contact-bus-value {
+  border-bottom-color: rgba(143, 186, 160, 0.55);
+}
+
+.contact-bus-node.is-active,
+.contact-bus-node:hover,
+.contact-bus-node:focus-visible {
+  background: rgba(143, 186, 160, 0.06);
+  outline: none;
+  box-shadow: inset 0 0 0 1px rgba(143, 186, 160, 0.18);
+  transform: translateY(-1px);
+}
+
+.contact-bus-node:focus-visible {
+  box-shadow:
+    inset 0 0 0 1px rgba(143, 186, 160, 0.35),
+    0 0 0 2px rgba(143, 186, 160, 0.12);
+}
+
+.contact-bus-node.is-active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-primary),
+    transparent
+  );
+  opacity: 0.65;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .contact-uplink-beam {
+  .contact-bus-sweep,
+  .contact-bus-line,
+  .contact-sync-dot {
     animation: none;
   }
 }
