@@ -359,6 +359,137 @@ body {
   }
 }
 
+.project-registry-sweep {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(143, 186, 160, 0.06),
+    transparent
+  );
+  animation: project-registry-sweep 4.5s ease-in-out infinite;
+}
+
+@keyframes project-registry-sweep {
+  0% {
+    transform: translateX(-130%);
+  }
+  100% {
+    transform: translateX(430%);
+  }
+}
+
+.project-registry-scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.045) 2px,
+    rgba(0, 0, 0, 0.045) 3px
+  );
+  pointer-events: none;
+}
+
+.project-module {
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.project-module:hover,
+.project-module:focus-visible {
+  background: rgba(143, 186, 160, 0.04);
+  outline: none;
+  box-shadow: inset 0 0 0 1px rgba(143, 186, 160, 0.16);
+}
+
+.project-module:focus-visible {
+  box-shadow:
+    inset 0 0 0 1px rgba(143, 186, 160, 0.3),
+    0 0 0 2px rgba(143, 186, 160, 0.1);
+}
+
+.project-module-preview {
+  isolation: isolate;
+}
+
+.project-module-scan {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(143, 186, 160, 0.18),
+    transparent
+  );
+  animation: project-module-scan 1.1s ease-in-out infinite;
+}
+
+@keyframes project-module-scan {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(520%);
+  }
+}
+
+.project-module-corners::before,
+.project-module-corners::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--accent-primary);
+  opacity: 0.55;
+}
+
+.project-module-corners::before {
+  top: 0;
+  left: 0;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.project-module-corners::after {
+  right: 0;
+  bottom: 0;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+.project-live-badge {
+  animation: project-live-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes project-live-pulse {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.project-module-access {
+  opacity: 0.45;
+  transition: opacity 0.2s ease;
+}
+
+.project-module:hover .project-module-access,
+.project-module:focus-visible .project-module-access {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-registry-sweep,
+  .project-module-scan,
+  .project-live-badge {
+    animation: none;
+  }
+}
+
 .hero-orbit-glow {
   background: radial-gradient(
     circle,

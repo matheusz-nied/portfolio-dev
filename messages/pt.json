@@ -55,6 +55,13 @@
   },
   "projects": {
     "title": "Projetos",
+    "subtitle": "Módulos deployados — sistemas reais em produção.",
+    "registryTag": "REGISTRY",
+    "modulesCount": "{count} módulos",
+    "accessLabel": "Acessar",
+    "accessModule": "Acessar {title}",
+    "liveTag": "LIVE",
+    "archivedTag": "STABLE",
     "problem": "Problema",
     "solution": "Solução",
     "role": "Meu papel",
