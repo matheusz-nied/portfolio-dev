@@ -76,16 +76,16 @@ export function ContactSection() {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <h2 className="section-title">{t("title")}</h2>
-            <p className="mt-2 max-w-lg text-sm text-[var(--text-muted)]">{t("subtitle")}</p>
+            <p className="section-subtitle">{t("subtitle")}</p>
           </div>
-          <p className="font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]/45">
-            <span className="inline-flex items-center gap-1.5 text-[var(--accent-primary)]/80">
+          <p className="hud-label">
+            <span className="inline-flex items-center gap-1.5 text-[var(--accent-primary)]">
               {!reducedMotion && (
                 <span className="contact-sync-dot h-1.5 w-1.5 rounded-full bg-[var(--accent-primary)]" />
               )}
               {t("syncTag")}
             </span>
-            <span className="mx-2 text-[var(--text-muted)]/20">|</span>
+            <span className="mx-2 text-[var(--text-muted)]/30">|</span>
             {location}
           </p>
         </div>
@@ -95,7 +95,7 @@ export function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="contact-bus relative mt-8 overflow-hidden border border-[var(--border-subtle)]/60 bg-[var(--bg-card)]/20"
+          className="contact-bus content-panel relative mt-8 overflow-hidden"
         >
           <div className="contact-bus-scanlines pointer-events-none absolute inset-0" aria-hidden />
           {!reducedMotion && <div className="contact-bus-sweep pointer-events-none absolute inset-y-0 w-24" aria-hidden />}
@@ -162,10 +162,10 @@ export function ContactSection() {
                 className={`contact-bus-node group cursor-pointer ${active === index ? "is-active" : ""} ${index > 0 ? "border-[var(--border-subtle)]/40 lg:border-l" : ""} ${index % 2 === 1 ? "border-l" : ""} ${index >= 2 ? "border-t lg:border-t-0" : ""}`}
               >
                 <div className="flex items-center justify-between gap-2">
-                  <span className="font-[family-name:var(--font-mono)] text-[9px] uppercase tracking-[0.14em] text-[var(--text-muted)]/40 transition-colors group-hover:text-[var(--accent-primary)]/65">
+                  <span className="hud-label transition-colors group-hover:text-[var(--accent-primary)]">
                     {t(channel.labelKey)}
                   </span>
-                  <span className="contact-bus-open shrink-0 font-[family-name:var(--font-mono)] text-[9px] uppercase tracking-[0.12em]">
+                  <span className="contact-bus-open shrink-0 hud-label">
                     {t("openLabel")}
                     <span aria-hidden>{channel.external ? " ↗" : " →"}</span>
                   </span>
@@ -177,12 +177,12 @@ export function ContactSection() {
             ))}
           </div>
 
-          <p className="border-t border-[var(--border-subtle)]/35 px-4 py-2 font-[family-name:var(--font-mono)] text-[9px] uppercase tracking-[0.12em] text-[var(--text-muted)]/35">
-            <span className="text-[var(--accent-primary)]/45">{availability}</span>
+          <p className="border-t border-[var(--border-subtle)]/35 px-4 py-2.5 hud-label">
+            <span className="text-[var(--accent-highlight)]/85">{availability}</span>
             <span className="mx-2 opacity-30">·</span>
             {t("nodesConnected", { count: CHANNELS.length })}
             <span className="mx-2 opacity-30">·</span>
-            <span className="text-[var(--text-muted)]/50">{t("selectHint")}</span>
+            <span className="text-[var(--text-muted)]/80">{t("selectHint")}</span>
           </p>
         </motion.div>
       </div>

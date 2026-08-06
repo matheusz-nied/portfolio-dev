@@ -23,11 +23,11 @@ export function ProjectsSection({ items }: ProjectsSectionProps) {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <h2 className="section-title">{t("title")}</h2>
-            <p className="mt-2 max-w-lg text-sm text-[var(--text-muted)]">{t("subtitle")}</p>
+            <p className="section-subtitle">{t("subtitle")}</p>
           </div>
-          <p className="font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]/45">
-            <span className="text-[var(--accent-primary)]/55">{t("registryTag")}</span>
-            <span className="mx-2 text-[var(--text-muted)]/20">|</span>
+          <p className="hud-label">
+            <span className="text-[var(--accent-primary)]">{t("registryTag")}</span>
+            <span className="mx-2 text-[var(--text-muted)]/30">|</span>
             {t("modulesCount", { count: items.length })}
           </p>
         </div>
@@ -37,7 +37,7 @@ export function ProjectsSection({ items }: ProjectsSectionProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="project-registry relative mt-10 overflow-hidden border border-[var(--border-subtle)]/60 bg-[var(--bg-card)]/20"
+          className="project-registry content-panel relative mt-10 overflow-hidden"
         >
           <div className="project-registry-scanlines pointer-events-none absolute inset-0" aria-hidden />
           {!reducedMotion && (
@@ -59,21 +59,21 @@ export function ProjectsSection({ items }: ProjectsSectionProps) {
                   aria-label={t("accessModule", { title: project.title })}
                   className="project-module group flex h-full cursor-pointer flex-col"
                 >
-                  <div className="flex items-center justify-between gap-3 border-b border-[var(--border-subtle)]/35 px-4 py-2 font-[family-name:var(--font-mono)] text-[9px] uppercase tracking-[0.14em]">
-                    <span className="text-[var(--accent-primary)]/55">
+                  <div className="flex items-center justify-between gap-3 border-b border-[var(--border-subtle)]/35 px-4 py-2 font-[family-name:var(--font-mono)] text-[11px] uppercase tracking-[0.12em]">
+                    <span className="text-[var(--accent-primary)]/80">
                       PRJ-{String(i + 1).padStart(2, "0")}
                     </span>
                     {project.featured ? (
-                      <span className="project-live-badge inline-flex items-center gap-1.5 text-[var(--accent-primary)]">
+                      <span className="project-live-badge hud-tag-live inline-flex items-center gap-1.5">
                         {!reducedMotion && (
-                          <span className="h-1 w-1 rounded-full bg-[var(--accent-primary)]" />
+                          <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent-highlight)]" />
                         )}
                         {t("liveTag")}
                       </span>
                     ) : (
-                      <span className="text-[var(--text-muted)]/30">{t("archivedTag")}</span>
+                      <span className="text-[var(--text-muted)]/60">{t("archivedTag")}</span>
                     )}
-                    <span className="text-[var(--text-muted)]/35">[{project.year}]</span>
+                    <span className="text-[var(--text-muted)]/60">[{project.year}]</span>
                   </div>
 
                   <div className="project-module-preview relative aspect-[16/10] overflow-hidden bg-[var(--bg-surface)]">
@@ -95,14 +95,14 @@ export function ProjectsSection({ items }: ProjectsSectionProps) {
                     <h3 className="font-[family-name:var(--font-display)] text-lg font-medium text-[var(--text-primary)] transition-colors group-hover:text-[var(--accent-primary)]">
                       {project.title}
                     </h3>
-                    <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[var(--text-muted)]">
+                    <p className="mt-2 line-clamp-2 text-[0.9375rem] leading-relaxed text-[var(--text-muted)]">
                       {project.summary}
                     </p>
-                    <p className="mt-4 font-[family-name:var(--font-mono)] text-[10px] tracking-wide text-[var(--text-muted)]/50">
+                    <p className="mt-4 font-[family-name:var(--font-mono)] text-xs tracking-wide text-[var(--text-muted)]/70">
                       {project.stack.slice(0, 5).join(" · ")}
                       {project.stack.length > 5 && ` · +${project.stack.length - 5}`}
                     </p>
-                    <span className="project-module-access mt-5 inline-flex items-center gap-1.5 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.12em] text-[var(--accent-primary)]">
+                    <span className="project-module-access mt-5 inline-flex items-center gap-1.5 hud-tag">
                       {t("accessLabel")}
                       <span aria-hidden>→</span>
                     </span>

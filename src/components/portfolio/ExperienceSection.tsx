@@ -18,7 +18,7 @@ export function ExperienceSection({ items }: ExperienceSectionProps) {
     <section id="experience" className="px-6 py-20">
       <div className="mx-auto max-w-5xl">
         <h2 className="section-title">{t("title")}</h2>
-        <p className="mt-4 max-w-lg text-[var(--text-muted)]">{t("subtitle")}</p>
+        <p className="section-subtitle">{t("subtitle")}</p>
 
         <motion.div
           initial={{ opacity: 0, y: 12 }}

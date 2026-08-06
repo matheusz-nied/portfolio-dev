@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useSyncExternalStore } from "react";
 
-const DEFAULT_ACCENT_RGB = "143, 186, 160";
+const DEFAULT_ACCENT_RGB = "110, 196, 146";
 const HEX = "0123456789ABCDEF";
 
 const LOG_POOL = [

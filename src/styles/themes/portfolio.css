@@ -1,24 +1,35 @@
 .theme-portfolio {
-  --bg-space: #0b0d0c;
-  --bg-surface: #121614;
-  --bg-card: rgba(18, 24, 20, 0.55);
-  --text-primary: #dde3df;
-  --text-muted: #8a948c;
-  --accent-primary: #8fbaa0;
-  --accent-secondary: #6d9f7e;
+  --bg-space: #080d0a;
+  --bg-surface: #0f1612;
+  --bg-card: rgba(12, 20, 16, 0.85);
+  --bg-panel: rgba(10, 16, 13, 0.94);
+  --text-primary: #e0ebe4;
+  --text-muted: #8a9e90;
+  --text-dim: #5f7266;
+  --accent-primary: #6ec492;
+  --accent-secondary: #4a9f72;
+  --accent-highlight: #a3d962;
   --accent-cyan: var(--accent-primary);
   --accent-magenta: var(--accent-secondary);
   --accent-purple: var(--accent-secondary);
-  --border-subtle: rgba(143, 186, 160, 0.16);
-  --glow-cyan: 0 4px 24px rgba(143, 186, 160, 0.07);
-  --glow-magenta: 0 4px 24px rgba(109, 159, 126, 0.06);
+  --border-subtle: rgba(110, 196, 146, 0.16);
+  --border-strong: rgba(110, 196, 146, 0.28);
+  --glow-cyan: 0 4px 24px rgba(110, 196, 146, 0.09);
+  --glow-magenta: 0 4px 24px rgba(74, 159, 114, 0.06);
+  --glow-highlight: 0 0 14px rgba(163, 217, 98, 0.14);
   --border-glow: 1px solid var(--border-subtle);
-  --signal-accent-rgb: 143, 186, 160;
+  --signal-accent-rgb: 110, 196, 146;
+  --highlight-rgb: 163, 217, 98;
   background:
     radial-gradient(
-      ellipse 90% 60% at 50% -10%,
-      rgba(80, 120, 95, 0.08),
+      ellipse 90% 55% at 50% -8%,
+      rgba(74, 159, 114, 0.08),
       transparent 55%
+    ),
+    radial-gradient(
+      ellipse 50% 35% at 85% 95%,
+      rgba(110, 196, 146, 0.04),
+      transparent 50%
     ),
     var(--bg-space);
 }

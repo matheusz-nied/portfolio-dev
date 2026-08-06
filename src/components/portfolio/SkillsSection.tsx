@@ -18,7 +18,7 @@ export function SkillsSection({ items }: SkillsSectionProps) {
     <section id="skills" className="px-6 py-20">
       <div className="mx-auto max-w-5xl">
         <h2 className="section-title">{t("title")}</h2>
-        <p className="mt-4 max-w-2xl text-[var(--text-muted)]">{t("subtitle")}</p>
+        <p className="section-subtitle">{t("subtitle")}</p>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}

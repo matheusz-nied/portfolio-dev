@@ -172,7 +172,7 @@ function HighlightLine({
       whileInView={{ opacity: active ? 1 : 0.55, x: 0 }}
       viewport={{ once: true }}
       transition={{ delay: active ? 0.05 + index * 0.06 : 0, ease: [0.22, 1, 0.36, 1] }}
-      className={`flex gap-2 text-sm leading-relaxed transition-colors duration-300 ${
+      className={`flex gap-2 text-[0.9375rem] leading-relaxed transition-colors duration-300 ${
         active ? "text-[var(--text-primary)]" : "text-[var(--text-muted)]"
       }`}
     >
@@ -227,8 +227,8 @@ function LogEntry({
       onMouseEnter={onFocus}
       onFocus={onFocus}
       tabIndex={0}
-      className={`group relative outline-none transition-colors hover:bg-[var(--bg-card)]/40 focus-visible:bg-[var(--bg-card)]/40 ${
-        faded ? "opacity-65" : ""
+      className={`group relative outline-none transition-colors hover:bg-[var(--bg-card)]/60 focus-visible:bg-[var(--bg-card)]/60 ${
+        faded ? "opacity-75" : ""
       } ${isCurrent ? "experience-entry-live" : ""} ${
         active ? "experience-entry-active" : ""
       }`}
@@ -243,7 +243,7 @@ function LogEntry({
           <div
             className={`relative mx-auto inline-flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-500 sm:ml-auto sm:mr-0 ${
               active
-                ? "border-[var(--accent-primary)]/50 bg-[var(--accent-primary)]/8 shadow-[0_0_20px_rgba(143,186,160,0.15)]"
+                ? "border-[var(--accent-primary)]/50 bg-[var(--accent-primary)]/8 shadow-[0_0_20px_rgba(var(--signal-accent-rgb),0.15)]"
                 : "border-[var(--border-subtle)] bg-transparent"
             }`}
           >
@@ -269,24 +269,24 @@ function LogEntry({
           <span
             className={`experience-node absolute -left-[4px] top-3 h-2 w-2 rounded-full border border-[var(--bg-space)] transition-all duration-300 ${
               active
-                ? "experience-node-active scale-125 bg-[var(--accent-primary)] shadow-[0_0_14px_rgba(143,186,160,0.55)]"
-                : "bg-[var(--accent-primary)]/50 shadow-[0_0_6px_rgba(143,186,160,0.2)]"
+                ? "experience-node-active scale-125 bg-[var(--accent-primary)] shadow-[0_0_14px_rgba(var(--signal-accent-rgb),0.55)]"
+                : "bg-[var(--accent-primary)]/50 shadow-[0_0_6px_rgba(var(--signal-accent-rgb),0.2)]"
             }`}
           />
 
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-wider text-[var(--text-muted)]">
-            <span className={active ? "text-[var(--accent-primary)]" : "text-[var(--accent-primary)]/55"}>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-[family-name:var(--font-mono)] text-[11px] uppercase tracking-wider text-[var(--text-muted)]">
+            <span className={active ? "text-[var(--accent-primary)]" : "text-[var(--accent-primary)]/70"}>
               {txId}
             </span>
-            <span>{sector}</span>
-            <span className="text-[var(--text-muted)]/40">
-              Δ {durationYears}y
+            <span className="text-[var(--text-muted)]/70">{sector}</span>
+            <span className="text-[var(--text-muted)]/60">
+              {durationYears}y
             </span>
             {isCurrent && (
-              <span className="inline-flex items-center gap-1.5 text-[var(--accent-primary)]">
+              <span className="inline-flex items-center gap-1.5 text-[var(--accent-highlight)]">
                 <span className="relative flex h-1.5 w-1.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent-primary)] opacity-40" />
-                  <span className="relative h-1.5 w-1.5 rounded-full bg-[var(--accent-primary)]" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent-highlight)] opacity-40" />
+                  <span className="relative h-1.5 w-1.5 rounded-full bg-[var(--accent-highlight)]" />
                 </span>
                 {liveLabel}
                 <SignalWaveform active={active || isCurrent} />
@@ -294,23 +294,18 @@ function LogEntry({
             )}
           </div>
 
-          <p className="mt-2 font-[family-name:var(--font-mono)] text-[11px] text-[var(--text-muted)]/55">
-            <span className="text-[var(--text-muted)]/35">[</span>
-            {" SIG :: "}
-            <span className={active ? "text-[var(--accent-primary)]/80" : ""}>{item.company}</span>
-            {" · "}
-            {item.period.start}—{endLabel}
-            <span className="text-[var(--text-muted)]/35"> ]</span>
-          </p>
-
           <div className="mt-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h3 className="glitch-hover text-base font-medium text-[var(--text-primary)] sm:text-lg">
+            <h3 className="glitch-hover text-lg font-medium text-[var(--text-primary)] sm:text-xl">
               {item.role}
             </h3>
-            <span className="font-[family-name:var(--font-mono)] text-xs text-[var(--text-muted)] transition-colors group-hover:text-[var(--accent-primary)]">
-              @{item.company}
+            <span className="font-[family-name:var(--font-mono)] text-sm text-[var(--text-muted)] transition-colors group-hover:text-[var(--accent-primary)]">
+              {item.company}
             </span>
           </div>
+
+          <p className="mt-1.5 font-[family-name:var(--font-mono)] text-xs text-[var(--text-muted)]">
+            {item.period.start} — {endLabel}
+          </p>
 
           <ul
             className={`mt-4 space-y-2 border-t border-dotted pt-4 transition-colors duration-300 ${
@@ -404,23 +399,23 @@ function TelemetryHud({
   const coords = pseudoCoords(item.company);
 
   return (
-    <div className="experience-telemetry mt-4 border border-[var(--border-subtle)]/60 bg-[var(--bg-card)]/20 px-3 py-2.5 sm:px-4">
-      <div className="flex flex-wrap items-center justify-between gap-2 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-wider">
+    <div className="experience-telemetry mt-4 content-panel px-3 py-2.5 sm:px-4">
+      <div className="flex flex-wrap items-center justify-between gap-2 font-[family-name:var(--font-mono)] text-[11px] uppercase tracking-wider">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[var(--text-muted)]">
           <span>
-            <span className="text-[var(--text-muted)]/45">{lockLabel}</span>{" "}
+            <span className="text-[var(--text-muted)]/70">{lockLabel}</span>{" "}
             <span className="text-[var(--accent-primary)]">{txId}</span>
           </span>
           <span>
-            <span className="text-[var(--text-muted)]/45">{snrLabel}</span>{" "}
+            <span className="text-[var(--text-muted)]/70">{snrLabel}</span>{" "}
             <span className="text-[var(--accent-primary)]">{snr}%</span>
           </span>
-          <span className="hidden sm:inline">
-            <span className="text-[var(--text-muted)]/45">{coordsLabel}</span>{" "}
-            <span className="text-[var(--text-primary)]/70">{coords}</span>
+          <span className="hidden lg:inline">
+            <span className="text-[var(--text-muted)]/70">{coordsLabel}</span>{" "}
+            <span className="text-[var(--text-primary)]/80">{coords}</span>
           </span>
         </div>
-        <span className="inline-flex items-center gap-1.5 text-[var(--text-muted)]/50">
+        <span className="inline-flex items-center gap-1.5 text-[var(--text-muted)]/70">
           {!userLocked ? (
             <>
               <span className="relative flex h-1.5 w-1.5">
@@ -509,7 +504,7 @@ export function ExperienceLog({
         <p className="font-[family-name:var(--font-mono)] text-xs text-[var(--accent-primary)]">
           <span className="text-[var(--text-muted)]">$</span> {logPrompt}
         </p>
-        <p className="font-[family-name:var(--font-mono)] text-[10px] text-[var(--text-muted)]/50">
+        <p className="hud-label text-[var(--text-muted)]/70">
           {t("receivingLabel", { count: recent.length })}
         </p>
       </div>
@@ -528,7 +523,7 @@ export function ExperienceLog({
         />
       )}
 
-      <div ref={containerRef} className="relative mt-3 overflow-hidden">
+      <div ref={containerRef} className="content-panel relative mt-3 overflow-hidden">
         {scanned && !reducedMotion && (
           <div className="experience-scan-line pointer-events-none absolute inset-x-0 top-0 z-20 h-px bg-gradient-to-r from-transparent via-[var(--accent-primary)] to-transparent" />
         )}
