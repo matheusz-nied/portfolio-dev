@@ -538,35 +538,499 @@ body {
   border-radius: 2px;
 }
 
-.skill-radar-sweep::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50%;
-  height: 1px;
-  transform-origin: left center;
+.skill-terminal-sweep {
   background: linear-gradient(
     90deg,
-    rgba(var(--signal-accent-rgb), 0.55),
+    transparent,
+    rgba(var(--signal-accent-rgb), 0.06),
     transparent
   );
-  animation: skill-radar-sweep 4s linear infinite;
+  animation: skill-terminal-sweep 4s ease-in-out infinite;
 }
 
-@keyframes skill-radar-sweep {
+.skill-nexus-sweep {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--signal-accent-rgb), 0.08),
+    transparent
+  );
+  animation: skill-terminal-sweep 3.8s ease-in-out infinite;
+}
+
+.skill-rack-sweep {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--signal-accent-rgb), 0.07),
+    transparent
+  );
+  animation: skill-terminal-sweep 3.6s ease-in-out infinite;
+}
+
+.skill-rack-scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.04) 2px,
+    rgba(0, 0, 0, 0.04) 3px
+  );
+  pointer-events: none;
+}
+
+.skill-rack-bus-line {
+  animation: skill-rack-bus-line 2.4s ease-in-out infinite;
+}
+
+@keyframes skill-rack-bus-line {
+  0%,
+  100% {
+    stroke-opacity: 0.16;
+  }
+  50% {
+    stroke-opacity: 0.55;
+  }
+}
+
+@keyframes skill-rack-wave-bar {
+  0%,
+  100% {
+    transform: scaleY(0.45);
+    transform-origin: center bottom;
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.skill-rack-wave-bar {
+  animation: skill-rack-wave-bar 1.1s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+
+.skill-rack-module {
+  background: var(--bg-space);
+  cursor: pointer;
+  outline: none;
+}
+
+.skill-rack-module:hover,
+.skill-rack-module:focus-visible,
+.skill-rack-module.is-active {
+  background: rgba(var(--signal-accent-rgb), 0.05);
+  box-shadow: inset 0 0 0 1px rgba(var(--signal-accent-rgb), 0.16);
+}
+
+.skill-rack-module.is-active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-primary),
+    transparent
+  );
+}
+
+.skill-rack-module:focus-visible {
+  box-shadow:
+    inset 0 0 0 1px rgba(var(--signal-accent-rgb), 0.35),
+    0 0 0 2px rgba(var(--signal-accent-rgb), 0.12);
+}
+
+/* ── Skill inject / netrun breach UI ── */
+
+.skill-inject {
+  background:
+    linear-gradient(180deg, rgba(var(--signal-accent-rgb), 0.03), transparent 28%),
+    var(--bg-panel);
+}
+
+.skill-inject-vignette {
+  background: radial-gradient(
+    ellipse 85% 70% at 50% 45%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  opacity: 0.65;
+}
+
+.skill-inject-glitch {
+  opacity: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 46%,
+    rgba(var(--signal-accent-rgb), 0.06) 49%,
+    rgba(var(--highlight-rgb), 0.05) 50%,
+    rgba(var(--signal-accent-rgb), 0.04) 51%,
+    transparent 54%
+  );
+  animation: skill-inject-glitch-idle 11s steps(1) infinite;
+}
+
+.skill-inject.is-glitching .skill-inject-glitch {
+  animation: skill-inject-glitch-hit 0.38s steps(2) forwards;
+}
+
+@keyframes skill-inject-glitch-idle {
+  0%,
+  97%,
+  100% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  98% {
+    opacity: 0.55;
+    transform: translateX(-2%);
+  }
+}
+
+@keyframes skill-inject-glitch-hit {
+  0% {
+    opacity: 0.8;
+    transform: translateX(-3%);
+  }
+  33% {
+    opacity: 0.45;
+    transform: translateX(2%);
+  }
+  66% {
+    opacity: 0.65;
+    transform: translateX(-1%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+}
+
+.skill-inject-bracket {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  opacity: 0.32;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.skill-inject-bracket-tl {
+  top: 10px;
+  left: 10px;
+  border-top: 1px solid rgba(var(--signal-accent-rgb), 0.5);
+  border-left: 1px solid rgba(var(--signal-accent-rgb), 0.5);
+}
+
+.skill-inject-bracket-tr {
+  top: 10px;
+  right: 10px;
+  border-top: 1px solid rgba(var(--signal-accent-rgb), 0.5);
+  border-right: 1px solid rgba(var(--signal-accent-rgb), 0.5);
+}
+
+.skill-inject-bracket-bl {
+  bottom: 10px;
+  left: 10px;
+  border-bottom: 1px solid rgba(var(--signal-accent-rgb), 0.5);
+  border-left: 1px solid rgba(var(--signal-accent-rgb), 0.5);
+}
+
+.skill-inject-bracket-br {
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 1px solid rgba(var(--signal-accent-rgb), 0.5);
+  border-right: 1px solid rgba(var(--signal-accent-rgb), 0.5);
+}
+
+.skill-inject-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  opacity: 0.75;
+}
+
+.skill-inject-dot-red {
+  background: #c45c5c;
+}
+
+.skill-inject-dot-amber {
+  background: #c4a85c;
+}
+
+.skill-inject-dot-green {
+  background: var(--accent-primary);
+  box-shadow: 0 0 6px rgba(var(--signal-accent-rgb), 0.45);
+}
+
+.skill-inject-hud {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.skill-inject-module-bracket {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.skill-inject-module-bracket-tl {
+  top: 8px;
+  left: 8px;
+  border-top: 1px solid var(--accent-primary);
+  border-left: 1px solid var(--accent-primary);
+}
+
+.skill-inject-module-bracket-br {
+  right: 8px;
+  bottom: 8px;
+  border-right: 1px solid var(--accent-primary);
+  border-bottom: 1px solid var(--accent-primary);
+}
+
+.skill-inject-module:hover .skill-inject-module-bracket,
+.skill-inject-module.is-active .skill-inject-module-bracket,
+.skill-inject-module:focus-visible .skill-inject-module-bracket {
+  opacity: 0.55;
+}
+
+.skill-inject-module-noise {
+  background-image:
+    linear-gradient(rgba(var(--signal-accent-rgb), 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--signal-accent-rgb), 0.04) 1px, transparent 1px);
+  background-size: 14px 14px;
+  opacity: 0.35;
+  mask-image: linear-gradient(180deg, transparent, black 30%, black 70%, transparent);
+}
+
+.skill-inject-module.is-active {
+  background: rgba(var(--signal-accent-rgb), 0.07);
+  box-shadow:
+    inset 0 0 0 1px rgba(var(--signal-accent-rgb), 0.22),
+    inset 0 0 24px rgba(var(--signal-accent-rgb), 0.04);
+}
+
+.skill-inject-glitch-text {
+  text-shadow:
+    1px 0 rgba(var(--highlight-rgb), 0.25),
+    -1px 0 rgba(var(--signal-accent-rgb), 0.2);
+}
+
+@keyframes skill-inject-decrypt {
+  0% {
+    transform: translateX(-102%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.skill-inject-decrypt-bar {
+  animation: skill-inject-decrypt 0.85s ease-out forwards;
+}
+
+@keyframes skill-inject-cursor {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.skill-inject-cursor {
+  animation: skill-inject-cursor 1s step-end infinite;
+}
+
+.skill-inject-panel {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.12), transparent),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(var(--signal-accent-rgb), 0.015) 3px,
+      rgba(var(--signal-accent-rgb), 0.015) 4px
+    );
+}
+
+.skill-inject-chip {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease;
+}
+
+.skill-inject-chip:hover {
+  border-color: rgba(var(--signal-accent-rgb), 0.45);
+  color: var(--accent-primary);
+  box-shadow:
+    0 0 0 1px rgba(var(--signal-accent-rgb), 0.08),
+    0 0 16px rgba(var(--signal-accent-rgb), 0.1);
+}
+
+.skill-inject-statusbar {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.skill-fullstack-toggle-btn {
+  position: relative;
+}
+
+.skill-fullstack-toggle-btn::before,
+.skill-fullstack-toggle-btn::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.skill-fullstack-toggle-btn::before {
+  top: 4px;
+  left: 4px;
+  border-top: 1px solid var(--accent-primary);
+  border-left: 1px solid var(--accent-primary);
+}
+
+.skill-fullstack-toggle-btn::after {
+  right: 4px;
+  bottom: 4px;
+  border-right: 1px solid var(--accent-primary);
+  border-bottom: 1px solid var(--accent-primary);
+}
+
+.skill-fullstack-details:hover .skill-fullstack-toggle-btn::before,
+.skill-fullstack-details:hover .skill-fullstack-toggle-btn::after,
+.skill-fullstack-details[open] .skill-fullstack-toggle-btn::before,
+.skill-fullstack-details[open] .skill-fullstack-toggle-btn::after {
+  opacity: 0.55;
+}
+
+.skill-nexus-scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.04) 2px,
+    rgba(0, 0, 0, 0.04) 3px
+  );
+  pointer-events: none;
+}
+
+@keyframes skill-nexus-ring-spin {
   from {
-    transform: rotate(200deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: rotate(-20deg);
+    transform: rotate(360deg);
   }
+}
+
+.skill-nexus-ring-spin {
+  animation: skill-nexus-ring-spin 48s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes skill-nexus-node-ring {
+  0%,
+  100% {
+    transform: scale(1);
+    stroke-opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.12);
+    stroke-opacity: 0.65;
+  }
+}
+
+.skill-nexus-node-ring {
+  animation: skill-nexus-node-ring 2.4s ease-in-out infinite;
+}
+
+@keyframes skill-nexus-pulse-dot {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
+.skill-nexus-pulse-dot {
+  animation: skill-nexus-pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes skill-terminal-sweep {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(520%);
+  }
+}
+
+@keyframes skill-terminal-cursor {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.skill-terminal-cursor {
+  animation: skill-terminal-cursor 1.1s step-end infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .skill-radar-sweep::after,
-  .skill-panel-beam {
+  .skill-terminal-sweep,
+  .skill-terminal-cursor,
+  .skill-nexus-sweep,
+  .skill-rack-sweep,
+  .skill-rack-bus-line,
+  .skill-rack-wave-bar,
+  .skill-inject-glitch,
+  .skill-inject-cursor,
+  .skill-inject-decrypt-bar,
+  .skill-nexus-ring-spin,
+  .skill-nexus-node-ring,
+  .skill-nexus-pulse-dot {
     animation: none !important;
+  }
+
+  .skill-terminal-cursor,
+  .skill-inject-cursor {
+    opacity: 0.7;
+  }
+
+  .skill-inject-decrypt-bar {
+    transform: none;
   }
 }
 
