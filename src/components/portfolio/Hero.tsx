@@ -402,20 +402,43 @@ export function Hero() {
               transition={{ duration: 0.45, delay: 0.18 }}
               className="mt-10"
             >
-              <a href="#projects" className="hero-hud-cta group inline-flex items-center gap-3">
-                <span className="hero-hud-cta-bracket text-[var(--accent-primary)]/40" aria-hidden>
-                  ⟨
-                </span>
-                <span className="font-[family-name:var(--font-mono)] text-sm uppercase tracking-[0.14em] text-[var(--accent-primary)] transition-colors group-hover:text-[var(--text-primary)]">
-                  {t("ctaProjects")}
-                </span>
-                <span className="hero-hud-cta-bracket text-[var(--accent-primary)]/40" aria-hidden>
-                  ⟩
-                </span>
-                <span className="text-[var(--accent-primary)] opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100">
+              <a href="#experience" className="hero-hud-cta group">
+                <span className="hero-hud-cta-corners" aria-hidden />
+                <span className="hero-hud-cta-prefix">01</span>
+                <span className="hero-hud-cta-label">{t("ctaPrimary")}</span>
+                <span className="hero-hud-cta-arrow" aria-hidden>
                   →
                 </span>
               </a>
+
+              <nav
+                className="hero-hud-actions mt-4 flex flex-wrap items-center gap-2"
+                aria-label={t("quickLinks")}
+              >
+                <a
+                  href="/resume.pdf"
+                  download
+                  className="hero-hud-btn-secondary"
+                >
+                  {t("downloadCv")}
+                </a>
+                <a
+                  href={profile.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-hud-btn-secondary"
+                >
+                  GitHub
+                </a>
+                <a
+                  href={profile.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-hud-btn-secondary"
+                >
+                  LinkedIn
+                </a>
+              </nav>
             </motion.div>
           </motion.div>
         </div>

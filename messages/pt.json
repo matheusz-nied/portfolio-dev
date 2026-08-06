@@ -17,7 +17,9 @@
     "closeMenu": "Fechar menu"
   },
   "hero": {
-    "ctaProjects": "Ver projetos",
+    "ctaPrimary": "Ver mais",
+    "downloadCv": "Baixar CV",
+    "quickLinks": "Atalhos do perfil",
     "scanRole": "Cargo",
     "scanStatus": "Disponibilidade",
     "scanLocation": "Local",
