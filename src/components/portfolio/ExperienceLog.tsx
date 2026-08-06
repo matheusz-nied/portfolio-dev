@@ -294,18 +294,22 @@ function LogEntry({
             )}
           </div>
 
-          <div className="mt-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h3 className="glitch-hover text-lg font-medium text-[var(--text-primary)] sm:text-xl">
+          <div className="mt-3">
+            <h3 className="text-lg font-medium text-[var(--text-primary)] sm:text-xl">
               {item.role}
             </h3>
-            <span className="font-[family-name:var(--font-mono)] text-sm text-[var(--text-muted)] transition-colors group-hover:text-[var(--accent-primary)]">
-              {item.company}
-            </span>
+            <p className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 font-[family-name:var(--font-mono)]">
+              <span className="text-sm font-medium text-[var(--accent-primary)] transition-colors group-hover:text-[var(--accent-highlight)]">
+                {item.company}
+              </span>
+              <span className="text-[var(--text-muted)]/35" aria-hidden>
+                ·
+              </span>
+              <span className="text-xs text-[var(--text-muted)]">
+                {item.period.start} — {endLabel}
+              </span>
+            </p>
           </div>
-
-          <p className="mt-1.5 font-[family-name:var(--font-mono)] text-xs text-[var(--text-muted)]">
-            {item.period.start} — {endLabel}
-          </p>
 
           <ul
             className={`mt-4 space-y-2 border-t border-dotted pt-4 transition-colors duration-300 ${
