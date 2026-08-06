@@ -1,27 +1,7 @@
 [
-  {
-    "id": "frontend",
-    "category": { "pt": "Frontend", "en": "Frontend" },
-    "items": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"]
-  },
-  {
-    "id": "mobile",
-    "category": { "pt": "Mobile", "en": "Mobile" },
-    "items": ["React Native", "Expo", "TypeScript", "Swift", "Kotlin"]
-  },
-  {
-    "id": "backend",
-    "category": { "pt": "Backend", "en": "Backend" },
-    "items": ["Node.js", "Python", "FastAPI", "GraphQL", "REST APIs"]
-  },
-  {
-    "id": "data",
-    "category": { "pt": "Dados & Infra", "en": "Data & Infra" },
-    "items": ["PostgreSQL", "Redis", "Docker", "AWS", "CI/CD"]
-  },
-  {
-    "id": "ai",
-    "category": { "pt": "AI / ML", "en": "AI / ML" },
-    "items": ["OpenAI API", "LangChain", "RAG", "Vector DBs", "Fine-tuning", "Agents"]
-  }
+  { "id": "frontend", "category": { "pt": "Front-end", "en": "Front end" }, "items": ["JavaScript", "TypeScript", "React", "Next.js", "Angular", "HTML5", "CSS3", "Tailwind CSS"] },
+  { "id": "backend", "category": { "pt": "Back-end", "en": "Back end" }, "items": ["Node.js", "Express", "NestJS", "Python", "Django", "PHP", "Laravel", "APIs REST"] },
+  { "id": "mobile", "category": { "pt": "Mobile", "en": "Mobile" }, "items": ["Flutter", "Dart", "Firebase", "Android", "iOS"] },
+  { "id": "data", "category": { "pt": "Dados", "en": "Data" }, "items": ["PostgreSQL", "MongoDB", "SQL"] },
+  { "id": "tools", "category": { "pt": "Ferramentas", "en": "Tools" }, "items": ["Git", "GitHub", "GitLab", "Docker", "Jest", "Figma", "Code review", "Codex", "Windsurf"] }
 ]

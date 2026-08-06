@@ -33,7 +33,7 @@ export async function generateMetadata({
     title: profile.name + " — " + profile.title,
     description: profile.summary,
     openGraph: {
-      title: profile.name + " — Full-Stack & AI Engineer",
+      title: profile.name + " — " + profile.title,
       description: profile.summary,
       type: "website",
       locale: locale === "pt" ? "pt_BR" : "en_US",

@@ -1,56 +1,29 @@
 [
   {
-    "id": "senior-fullstack",
-    "company": "TechCorp",
-    "role": { "pt": "Engenheiro Full-Stack Sênior", "en": "Senior Full-Stack Engineer" },
-    "period": { "start": "2023", "end": null },
+    "id": "umobi-fullstack", "company": "Umobi",
+    "role": { "pt": "Desenvolvedor Full Stack", "en": "Full-Stack Developer" },
+    "period": { "start": "2026", "end": null },
     "highlights": {
-      "pt": [
-        "Liderou migração para arquitetura event-driven, reduzindo latência em 40%",
-        "Implementou pipeline RAG para suporte interno com 85% de precisão",
-        "Mentorou 3 devs júnior em práticas de code review e testes"
-      ],
-      "en": [
-        "Led migration to event-driven architecture, reducing latency by 40%",
-        "Implemented RAG pipeline for internal support with 85% accuracy",
-        "Mentored 3 junior devs on code review and testing practices"
-      ]
+      "pt": ["Manutenção e evolução de aplicativos Flutter em produção para Android e iOS, com novas funcionalidades e correção de bugs reportados por usuários.", "Desenvolvimento de interfaces web em Angular e back-end em PHP/Laravel, incluindo painéis administrativos com Filament.", "Participação no ciclo completo de desenvolvimento, da concepção à entrega, com atenção à performance e à qualidade do código."],
+      "en": ["Maintains and evolves production Flutter applications for Android and iOS, delivering new features and fixing user-reported bugs.", "Builds Angular web interfaces and PHP/Laravel back ends, including administrative panels with Filament.", "Participates in the full development cycle, from conception to delivery, focusing on performance and code quality."]
     }
   },
   {
-    "id": "fullstack",
-    "company": "StartupXYZ",
-    "role": { "pt": "Engenheiro Full-Stack", "en": "Full-Stack Engineer" },
-    "period": { "start": "2021", "end": "2023" },
+    "id": "umobi-mobile-freelance", "company": "Umobi",
+    "role": { "pt": "Desenvolvedor Mobile (Freelance)", "en": "Mobile Developer (Freelance)" },
+    "period": { "start": "2024", "end": "2025" },
     "highlights": {
-      "pt": [
-        "Construiu MVP do zero até 10k usuários em 8 meses",
-        "Desenvolveu API REST e GraphQL com autenticação OAuth2",
-        "Integrou pagamentos Stripe e analytics em tempo real"
-      ],
-      "en": [
-        "Built MVP from scratch to 10k users in 8 months",
-        "Developed REST and GraphQL APIs with OAuth2 authentication",
-        "Integrated Stripe payments and real-time analytics"
-      ]
+      "pt": ["Desenvolvimento de funcionalidades em Flutter para o app Revela Fácil, da Fujioka, com fidelidade ao design no Figma e integração de APIs de autenticação e produtos.", "Entrega de um aplicativo Flutter completo para uma startup de construção civil, com mais de 30 telas integradas a mais de 60 rotas de API.", "Organização remota de prazos e entregas incrementais em comunicação direta com o cliente; a parceria resultou em contratação efetiva pela Umobi."],
+      "en": ["Developed Flutter features for Fujioka's Revela Fácil app, faithfully implementing Figma designs and integrating authentication and product APIs.", "Delivered a complete Flutter app for a construction-tech startup, with more than 30 screens integrated with over 60 client API routes.", "Managed deadlines and incremental deliveries remotely in direct client communication; the partnership led to a full-time role at Umobi."]
     }
   },
   {
-    "id": "junior",
-    "company": "DevAgency",
-    "role": { "pt": "Desenvolvedor Júnior", "en": "Junior Developer" },
-    "period": { "start": "2019", "end": "2021" },
+    "id": "cett-ufg-web", "company": "Fundação RTVE — CETT/UFG",
+    "role": { "pt": "Desenvolvedor Web", "en": "Web Developer" },
+    "period": { "start": "2024", "end": "2025" },
     "highlights": {
-      "pt": [
-        "Desenvolveu interfaces React para clientes enterprise",
-        "Automatizou deploys com CI/CD (GitHub Actions)",
-        "Contribuiu para biblioteca interna de componentes"
-      ],
-      "en": [
-        "Built React interfaces for enterprise clients",
-        "Automated deploys with CI/CD (GitHub Actions)",
-        "Contributed to internal component library"
-      ]
+      "pt": ["Manutenção evolutiva de sistemas web em Django e PostgreSQL, incluindo novas funcionalidades, correção de bugs e otimização de consultas.", "Implementação e consumo de APIs REST seguindo padrões de projeto e boas práticas de segurança.", "Desenvolvimento de apps Flutter para automatizar processos internos e documentação técnica com as áreas usuárias."],
+      "en": ["Maintained and evolved Django and PostgreSQL web systems, adding features, fixing bugs, and optimizing queries.", "Implemented and consumed REST APIs following design patterns and security best practices.", "Built Flutter apps to automate internal processes and produced technical documentation with stakeholder teams."]
     }
   }
 ]

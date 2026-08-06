@@ -1,42 +1,21 @@
 {
-  "name": "Kaizen",
-  "title": "Full-Stack Engineer",
-  "email": "kaizen@email.com",
-  "whatsapp": "+55 11 99999-9999",
-  "github": "https://github.com/kaizen",
-  "linkedin": "https://linkedin.com/in/kaizen",
-  "yearsExperience": 5,
-  "availability": {
-    "pt": "Aberto a oportunidades · Remoto",
-    "en": "Open to opportunities · Remote"
-  },
-  "location": {
-    "pt": "Brasil · Remoto",
-    "en": "Brazil · Remote"
-  },
-  "languages": {
-    "pt": "Português (nativo), Inglês (fluente)",
-    "en": "Portuguese (native), English (fluent)"
-  },
-  "topStack": ["TypeScript", "Next.js", "Python", "PostgreSQL", "OpenAI / LLMs"],
+  "name": "Matheus Fernandes da Silva",
+  "title": "Desenvolvedor Full Stack",
+  "email": "matheustae@hotmail.com",
+  "whatsapp": "+55 62 99439-5965",
+  "github": "https://github.com/matheusz-nied",
+  "linkedin": "https://linkedin.com/in/matheusznied",
+  "yearsExperience": 2,
+  "availability": { "pt": "Disponível para trabalho 100% remoto", "en": "Available for fully remote work" },
+  "location": { "pt": "Goiânia, GO · Brasil", "en": "Goiânia, GO · Brazil" },
+  "languages": { "pt": "Português", "en": "Portuguese" },
+  "topStack": ["JavaScript", "React", "Node.js", "Python", "Flutter"],
   "summary": {
-    "pt": "Engenheiro full-stack com 5+ anos construindo produtos web e sistemas de AI. Experiência em arquitetura de APIs, interfaces performáticas, pipelines RAG e agentes autônomos.",
-    "en": "Full-stack engineer with 5+ years building web products and AI systems. Experience in API architecture, performant interfaces, RAG pipelines, and autonomous agents."
+    "pt": "Estudante de Engenharia de Computação na UFG, com mais de 2 anos de experiência prática em desenvolvimento web e mobile. Atua na manutenção e evolução de sistemas em produção, com JavaScript, Python, APIs REST, Git e code review.",
+    "en": "Computer Engineering student at UFG with over two years of hands-on web and mobile development experience. Works on maintaining and evolving production systems with JavaScript, Python, REST APIs, Git, and code review."
   },
   "education": {
-    "pt": [
-      {
-        "institution": "Universidade Exemplo",
-        "degree": "Bacharelado em Ciência da Computação",
-        "period": "2016 — 2020"
-      }
-    ],
-    "en": [
-      {
-        "institution": "Example University",
-        "degree": "Bachelor's in Computer Science",
-        "period": "2016 — 2020"
-      }
-    ]
+    "pt": [{ "institution": "Universidade Federal de Goiás (UFG)", "degree": "Bacharelado em Engenharia de Computação", "period": "2020 — conclusão prevista para dezembro de 2026" }],
+    "en": [{ "institution": "Federal University of Goiás (UFG)", "degree": "Bachelor's degree in Computer Engineering", "period": "2020 — expected graduation December 2026" }]
   }
 }

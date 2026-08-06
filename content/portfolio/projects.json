@@ -1,143 +1,146 @@
 [
   {
-    "id": "ai-agent-platform",
-    "thumbnail": "/projects/ai-agent-platform/thumb.svg",
-    "images": [
-      "/projects/ai-agent-platform/1.svg",
-      "/projects/ai-agent-platform/2.svg",
-      "/projects/ai-agent-platform/3.svg"
-    ],
-    "title": { "pt": "Plataforma de AI Agents", "en": "AI Agent Platform" },
-    "summary": {
-      "pt": "Orquestração de agents autônomos com tool-calling e memória persistente.",
-      "en": "Autonomous agent orchestration with tool-calling and persistent memory."
-    },
-    "problem": {
-      "pt": "Equipes precisavam automatizar workflows complexos sem escrever código para cada caso.",
-      "en": "Teams needed to automate complex workflows without writing code for each case."
-    },
-    "solution": {
-      "pt": "Plataforma visual para definir agents, conectar ferramentas internas e monitorar execuções em tempo real. Backend em FastAPI com filas Redis e persistência PostgreSQL.",
-      "en": "Visual platform to define agents, connect internal tools, and monitor executions in real time. FastAPI backend with Redis queues and PostgreSQL persistence."
-    },
-    "role": {
-      "pt": "Arquitetura end-to-end, implementação do runtime de agents, UI de monitoramento e deploy em produção.",
-      "en": "End-to-end architecture, agent runtime implementation, monitoring UI, and production deployment."
-    },
-    "highlights": {
-      "pt": [
-        "12 agents em produção atendendo 3 departamentos",
-        "Tool-calling com 20+ integrações internas",
-        "Dashboard de observabilidade com traces por execução"
-      ],
-      "en": [
-        "12 agents in production serving 3 departments",
-        "Tool-calling with 20+ internal integrations",
-        "Observability dashboard with per-execution traces"
-      ]
-    },
-    "stack": ["Python", "FastAPI", "LangChain", "PostgreSQL", "Redis", "React"],
-    "result": {
-      "pt": "Redução de 60% no tempo de tarefas repetitivas; 12 agents em produção.",
-      "en": "60% reduction in repetitive task time; 12 agents in production."
-    },
-    "links": { "demo": "#", "github": "https://github.com/kaizen" },
-    "featured": true,
-    "relatedTechPost": "building-rag-pipeline",
-    "year": "2026"
+    "id": "revela-facil", "thumbnail": "/projects/revela-facil/cover.svg", "images": ["/projects/revela-facil/cover.svg"],
+    "title": { "pt": "Revela Fácil — Fujioka", "en": "Revela Fácil — Fujioka" },
+    "summary": { "pt": "Funcionalidades mobile em Flutter para o aplicativo Revela Fácil da Fujioka.", "en": "Flutter mobile features for Fujioka's Revela Fácil app." },
+    "problem": { "pt": "O aplicativo precisava de novas funcionalidades alinhadas ao design aprovado e conectadas aos serviços já existentes.", "en": "The app needed new features aligned with approved designs and connected to existing services." },
+    "solution": { "pt": "Implementação de funcionalidades em Flutter com fidelidade ao Figma e integração com APIs de autenticação de usuários e listagem de produtos.", "en": "Implemented Flutter features faithful to Figma designs, integrating user authentication and product-listing APIs." },
+    "role": { "pt": "Desenvolvimento mobile em Flutter e integração com APIs.", "en": "Flutter mobile development and API integration." },
+    "highlights": { "pt": ["Funcionalidades implementadas em Flutter", "Integração de autenticação", "Listagem de produtos via API"], "en": ["Flutter feature delivery", "Authentication integration", "API-powered product listing"] },
+    "stack": ["Flutter", "Dart", "REST APIs", "Figma"],
+    "result": { "pt": "Novas funcionalidades entregues para um aplicativo mobile em produção.", "en": "New features delivered for a production mobile application." },
+    "links": { "demo": "#", "github": null }, "featured": true, "relatedTechPost": null, "year": "2024 — 2025"
   },
   {
-    "id": "rag-pipeline",
-    "thumbnail": "/projects/rag-pipeline/thumb.svg",
-    "images": [
-      "/projects/rag-pipeline/1.svg",
-      "/projects/rag-pipeline/2.svg",
-      "/projects/rag-pipeline/3.svg"
-    ],
-    "title": { "pt": "Pipeline RAG Enterprise", "en": "Enterprise RAG Pipeline" },
-    "summary": {
-      "pt": "Busca semântica e geração aumentada para documentação interna.",
-      "en": "Semantic search and augmented generation for internal documentation."
-    },
-    "problem": {
-      "pt": "Base de conhecimento dispersa impedia respostas rápidas do suporte.",
-      "en": "Scattered knowledge base prevented fast support responses."
-    },
-    "solution": {
-      "pt": "Pipeline de ingestão multi-fonte, chunking semântico, busca híbrida (dense + BM25) e interface de chat para o time de suporte.",
-      "en": "Multi-source ingestion pipeline, semantic chunking, hybrid search (dense + BM25), and chat interface for the support team."
-    },
-    "role": {
-      "pt": "Design do pipeline, implementação do retrieval, avaliação de qualidade e integração com Slack.",
-      "en": "Pipeline design, retrieval implementation, quality evaluation, and Slack integration."
-    },
-    "highlights": {
-      "pt": [
-        "85% de precisão em 200 queries de avaliação",
-        "Ingestão de Confluence, Notion e PDFs",
-        "Re-ranking com cross-encoder (+12% precisão)"
-      ],
-      "en": [
-        "85% accuracy on 200 evaluation queries",
-        "Ingestion from Confluence, Notion, and PDFs",
-        "Cross-encoder re-ranking (+12% accuracy)"
-      ]
-    },
-    "stack": ["Python", "Pinecone", "OpenAI", "Next.js", "Docker"],
-    "result": {
-      "pt": "Tempo médio de resposta caiu de 4h para 15min; 85% de precisão.",
-      "en": "Average response time dropped from 4h to 15min; 85% accuracy."
-    },
-    "links": { "demo": "#", "github": "https://github.com/kaizen" },
-    "featured": true,
-    "relatedTechPost": "building-rag-pipeline",
-    "year": "2025"
+    "id": "construcao-civil", "thumbnail": "/projects/construcao-civil/cover.svg", "images": ["/projects/construcao-civil/cover.svg"],
+    "title": { "pt": "App para construção civil", "en": "Construction-tech app" },
+    "summary": { "pt": "Aplicativo Flutter completo para uma startup do setor de construção civil.", "en": "Complete Flutter application for a construction-tech startup." },
+    "problem": { "pt": "A startup precisava de um aplicativo mobile completo integrado à extensa API do cliente.", "en": "The startup needed a complete mobile application integrated with the client's extensive API." },
+    "solution": { "pt": "Desenvolvimento de mais de 30 telas em Flutter, conectadas a mais de 60 rotas da API do cliente.", "en": "Developed more than 30 Flutter screens connected to over 60 client API routes." },
+    "role": { "pt": "Desenvolvimento do aplicativo mobile e integração das telas com a API.", "en": "Mobile app development and screen-to-API integration." },
+    "highlights": { "pt": ["Mais de 30 telas em Flutter", "Mais de 60 rotas de API integradas", "Entregas incrementais em trabalho remoto"], "en": ["More than 30 Flutter screens", "Over 60 integrated API routes", "Incremental delivery in a remote workflow"] },
+    "stack": ["Flutter", "Dart", "REST APIs"],
+    "result": { "pt": "Aplicativo completo entregue em parceria remota com o cliente.", "en": "Complete application delivered through a remote client partnership." },
+    "links": { "demo": "#", "github": null }, "featured": true, "relatedTechPost": null, "year": "2024 — 2025"
   },
   {
-    "id": "realtime-dashboard",
-    "thumbnail": "/projects/realtime-dashboard/thumb.svg",
-    "images": [
-      "/projects/realtime-dashboard/1.svg",
-      "/projects/realtime-dashboard/2.svg",
-      "/projects/realtime-dashboard/3.svg"
-    ],
-    "title": { "pt": "Dashboard em Tempo Real", "en": "Real-time Dashboard" },
-    "summary": {
-      "pt": "Painel operacional com métricas ao vivo e alertas configuráveis.",
-      "en": "Operational panel with live metrics and configurable alerts."
-    },
-    "problem": {
-      "pt": "Operações precisavam de visibilidade instantânea de métricas críticas.",
-      "en": "Operations needed instant visibility into critical metrics."
-    },
-    "solution": {
-      "pt": "Dashboard Next.js com WebSockets, agregação server-side e widgets customizáveis por equipe. Integração com Grafana para métricas históricas.",
-      "en": "Next.js dashboard with WebSockets, server-side aggregation, and customizable widgets per team. Grafana integration for historical metrics."
-    },
-    "role": {
-      "pt": "Frontend, camada de tempo real, API de agregação e onboarding de equipes.",
-      "en": "Frontend, real-time layer, aggregation API, and team onboarding."
-    },
-    "highlights": {
-      "pt": [
-        "Latência média abaixo de 200ms",
-        "Adotado por 3 equipes internas",
-        "Alertas via webhook e email"
-      ],
-      "en": [
-        "Average latency under 200ms",
-        "Adopted by 3 internal teams",
-        "Alerts via webhook and email"
-      ]
-    },
-    "stack": ["Next.js", "WebSockets", "PostgreSQL", "Grafana", "TypeScript"],
-    "result": {
-      "pt": "Latência < 200ms; adotado por 3 equipes internas.",
-      "en": "Latency < 200ms; adopted by 3 internal teams."
-    },
-    "links": { "demo": "#", "github": "https://github.com/kaizen" },
-    "featured": true,
-    "relatedTechPost": "nextjs-performance-tips",
-    "year": "2023"
+    "id": "sistemas-cett-ufg", "thumbnail": "/projects/cett-ufg/cover.svg", "images": ["/projects/cett-ufg/cover.svg"],
+    "title": { "pt": "Sistemas internos — CETT/UFG", "en": "Internal systems — CETT/UFG" },
+    "summary": { "pt": "Evolução de sistemas web e automação de processos internos para a Fundação RTVE — CETT/UFG.", "en": "Web system evolution and internal process automation for Fundação RTVE — CETT/UFG." },
+    "problem": { "pt": "Os departamentos precisavam evoluir sistemas existentes e reduzir trabalho manual em processos internos.", "en": "Departments needed to evolve existing systems and reduce manual work in internal processes." },
+    "solution": { "pt": "Manutenção de sistemas Django e PostgreSQL, implementação de APIs REST e desenvolvimento de apps Flutter para automação.", "en": "Maintained Django and PostgreSQL systems, implemented REST APIs, and developed Flutter apps for automation." },
+    "role": { "pt": "Desenvolvimento web e mobile, integração de APIs, documentação técnica e levantamento de requisitos.", "en": "Web and mobile development, API integration, technical documentation, and requirements gathering." },
+    "highlights": { "pt": ["Novas funcionalidades e correções em Django", "Otimização de consultas PostgreSQL", "Automação de processos internos com Flutter"], "en": ["New Django features and fixes", "PostgreSQL query optimization", "Internal process automation with Flutter"] },
+    "stack": ["Python", "Django", "PostgreSQL", "Flutter", "REST APIs"],
+    "result": { "pt": "Sistemas evoluídos e processos internos automatizados para as equipes usuárias.", "en": "Evolved systems and automated internal processes for stakeholder teams." },
+    "links": { "demo": "#", "github": null }, "featured": false, "relatedTechPost": null, "year": "2024 — 2025"
+  },
+  {
+    "id": "pfc", "thumbnail": "/projects/em-construcao/cover.svg", "images": ["/projects/em-construcao/cover.svg"],
+    "title": { "pt": "PFC — Análise de sistemas", "en": "Final course project — Systems analysis" },
+    "summary": { "pt": "Projeto acadêmico de investigação técnica envolvendo Machine Learning, corrente AC e CC, Zabbix, Grafana e PostgreSQL.", "en": "Academic technical investigation involving machine learning, AC/DC current, Zabbix, Grafana, and PostgreSQL." },
+    "problem": { "pt": "O escopo técnico ainda precisa ser analisado e estruturado.", "en": "The technical scope still needs analysis and structuring." },
+    "solution": { "pt": "Pesquisa e análise técnica das tecnologias e do problema proposto.", "en": "Technical research and analysis of the proposed problem and technologies." },
+    "role": { "pt": "Pesquisa, análise e definição do escopo técnico.", "en": "Research, analysis, and technical scope definition." },
+    "highlights": { "pt": ["Machine Learning", "Monitoramento com Zabbix e Grafana", "PostgreSQL"], "en": ["Machine learning", "Monitoring with Zabbix and Grafana", "PostgreSQL"] },
+    "stack": ["Machine Learning", "Zabbix", "Grafana", "PostgreSQL"],
+    "result": { "pt": "Em fase de análise técnica.", "en": "In the technical analysis phase." },
+    "links": { "demo": "#", "github": null }, "featured": false, "relatedTechPost": null, "year": "Em andamento"
+  },
+  {
+    "id": "memora", "thumbnail": "/projects/em-construcao/cover.svg", "images": ["/projects/em-construcao/cover.svg"],
+    "title": { "pt": "Memora", "en": "Memora" },
+    "summary": { "pt": "App mobile de flashcards com IA para estudar inglês e conteúdo técnico, com foco offline.", "en": "Offline-first mobile flashcard app with AI for learning English and technical content." },
+    "problem": { "pt": "Estudo de vocabulário precisa funcionar sem depender de conexão ou sincronização contínua.", "en": "Vocabulary study needs to work without relying on constant connectivity or synchronization." },
+    "solution": { "pt": "Flashcards em Flutter com SQLite, TTS, importação/exportação de decks e geração opcional por IA usando a chave do usuário.", "en": "Flutter flashcards with SQLite, TTS, deck import/export, and optional AI generation using the user's own key." },
+    "role": { "pt": "Definição de arquitetura e desenvolvimento do MVP mobile.", "en": "Architecture definition and mobile MVP development." },
+    "highlights": { "pt": ["Offline-first", "TTS em inglês", "Importação e exportação JSON/CSV"], "en": ["Offline-first", "English TTS", "JSON/CSV import and export"] },
+    "stack": ["Flutter", "SQLite", "Riverpod", "TTS"],
+    "result": { "pt": "Arquitetura definida; MVP em desenvolvimento.", "en": "Architecture defined; MVP in development." },
+    "links": { "demo": "#", "github": null }, "featured": false, "relatedTechPost": null, "year": "Em andamento"
+  },
+  {
+    "id": "o-altar", "thumbnail": "/projects/em-construcao/cover.svg", "images": ["/projects/em-construcao/cover.svg"],
+    "title": { "pt": "O Altar", "en": "O Altar" },
+    "summary": { "pt": "Aplicativo Android que cria uma pausa de oração antes da abertura de apps de distração.", "en": "Android app that creates a prayer pause before opening distracting apps." },
+    "problem": { "pt": "O uso automático de redes sociais compete com a disciplina espiritual diária.", "en": "Automatic social media use competes with daily spiritual discipline." },
+    "solution": { "pt": "Antes de liberar um app selecionado, apresenta versículo e oração personalizada por IA; inclui plano de leitura e acompanhamento de hábitos.", "en": "Before releasing a selected app, presents a verse and AI-personalized prayer; includes a reading plan and habit tracking." },
+    "role": { "pt": "Concepção de produto, PRD e validação da proposta.", "en": "Product conception, PRD, and value-proposition validation." },
+    "highlights": { "pt": ["Oração personalizada por IA", "Plano de leitura bíblica", "Foco em cristãos brasileiros"], "en": ["AI-personalized prayer", "Bible reading plan", "Focus on Brazilian Christians"] },
+    "stack": ["Flutter", "IA", "Android"],
+    "result": { "pt": "PRD detalhado e landing page de validação em andamento.", "en": "Detailed PRD and validation landing page in progress." },
+    "links": { "demo": "#", "github": null }, "featured": false, "relatedTechPost": null, "year": "Em andamento"
+  },
+  {
+    "id": "lumen", "thumbnail": "/projects/em-construcao/cover.svg", "images": ["/projects/em-construcao/cover.svg"],
+    "title": { "pt": "Lúmen", "en": "Lúmen" },
+    "summary": { "pt": "Controle financeiro simples para fundadores de Micro-SaaS acompanharem receitas, despesas, sócios e indicadores.", "en": "Simple financial control for Micro-SaaS founders to track revenue, expenses, partners, and key indicators." },
+    "problem": { "pt": "Fundadores de Micro-SaaS têm gastos, receitas e investimentos de sócios dispersos e pouca visibilidade financeira.", "en": "Micro-SaaS founders have scattered expenses, revenue, and partner investments with little financial visibility." },
+    "solution": { "pt": "MVP com projetos, receitas, despesas, sócios, dashboard e indicadores como MRR, burn rate, break-even e runway.", "en": "MVP with projects, revenue, expenses, partners, a dashboard, and indicators such as MRR, burn rate, break-even, and runway." },
+    "role": { "pt": "Definição de produto e planejamento do MVP.", "en": "Product definition and MVP planning." },
+    "highlights": { "pt": ["Resolve a dor inicial do PinLovers", "Acesso multiusuário", "Potencial para SaaS"], "en": ["Solves PinLovers' initial pain point", "Multi-user access", "SaaS potential"] },
+    "stack": ["SaaS", "Dashboard financeiro", "Multiusuário"],
+    "result": { "pt": "PRD completo e MVP definido.", "en": "Complete PRD and defined MVP." },
+    "links": { "demo": "#", "github": null }, "featured": false, "relatedTechPost": null, "year": "Planejado"
+  },
+  {
+    "id": "orbit", "thumbnail": "/projects/em-construcao/cover.svg", "images": ["/projects/em-construcao/cover.svg"],
+    "title": { "pt": "Orbit", "en": "Orbit" },
+    "summary": { "pt": "Startpage pessoal personalizável que reúne atalhos, busca, clima, notas e Pomodoro diretamente no navegador.", "en": "Customizable personal start page that brings shortcuts, search, weather, notes, and Pomodoro into the browser." },
+    "problem": { "pt": "A rotina no navegador precisa de uma página inicial prática sem depender de conta ou backend.", "en": "Browser routines need a practical start page without depending on an account or backend." },
+    "solution": { "pt": "Aplicação local que mantém preferências no navegador e centraliza ferramentas de uso diário.", "en": "Local application that keeps preferences in the browser and centralizes daily-use tools." },
+    "role": { "pt": "Desenvolvimento da aplicação e validação em uso diário.", "en": "Application development and daily-use validation." },
+    "highlights": { "pt": ["Sem conta ou backend", "Preferências locais", "Atalhos, clima, notas e Pomodoro"], "en": ["No account or backend", "Local preferences", "Shortcuts, weather, notes, and Pomodoro"] },
+    "stack": ["React", "Vite", "Tailwind CSS", "Zustand"],
+    "result": { "pt": "Implementado localmente; em validação no uso diário.", "en": "Implemented locally; being validated in daily use." },
+    "links": { "demo": "#", "github": null }, "featured": false, "relatedTechPost": null, "year": "2026"
+  },
+  {
+    "id": "neural-spark", "thumbnail": "/projects/em-construcao/cover.svg", "images": ["/projects/em-construcao/cover.svg"],
+    "title": { "pt": "Neural Spark", "en": "Neural Spark" },
+    "summary": { "pt": "Arquivo pessoal para capturar, classificar e revisitar frases importantes em uma interface inspirada em Cyberpunk 2077.", "en": "Personal archive to capture, classify, and revisit important quotes in a Cyberpunk 2077-inspired interface." },
+    "problem": { "pt": "Frases e ideias importantes se perdem sem um espaço pessoal de captura e revisão.", "en": "Important quotes and ideas get lost without a personal capture and review space." },
+    "solution": { "pt": "Aplicação com organização de frases e interface temática para tornar a revisão mais agradável.", "en": "Application for organizing quotes with a themed interface that makes review more engaging." },
+    "role": { "pt": "Desenvolvimento da aplicação e validação de uso pessoal.", "en": "Application development and personal-use validation." },
+    "highlights": { "pt": ["Captura e classificação de frases", "Interface inspirada em Cyberpunk 2077", "Uso pessoal"], "en": ["Quote capture and classification", "Cyberpunk 2077-inspired interface", "Personal use"] },
+    "stack": ["Next.js", "TypeScript", "Drizzle ORM", "libSQL"],
+    "result": { "pt": "Implementado localmente; em validação no uso diário.", "en": "Implemented locally; being validated in daily use." },
+    "links": { "demo": "#", "github": null }, "featured": false, "relatedTechPost": null, "year": "2026"
+  },
+  {
+    "id": "portfolio-blog", "thumbnail": "/projects/em-construcao/cover.svg", "images": ["/projects/em-construcao/cover.svg"],
+    "title": { "pt": "Portfólio + Blog", "en": "Portfolio + Blog" },
+    "summary": { "pt": "Plataforma unificada para apresentar projetos e publicar conteúdo técnico e reflexivo, com foco em SEO e marca pessoal.", "en": "Unified platform for showcasing projects and publishing technical and reflective content, focused on SEO and personal brand." },
+    "problem": { "pt": "Portfólio e blogs separados aumentam a manutenção e não aproveitam o tráfego orgânico de forma integrada.", "en": "Separate portfolio and blog experiences increase maintenance and do not integrate organic traffic effectively." },
+    "solution": { "pt": "Unificação das experiências de portfólio e blog, preservando uma leitura limpa nos artigos e CTAs discretos para o perfil.", "en": "Unifies the portfolio and blog experiences, preserving clean article reading with discreet profile CTAs." },
+    "role": { "pt": "Arquitetura, UX e consolidação de conteúdo.", "en": "Architecture, UX, and content consolidation." },
+    "highlights": { "pt": ["Portfólio e dois blogs", "SEO por rota", "Conteúdo em JSON e Markdown"], "en": ["Portfolio and two blogs", "Route-level SEO", "JSON and Markdown content"] },
+    "stack": ["Next.js", "TypeScript", "Tailwind CSS", "MDX"],
+    "result": { "pt": "Em evolução contínua com conteúdo e deploy sendo consolidados.", "en": "Continuously evolving as content and deployment are consolidated." },
+    "links": { "demo": "#", "github": null }, "featured": false, "relatedTechPost": null, "year": "Em andamento"
+  },
+  {
+    "id": "cortex-whisper", "thumbnail": "/projects/em-construcao/cover.svg", "images": ["/projects/em-construcao/cover.svg"],
+    "title": { "pt": "cortex-whisper", "en": "cortex-whisper" },
+    "summary": { "pt": "Aplicativo de ditado por voz privado: segure F8, fale e receba a transcrição local no campo em foco.", "en": "Private voice dictation application: hold F8, speak, and receive local transcription in the focused field." },
+    "problem": { "pt": "A digitação em fluxos de trabalho diários pode ser mais lenta do que o ditado, sem abrir mão de privacidade.", "en": "Typing in daily workflows can be slower than dictation without sacrificing privacy." },
+    "solution": { "pt": "Ditado local ativado por atalho, com transcrição colada diretamente no campo ativo.", "en": "Hotkey-activated local dictation with transcription pasted directly into the active field." },
+    "role": { "pt": "Desenvolvimento e uso diário do aplicativo.", "en": "Application development and daily use." },
+    "highlights": { "pt": ["Transcrição local", "Atalho F8", "Privacidade no fluxo de trabalho"], "en": ["Local transcription", "F8 hotkey", "Workflow privacy"] },
+    "stack": ["Python", "PySide6", "faster-whisper"],
+    "result": { "pt": "Usado no dia a dia; distribuição multiplataforma pausada por enquanto.", "en": "Used daily; cross-platform distribution is currently paused." },
+    "links": { "demo": "#", "github": null }, "featured": false, "relatedTechPost": null, "year": "2026"
+  },
+  {
+    "id": "pinlovers", "thumbnail": "/projects/em-construcao/cover.svg", "images": ["/projects/em-construcao/cover.svg"],
+    "title": { "pt": "PinLovers", "en": "PinLovers" },
+    "summary": { "pt": "Plataforma de presentes digitais com páginas personalizadas para declarações e datas especiais.", "en": "Digital gift platform with personalized pages for declarations of love and special occasions." },
+    "problem": { "pt": "Presentes digitais românticos precisam ser pessoais, rápidos de criar e fáceis de compartilhar.", "en": "Romantic digital gifts need to be personal, quick to create, and easy to share." },
+    "solution": { "pt": "Páginas exclusivas inspiradas em Carta Clássica, Spotify e Netflix, montadas em poucos minutos e compartilhadas por link privado.", "en": "Exclusive pages inspired by classic letters, Spotify, and Netflix, assembled in minutes and shared through a private link." },
+    "role": { "pt": "Concepção e desenvolvimento da plataforma.", "en": "Platform conception and development." },
+    "highlights": { "pt": ["Três templates de presente", "Links privados", "Origem da necessidade que inspirou o Lúmen"], "en": ["Three gift templates", "Private links", "Origin of the need that inspired Lúmen"] },
+    "stack": ["Next.js", "Vercel"],
+    "result": { "pt": "Projeto arquivado; serviu de base para a concepção do Lúmen.", "en": "Archived project; it informed the conception of Lúmen." },
+    "links": { "demo": "https://www.pinloversoficial.com/", "github": null }, "featured": false, "relatedTechPost": null, "year": "Arquivado"
   }
 ]

@@ -1,29 +1,8 @@
 [
   {
-    "title": { "pt": "Pipeline RAG", "en": "RAG Pipeline" },
-    "description": {
-      "pt": "Sistema de retrieval-augmented generation para documentação interna com chunking semântico e re-ranking.",
-      "en": "Retrieval-augmented generation system for internal docs with semantic chunking and re-ranking."
-    },
-    "tools": ["LangChain", "Pinecone", "OpenAI", "Python"],
-    "relatedPost": "building-rag-pipeline"
-  },
-  {
-    "title": { "pt": "AI Agents", "en": "AI Agents" },
-    "description": {
-      "pt": "Agents autônomos com tool-calling, memória persistente e orquestração multi-step.",
-      "en": "Autonomous agents with tool-calling, persistent memory, and multi-step orchestration."
-    },
-    "tools": ["LangGraph", "FastAPI", "Redis", "PostgreSQL"],
-    "relatedPost": "building-rag-pipeline"
-  },
-  {
-    "title": { "pt": "Fine-tuning & Evals", "en": "Fine-tuning & Evals" },
-    "description": {
-      "pt": "Pipeline de avaliação de modelos com datasets customizados e métricas de qualidade.",
-      "en": "Model evaluation pipeline with custom datasets and quality metrics."
-    },
-    "tools": ["OpenAI", "Weights & Biases", "Python"],
-    "relatedPost": "nextjs-performance-tips"
+    "title": { "pt": "Agentes de IA no desenvolvimento", "en": "AI agents in development" },
+    "description": { "pt": "Uso de agentes de IA para acelerar entregas, apoiar a evolução do código e manter o foco em qualidade durante o desenvolvimento.", "en": "Uses AI agents to accelerate delivery, support code evolution, and keep a focus on quality during development." },
+    "tools": ["Codex", "Windsurf"],
+    "relatedPost": null
   }
 ]

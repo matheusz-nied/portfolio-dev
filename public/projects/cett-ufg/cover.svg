@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none">
+  <rect width="1200" height="675" fill="#111D1C"/>
+  <rect x="72" y="58" width="1056" height="559" rx="28" fill="#17302D" stroke="#8DD6A3" stroke-opacity=".42"/>
+  <rect x="124" y="110" width="952" height="70" rx="14" fill="#23453F"/>
+  <rect x="124" y="218" width="952" height="326" rx="20" fill="#0D1817" stroke="#8DD6A3" stroke-opacity=".25"/>
+  <path d="M190 462h170V330h154v132h176V272h148v190h172" stroke="#8DD6A3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="360" cy="330" r="13" fill="#8DD6A3"/><circle cx="690" cy="272" r="13" fill="#8DD6A3"/><circle cx="1010" cy="462" r="13" fill="#8DD6A3"/>
+  <text x="124" y="585" fill="#E5F8E9" font-family="system-ui, sans-serif" font-size="34" font-weight="700">Sistemas internos — CETT/UFG</text>
+  <text x="124" y="648" fill="#A6CBB6" font-family="system-ui, sans-serif" font-size="24">Django · PostgreSQL · Flutter · APIs REST</text>
+</svg>

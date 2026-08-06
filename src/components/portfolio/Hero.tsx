@@ -20,6 +20,10 @@ const FIELD_HEIGHT = 520;
 const NAME_LETTERS = profile.name.split("");
 const HARMONIC_X = [0.62, 0.68, 0.74, 0.8, 0.86, 0.92];
 
+function getHarmonicIndex(letterIndex: number): number {
+  return letterIndex % HARMONIC_X.length;
+}
+
 function waveY(
   x: number,
   probeX: number,
@@ -134,7 +138,7 @@ export function Hero() {
   );
 
   const activeHarmonic =
-    hoveredLetter !== null ? harmonics[hoveredLetter] : null;
+    hoveredLetter !== null ? harmonics[getHarmonicIndex(hoveredLetter)] : null;
 
   const scanIndex = Math.min(
     scanZones.length - 1,
@@ -253,7 +257,7 @@ export function Hero() {
 
           {hoveredLetter !== null &&
             nodes.map((node) => {
-              if (node.index !== hoveredLetter) return null;
+              if (node.index !== getHarmonicIndex(hoveredLetter)) return null;
               const letterX =
                 100 +
                 (node.index / Math.max(NAME_LETTERS.length - 1, 1)) * 220;
@@ -332,7 +336,7 @@ export function Hero() {
                   <span
                     key={`${letter}-${index}`}
                     role="button"
-                    aria-label={harmonics[index].label}
+                    aria-label={harmonics[getHarmonicIndex(index)].label}
                     onMouseEnter={() => handleLetterEnter(index)}
                     onMouseLeave={() => setHoveredLetter(null)}
                     onFocus={() => handleLetterEnter(index)}

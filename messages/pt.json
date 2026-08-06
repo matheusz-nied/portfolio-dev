@@ -1,8 +1,8 @@
 {
   "meta": {
-    "siteName": "Kaizen",
-    "title": "Kaizen — Full-Stack & AI Engineer",
-    "description": "Portfólio de engenheiro full-stack com foco em AI. Projetos, experiência e contato para recrutadores."
+    "siteName": "Matheus Fernandes",
+    "title": "Matheus Fernandes — Desenvolvedor Full Stack",
+    "description": "Portfólio de Matheus Fernandes, desenvolvedor full stack com experiência em desenvolvimento web e mobile."
   },
   "nav": {
     "experience": "Experiência",
@@ -104,9 +104,9 @@
     "fullStackHint": "clique para ver todos os setores"
   },
   "ai": {
-    "title": "AI & Machine Learning",
-    "subtitle": "Projetos e ferramentas que uso para construir sistemas inteligentes.",
-    "readMore": "Ler no Tech Log"
+    "title": "IA no desenvolvimento",
+    "subtitle": "Ferramentas que uso para apoiar o desenvolvimento e acelerar entregas.",
+    "readMore": "Ler mais"
   },
   "contact": {
     "title": "Contato",
@@ -134,7 +134,8 @@
     "summary": "Resumo",
     "experience": "Experiência",
     "education": "Formação",
-    "skills": "Competências"
+    "skills": "Competências",
+    "present": "Atual"
   },
   "tech": {
     "siteName": "Transmission Log",
@@ -163,9 +164,9 @@
     "help": "Comandos: help, resume, projects, contact, clear, exit",
     "welcome": "Terminal aberto. Digite 'help' para ver comandos.",
     "unknown": "Comando desconhecido. Digite 'help'.",
-    "resume": "Engenheiro Full-Stack · AI · 5+ anos · kaizen@email.com",
-    "projects": "1. AI Agent Platform  2. RAG Pipeline  3. Real-time Dashboard",
-    "contact": "Email: kaizen@email.com | WhatsApp: +55 11 99999-9999 | GitHub: github.com/kaizen | LinkedIn: /in/kaizen"
+    "resume": "Desenvolvedor Full Stack · 2+ anos · matheustae@hotmail.com",
+    "projects": "1. Revela Fácil — Fujioka  2. App para construção civil  3. Sistemas internos — CETT/UFG",
+    "contact": "Email: matheustae@hotmail.com | WhatsApp: +55 62 99439-5965 | GitHub: github.com/matheusz-nied | LinkedIn: /in/matheusznied"
   },
   "constellation": {
     "revealed": "Curiosidade é a melhor skill de um engenheiro."

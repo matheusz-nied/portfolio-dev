@@ -1,8 +1,8 @@
 {
   "meta": {
-    "siteName": "Kaizen",
-    "title": "Kaizen — Full-Stack & AI Engineer",
-    "description": "Portfolio of a full-stack engineer focused on AI. Projects, experience, and contact for recruiters."
+    "siteName": "Matheus Fernandes",
+    "title": "Matheus Fernandes — Full-Stack Developer",
+    "description": "Portfolio of Matheus Fernandes, a full-stack developer with web and mobile development experience."
   },
   "nav": {
     "experience": "Experience",
@@ -104,9 +104,9 @@
     "fullStackHint": "click to dump all sectors"
   },
   "ai": {
-    "title": "AI & Machine Learning",
-    "subtitle": "Projects and tools I use to build intelligent systems.",
-    "readMore": "Read on Tech Log"
+    "title": "AI in development",
+    "subtitle": "Tools I use to support development and accelerate delivery.",
+    "readMore": "Read more"
   },
   "contact": {
     "title": "Contact",
@@ -134,7 +134,8 @@
     "summary": "Summary",
     "experience": "Experience",
     "education": "Education",
-    "skills": "Skills"
+    "skills": "Skills",
+    "present": "Present"
   },
   "tech": {
     "siteName": "Transmission Log",
@@ -163,9 +164,9 @@
     "help": "Commands: help, resume, projects, contact, clear, exit",
     "welcome": "Terminal open. Type 'help' for commands.",
     "unknown": "Unknown command. Type 'help'.",
-    "resume": "Full-Stack Engineer · AI · 5+ years · kaizen@email.com",
-    "projects": "1. AI Agent Platform  2. RAG Pipeline  3. Real-time Dashboard",
-    "contact": "Email: kaizen@email.com | WhatsApp: +55 11 99999-9999 | GitHub: github.com/kaizen | LinkedIn: /in/kaizen"
+    "resume": "Full-Stack Developer · 2+ years · matheustae@hotmail.com",
+    "projects": "1. Revela Fácil — Fujioka  2. Construction-tech app  3. Internal systems — CETT/UFG",
+    "contact": "Email: matheustae@hotmail.com | WhatsApp: +55 62 99439-5965 | GitHub: github.com/matheusz-nied | LinkedIn: /in/matheusznied"
   },
   "constellation": {
     "revealed": "Curiosity is the best skill of an engineer."

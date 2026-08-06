@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none">
+  <rect width="1200" height="675" fill="#1B1720"/>
+  <rect x="72" y="58" width="1056" height="559" rx="28" fill="#2A2130" stroke="#F1B56B" stroke-opacity=".45"/>
+  <rect x="124" y="110" width="952" height="70" rx="14" fill="#3B2D3C"/>
+  <rect x="124" y="218" width="250" height="326" rx="20" fill="#19131C" stroke="#F1B56B" stroke-opacity=".25"/>
+  <rect x="412" y="218" width="664" height="326" rx="20" fill="#19131C" stroke="#F1B56B" stroke-opacity=".25"/>
+  <path d="M470 474V344l88-72 86 68v-54l78-60 96 88 110-94 92 82v172" stroke="#F1B56B" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="470" y="410" width="510" height="18" rx="9" fill="#F1B56B" fill-opacity=".45"/>
+  <text x="124" y="585" fill="#FFF0DD" font-family="system-ui, sans-serif" font-size="34" font-weight="700">App para construção civil</text>
+  <text x="124" y="648" fill="#D8B6D5" font-family="system-ui, sans-serif" font-size="24">Flutter · +30 telas · +60 rotas de API</text>
+</svg>

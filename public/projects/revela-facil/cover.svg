@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none">
+  <rect width="1200" height="675" fill="#101827"/>
+  <rect x="72" y="58" width="1056" height="559" rx="28" fill="#17233A" stroke="#61D3C8" stroke-opacity=".42"/>
+  <rect x="124" y="110" width="952" height="70" rx="14" fill="#213452"/>
+  <circle cx="164" cy="145" r="14" fill="#61D3C8"/><rect x="198" y="132" width="220" height="16" rx="8" fill="#B8E8E3" fill-opacity=".7"/>
+  <rect x="124" y="218" width="290" height="326" rx="20" fill="#0E1625" stroke="#61D3C8" stroke-opacity=".26"/>
+  <rect x="454" y="218" width="622" height="142" rx="20" fill="#0E1625" stroke="#61D3C8" stroke-opacity=".26"/>
+  <rect x="454" y="402" width="622" height="142" rx="20" fill="#0E1625" stroke="#61D3C8" stroke-opacity=".26"/>
+  <path d="M486 306h132l34-42 50 72 44-56 44 26h236" stroke="#61D3C8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="124" y="585" fill="#E6FAF8" font-family="system-ui, sans-serif" font-size="34" font-weight="700">Revela Fácil — Fujioka</text>
+  <text x="124" y="648" fill="#9DB8D7" font-family="system-ui, sans-serif" font-size="24">Flutter · REST APIs · Figma</text>
+</svg>
