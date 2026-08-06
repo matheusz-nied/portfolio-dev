@@ -30,10 +30,10 @@ export async function generateMetadata({
   const profile = getProfile(locale as Locale);
 
   return {
-    title: profile.name + " — " + profile.title,
+    title: profile.displayName + " — " + profile.title,
     description: profile.summary,
     openGraph: {
-      title: profile.name + " — " + profile.title,
+      title: profile.displayName + " — " + profile.title,
       description: profile.summary,
       type: "website",
       locale: locale === "pt" ? "pt_BR" : "en_US",

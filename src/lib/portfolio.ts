@@ -27,6 +27,7 @@ function localizeProject(item: (typeof projects)[number], locale: Locale) {
 export function getProfile(locale: Locale) {
   return {
     ...profile,
+    displayName: profile.displayName ?? profile.name,
     availability: profile.availability[locale],
     location: profile.location[locale],
     languages: profile.languages[locale],
@@ -35,11 +36,51 @@ export function getProfile(locale: Locale) {
   };
 }
 
+function parsePeriodDate(value: string) {
+  const [year, month = "01"] = value.split("-");
+  return { year: Number(year), month: Number(month) };
+}
+
+export function formatExperiencePeriodDate(date: string, locale: Locale) {
+  const { year, month } = parsePeriodDate(date);
+  const parsed = new Date(year, month - 1, 1);
+
+  if (locale === "pt") {
+    const monthName = parsed.toLocaleDateString("pt-BR", { month: "long" });
+    const capitalized = monthName.charAt(0).toUpperCase() + monthName.slice(1);
+    return `${capitalized}/${year}`;
+  }
+
+  return parsed.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+}
+
+export function experienceDurationYears(start: string, end: string | null) {
+  const startDate = parsePeriodDate(start);
+  const endDate = end
+    ? parsePeriodDate(end)
+    : { year: new Date().getFullYear(), month: new Date().getMonth() + 1 };
+  const months =
+    (endDate.year - startDate.year) * 12 + (endDate.month - startDate.month);
+  return Math.max(1, Math.round(months / 12));
+}
+
 export function getExperience(locale: Locale) {
   return experience.map((item) => ({
     ...item,
     role: item.role[locale],
     highlights: item.highlights[locale],
+    period: {
+      start: item.period.start,
+      end: item.period.end,
+      startLabel: formatExperiencePeriodDate(item.period.start, locale),
+      endLabel: item.period.end
+        ? formatExperiencePeriodDate(item.period.end, locale)
+        : null,
+      startYear: String(parsePeriodDate(item.period.start).year),
+      endYear: item.period.end
+        ? String(parsePeriodDate(item.period.end).year)
+        : null,
+    },
   }));
 }
 

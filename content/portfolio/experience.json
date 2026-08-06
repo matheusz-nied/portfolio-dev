@@ -2,7 +2,7 @@
   {
     "id": "umobi-fullstack", "company": "Umobi",
     "role": { "pt": "Desenvolvedor Full Stack", "en": "Full-Stack Developer" },
-    "period": { "start": "2026", "end": null },
+    "period": { "start": "2026-01", "end": null },
     "highlights": {
       "pt": ["Manutenção e evolução de aplicativos Flutter em produção para Android e iOS, com novas funcionalidades e correção de bugs reportados por usuários.", "Desenvolvimento de interfaces web em Angular e back-end em PHP/Laravel, incluindo painéis administrativos com Filament.", "Participação no ciclo completo de desenvolvimento, da concepção à entrega, com atenção à performance e à qualidade do código."],
       "en": ["Maintains and evolves production Flutter applications for Android and iOS, delivering new features and fixing user-reported bugs.", "Builds Angular web interfaces and PHP/Laravel back ends, including administrative panels with Filament.", "Participates in the full development cycle, from conception to delivery, focusing on performance and code quality."]
@@ -11,7 +11,7 @@
   {
     "id": "umobi-mobile-freelance", "company": "Umobi",
     "role": { "pt": "Desenvolvedor Mobile (Freelance)", "en": "Mobile Developer (Freelance)" },
-    "period": { "start": "2024", "end": "2025" },
+    "period": { "start": "2024-08", "end": "2025-11" },
     "highlights": {
       "pt": ["Desenvolvimento de funcionalidades em Flutter para o app Revela Fácil, da Fujioka, com fidelidade ao design no Figma e integração de APIs de autenticação e produtos.", "Entrega de um aplicativo Flutter completo para uma startup de construção civil, com mais de 30 telas integradas a mais de 60 rotas de API.", "Organização remota de prazos e entregas incrementais em comunicação direta com o cliente; a parceria resultou em contratação efetiva pela Umobi."],
       "en": ["Developed Flutter features for Fujioka's Revela Fácil app, faithfully implementing Figma designs and integrating authentication and product APIs.", "Delivered a complete Flutter app for a construction-tech startup, with more than 30 screens integrated with over 60 client API routes.", "Managed deadlines and incremental deliveries remotely in direct client communication; the partnership led to a full-time role at Umobi."]
@@ -20,7 +20,7 @@
   {
     "id": "cett-ufg-web", "company": "Fundação RTVE — CETT/UFG",
     "role": { "pt": "Desenvolvedor Web", "en": "Web Developer" },
-    "period": { "start": "2024", "end": "2025" },
+    "period": { "start": "2024-03", "end": "2025-12" },
     "highlights": {
       "pt": ["Manutenção evolutiva de sistemas web em Django e PostgreSQL, incluindo novas funcionalidades, correção de bugs e otimização de consultas.", "Implementação e consumo de APIs REST seguindo padrões de projeto e boas práticas de segurança.", "Desenvolvimento de apps Flutter para automatizar processos internos e documentação técnica com as áreas usuárias."],
       "en": ["Maintained and evolved Django and PostgreSQL web systems, adding features, fixing bugs, and optimizing queries.", "Implemented and consumed REST APIs following design patterns and security best practices.", "Built Flutter apps to automate internal processes and produced technical documentation with stakeholder teams."]

@@ -17,7 +17,18 @@ import profile from "../../../content/portfolio/profile.json";
 
 const FIELD_WIDTH = 1000;
 const FIELD_HEIGHT = 520;
-const NAME_LETTERS = profile.name.split("");
+const DISPLAY_NAME = profile.displayName ?? profile.name;
+const INTERACTIVE_LETTERS = DISPLAY_NAME.replace(/\s/g, "").split("");
+const NAME_SEGMENTS = (() => {
+  let letterIndex = 0;
+  return DISPLAY_NAME.split("").map((char, charIndex) => {
+    if (char === " ") {
+      return { type: "space" as const, key: `space-${charIndex}` };
+    }
+    const index = letterIndex++;
+    return { type: "letter" as const, char, index, key: `${char}-${charIndex}` };
+  });
+})();
 const HARMONIC_X = [0.62, 0.68, 0.74, 0.8, 0.86, 0.92];
 
 function getHarmonicIndex(letterIndex: number): number {
@@ -166,7 +177,7 @@ export function Hero() {
 
     if (index === seqProgress) {
       const next = seqProgress + 1;
-      if (next === NAME_LETTERS.length) {
+      if (next === INTERACTIVE_LETTERS.length) {
         setSynced(true);
         setSeqProgress(next);
       } else {
@@ -260,7 +271,7 @@ export function Hero() {
               if (node.index !== getHarmonicIndex(hoveredLetter)) return null;
               const letterX =
                 100 +
-                (node.index / Math.max(NAME_LETTERS.length - 1, 1)) * 220;
+                (node.index / Math.max(INTERACTIVE_LETTERS.length - 1, 1)) * 220;
               const letterY = FIELD_HEIGHT * 0.5;
               return (
                 <motion.line
@@ -324,7 +335,18 @@ export function Hero() {
               className="hero-name mt-3 font-[family-name:var(--font-display)] text-[clamp(3rem,9vw,5.25rem)] font-semibold leading-[0.88] tracking-tight"
               aria-label={profile.name}
             >
-              {NAME_LETTERS.map((letter, index) => {
+              {NAME_SEGMENTS.map((segment) => {
+                if (segment.type === "space") {
+                  return (
+                    <span
+                      key={segment.key}
+                      className="hero-field-space"
+                      aria-hidden
+                    />
+                  );
+                }
+
+                const { char, index } = segment;
                 const active = hoveredLetter === index;
                 const isNext =
                   !synced &&
@@ -334,7 +356,7 @@ export function Hero() {
 
                 return (
                   <span
-                    key={`${letter}-${index}`}
+                    key={segment.key}
                     role="button"
                     aria-label={harmonics[getHarmonicIndex(index)].label}
                     onMouseEnter={() => handleLetterEnter(index)}
@@ -344,7 +366,7 @@ export function Hero() {
                     tabIndex={0}
                     className={`hero-field-letter outline-none ${active ? "is-active" : ""} ${isNext ? "is-next" : ""} ${isDone ? "is-done" : ""} ${synced ? "is-synced" : ""}`}
                   >
-                    {letter}
+                    {char}
                   </span>
                 );
               })}
@@ -352,7 +374,7 @@ export function Hero() {
 
             {!synced && (
               <div className="hero-letter-track mt-4" aria-hidden>
-                {NAME_LETTERS.map((_, index) => {
+                {INTERACTIVE_LETTERS.map((_, index) => {
                   const done = seqProgress > index;
                   const next = seqProgress === index;
                   return (

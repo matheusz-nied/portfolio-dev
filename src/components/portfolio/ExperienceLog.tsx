@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { getExperience } from "@/lib/portfolio";
+import { experienceDurationYears, type getExperience } from "@/lib/portfolio";
 
 export const RECENT_EXPERIENCE_COUNT = 5;
 
@@ -210,13 +210,11 @@ function LogEntry({
   onFocus: () => void;
 }) {
   const isCurrent = item.period.end === null;
-  const endLabel = item.period.end ?? presentLabel;
-  const txId = `TX-${item.period.start}-${String(index + 1).padStart(2, "0")}`;
+  const endLabel = item.period.endLabel ?? presentLabel;
+  const txId = `TX-${item.period.startYear}-${String(index + 1).padStart(2, "0")}`;
   const signal = Math.max(1, totalRecent - index);
   const sector = sectorCode(item.company);
-  const durationYears =
-    (item.period.end ? Number(item.period.end) : new Date().getFullYear()) -
-    Number(item.period.start);
+  const durationYears = experienceDurationYears(item.period.start, item.period.end);
 
   return (
     <motion.li
@@ -254,11 +252,11 @@ function LogEntry({
               />
             )}
             <span className="font-[family-name:var(--font-mono)] text-xs text-[var(--accent-primary)]">
-              {item.period.start.slice(-2)}
+              {item.period.startYear.slice(-2)}
             </span>
           </div>
           <span className="mt-1 block font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-wide text-[var(--text-muted)]">
-            {endLabel === presentLabel ? "···" : endLabel.slice(-2)}
+            {isCurrent ? "···" : item.period.endYear?.slice(-2)}
           </span>
           <div className="mt-2 flex justify-end">
             <SignalBars strength={active ? signal : Math.max(1, signal - 1)} />
@@ -306,7 +304,7 @@ function LogEntry({
                 ·
               </span>
               <span className="text-xs text-[var(--text-muted)]">
-                {item.period.start} — {endLabel}
+                {item.period.startLabel} — {endLabel}
               </span>
             </p>
           </div>
@@ -398,7 +396,7 @@ function TelemetryHud({
   scanHint: string;
   lockedHint: string;
 }) {
-  const txId = `TX-${item.period.start}-${String(index + 1).padStart(2, "0")}`;
+  const txId = `TX-${item.period.startYear}-${String(index + 1).padStart(2, "0")}`;
   const snr = snrForEntry(item.company, index, total);
   const coords = pseudoCoords(item.company);
 

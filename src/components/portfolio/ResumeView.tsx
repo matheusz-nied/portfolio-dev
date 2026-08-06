@@ -72,7 +72,7 @@ export function ResumeView({ locale }: { locale: Locale }) {
                     {item.role} — {item.company}
                   </h3>
                   <span className="text-sm text-[var(--text-muted)]">
-                    {item.period.start} — {item.period.end ?? t("present")}
+                    {item.period.startLabel} — {item.period.endLabel ?? t("present")}
                   </span>
                 </div>
                 <ul className="mt-2 list-disc space-y-1 pl-5 text-[var(--text-muted)]">
