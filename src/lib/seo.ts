@@ -7,7 +7,7 @@ export function getPersonJsonLd(locale: "pt" | "en") {
     "@context": "https://schema.org",
     "@type": "Person",
     name: profile.name,
-    jobTitle: profile.title,
+    jobTitle: profile.title[locale],
     email: profile.email,
     url: siteUrl,
     sameAs: [profile.github, profile.linkedin],

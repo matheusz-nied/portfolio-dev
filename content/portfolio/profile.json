@@ -1,7 +1,7 @@
 {
   "name": "Matheus Fernandes da Silva",
   "displayName": "Matheus",
-  "title": "Desenvolvedor Full Stack",
+  "title": { "pt": "Desenvolvedor Full Stack · Web & Mobile", "en": "Full-Stack Developer · Web & Mobile" },
   "email": "matheustae@hotmail.com",
   "whatsapp": "+55 62 99439-5965",
   "github": "https://github.com/matheusz-nied",
@@ -10,10 +10,10 @@
   "availability": { "pt": "Disponível para trabalho 100% remoto", "en": "Available for fully remote work" },
   "location": { "pt": "Goiânia, GO · Brasil", "en": "Goiânia, GO · Brazil" },
   "languages": { "pt": "Português", "en": "Portuguese" },
-  "topStack": ["JavaScript", "React", "Node.js", "Python", "Flutter"],
+  "topStack": ["TypeScript", "React / Next.js", "Flutter", "Python / Django", "Laravel"],
   "summary": {
-    "pt": "Estudante de Engenharia de Computação na UFG, com mais de 2 anos de experiência prática em desenvolvimento web e mobile. Atua na manutenção e evolução de sistemas em produção, com JavaScript, Python, APIs REST, Git e code review.",
-    "en": "Computer Engineering student at UFG with over two years of hands-on web and mobile development experience. Works on maintaining and evolving production systems with JavaScript, Python, REST APIs, Git, and code review."
+    "pt": "Desenvolvedor full stack na Umobi e estudante de Engenharia de Computação na UFG. Construo e evoluo produtos web e mobile em produção, do levantamento de requisitos à entrega, com foco em integrações, qualidade de código e experiências úteis.",
+    "en": "Full-stack developer at Umobi and Computer Engineering student at UFG. I build and evolve production web and mobile products from requirements through delivery, focusing on integrations, code quality, and useful experiences."
   },
   "education": {
     "pt": [{ "institution": "Universidade Federal de Goiás (UFG)", "degree": "Bacharelado em Engenharia de Computação", "period": "2020 — conclusão prevista para dezembro de 2026" }],

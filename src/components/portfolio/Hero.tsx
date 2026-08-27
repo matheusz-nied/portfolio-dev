@@ -125,7 +125,7 @@ export function Hero() {
 
   const scanZones = useMemo(
     () => [
-      { value: profile.title, scan: t("scanRole") },
+      { value: profile.title[locale], scan: t("scanRole") },
       { value: profile.availability[locale], scan: t("scanStatus") },
       { value: profile.location[locale], scan: t("scanLocation") },
       { value: profile.languages[locale], scan: t("scanLanguages") },
@@ -328,7 +328,7 @@ export function Hero() {
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
             <p className="font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.18em] text-[var(--text-muted)]/45">
-              {profile.title}
+              {profile.title[locale]}
             </p>
 
             <h1

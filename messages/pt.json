@@ -59,7 +59,7 @@
   },
   "projects": {
     "title": "Projetos",
-    "subtitle": "Sistemas que construí e mantenho — do backend à interface, em produção.",
+    "subtitle": "Produtos e sistemas que construí — projetos públicos, trabalhos profissionais e experimentos completos.",
     "registryTag": "REGISTRY",
     "modulesCount": "{count} módulos",
     "accessLabel": "Acessar",
@@ -167,7 +167,7 @@
     "welcome": "Terminal aberto. Digite 'help' para ver comandos.",
     "unknown": "Comando desconhecido. Digite 'help'.",
     "resume": "Desenvolvedor Full Stack · 2+ anos · matheustae@hotmail.com",
-    "projects": "1. Revela Fácil — Fujioka  2. App para construção civil  3. Sistemas internos — CETT/UFG",
+    "projects": "1. Orbit  2. Memora  3. Orbitarium  4. Lumen  5. Projetos profissionais",
     "contact": "Email: matheustae@hotmail.com | WhatsApp: +55 62 99439-5965 | GitHub: github.com/matheusz-nied | LinkedIn: /in/matheusznied"
   },
   "constellation": {

@@ -6,9 +6,14 @@ import { useCallback, useEffect, useState } from "react";
 interface ProjectCarouselProps {
   images: string[];
   title: string;
+  fit?: "cover" | "contain";
 }
 
-export function ProjectCarousel({ images, title }: ProjectCarouselProps) {
+export function ProjectCarousel({
+  images,
+  title,
+  fit = "cover",
+}: ProjectCarouselProps) {
   const [index, setIndex] = useState(0);
   const total = images.length;
 
@@ -32,7 +37,11 @@ export function ProjectCarousel({ images, title }: ProjectCarouselProps) {
 
   return (
     <div className="relative overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)]">
-      <div className="relative aspect-[16/9] w-full">
+      <div
+        className={`relative w-full ${
+          fit === "contain" ? "aspect-[4/5] sm:aspect-[16/9]" : "aspect-[16/9]"
+        }`}
+      >
         {images.map((src, i) => (
           <div
             key={src}
@@ -45,7 +54,7 @@ export function ProjectCarousel({ images, title }: ProjectCarouselProps) {
               src={src}
               alt={`${title} — ${i + 1}`}
               fill
-              className="object-cover"
+              className={fit === "contain" ? "object-contain p-4 sm:p-6" : "object-cover"}
               sizes="(max-width: 768px) 100vw, 896px"
               priority={i === 0}
             />

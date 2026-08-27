@@ -26,7 +26,8 @@ const linkClass =
   "text-[var(--text-muted)] transition-colors hover:text-[var(--accent-primary)]";
 
 export function ProjectDetail({ project, labels }: ProjectDetailProps) {
-  const hasDemo = project.links.demo && project.links.demo !== "#";
+  const demoLink = project.links.demo ?? undefined;
+  const hasDemo = Boolean(demoLink && demoLink !== "#");
   const hasLinks = hasDemo || project.links.github || project.relatedTechPost;
 
   return (
@@ -55,9 +56,18 @@ export function ProjectDetail({ project, labels }: ProjectDetailProps) {
       </nav>
 
       <div className="mx-auto max-w-3xl px-6 py-8 pb-12">
-        <ProjectCarousel images={project.images} title={project.title} />
+        <ProjectCarousel
+          images={project.images}
+          title={project.title}
+          fit={project.imageFit}
+        />
 
         <header className="mt-8">
+          <div className="mb-3 flex flex-wrap items-center gap-2 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.12em]">
+            <span className="text-[var(--accent-primary)]">{project.status}</span>
+            <span className="text-[var(--text-muted)]/30">/</span>
+            <span className="text-[var(--text-muted)]/60">{project.year}</span>
+          </div>
           <h1
             className="font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-[var(--text-primary)] md:text-4xl"
             style={{ textWrap: "balance" }}
@@ -79,8 +89,8 @@ export function ProjectDetail({ project, labels }: ProjectDetailProps) {
           </div>
         </header>
 
-        <div className="mt-10 space-y-10">
-          <section>
+        <div className="mt-10 grid gap-px overflow-hidden rounded-xl border border-[var(--border-subtle)]/70 bg-[var(--border-subtle)]/50 md:grid-cols-2">
+          <section className="bg-[var(--bg-space)] p-5 sm:p-6">
             <h2 className="text-xs uppercase tracking-wider text-[var(--text-muted)]">
               {labels.problem}
             </h2>
@@ -89,7 +99,7 @@ export function ProjectDetail({ project, labels }: ProjectDetailProps) {
             </p>
           </section>
 
-          <section>
+          <section className="bg-[var(--bg-space)] p-5 sm:p-6">
             <h2 className="text-xs uppercase tracking-wider text-[var(--text-muted)]">
               {labels.solution}
             </h2>
@@ -98,7 +108,7 @@ export function ProjectDetail({ project, labels }: ProjectDetailProps) {
             </p>
           </section>
 
-          <section>
+          <section className="bg-[var(--bg-space)] p-5 sm:p-6">
             <h2 className="text-xs uppercase tracking-wider text-[var(--text-muted)]">
               {labels.role}
             </h2>
@@ -107,7 +117,7 @@ export function ProjectDetail({ project, labels }: ProjectDetailProps) {
             </p>
           </section>
 
-          <section>
+          <section className="bg-[var(--bg-space)] p-5 sm:p-6">
             <h2 className="text-xs uppercase tracking-wider text-[var(--text-muted)]">
               {labels.highlights}
             </h2>
@@ -124,7 +134,7 @@ export function ProjectDetail({ project, labels }: ProjectDetailProps) {
             </ul>
           </section>
 
-          <section className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-card)] p-5">
+          <section className="bg-[var(--bg-card)] p-5 sm:col-span-2 sm:p-6">
             <h2 className="text-xs uppercase tracking-wider text-[var(--text-muted)]">
               {labels.result}
             </h2>
@@ -139,7 +149,7 @@ export function ProjectDetail({ project, labels }: ProjectDetailProps) {
             {hasDemo && (
               <>
                 <a
-                  href={project.links.demo}
+                  href={demoLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={linkClass}

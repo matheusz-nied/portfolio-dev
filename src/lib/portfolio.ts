@@ -14,8 +14,10 @@ export function t(obj: LocalizedString, locale: Locale): string {
 function localizeProject(item: (typeof projects)[number], locale: Locale) {
   return {
     ...item,
+    imageFit: item.imageFit as "cover" | "contain",
     title: item.title[locale],
     summary: item.summary[locale],
+    status: item.status[locale],
     problem: item.problem[locale],
     solution: item.solution[locale],
     role: item.role[locale],
@@ -28,6 +30,7 @@ export function getProfile(locale: Locale) {
   return {
     ...profile,
     displayName: profile.displayName ?? profile.name,
+    title: profile.title[locale],
     availability: profile.availability[locale],
     location: profile.location[locale],
     languages: profile.languages[locale],

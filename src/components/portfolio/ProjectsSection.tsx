@@ -68,10 +68,10 @@ export function ProjectsSection({ items }: ProjectsSectionProps) {
                         {!reducedMotion && (
                           <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent-highlight)]" />
                         )}
-                        {t("liveTag")}
+                        {project.status}
                       </span>
                     ) : (
-                      <span className="text-[var(--text-muted)]/60">{t("archivedTag")}</span>
+                      <span className="text-[var(--text-muted)]/60">{project.status}</span>
                     )}
                     <span className="text-[var(--text-muted)]/60">[{project.year}]</span>
                   </div>
@@ -81,7 +81,7 @@ export function ProjectsSection({ items }: ProjectsSectionProps) {
                       src={project.thumbnail}
                       alt={project.title}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      className={`${project.imageFit === "contain" ? "object-contain p-5" : "object-cover"} transition-transform duration-500 group-hover:scale-[1.03]`}
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-space)]/90 via-[var(--bg-space)]/20 to-transparent" />
