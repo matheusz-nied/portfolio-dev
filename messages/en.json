@@ -117,7 +117,7 @@
     "syncTag": "ONLINE",
     "nodesConnected": "{count} channels",
     "openLabel": "Open",
-    "selectHint": "Select a channel below",
+    "selectHint": "Select a channel above",
     "openChannel": "Open {channel}",
     "email": "Email",
     "whatsapp": "WhatsApp",
