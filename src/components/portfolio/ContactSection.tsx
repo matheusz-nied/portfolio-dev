@@ -2,42 +2,61 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import profile from "../../../content/portfolio/profile.json";
 
-const CHANNELS = [
+type ChannelKey = "email" | "whatsapp" | "github" | "linkedin" | "schedule";
+
+type Channel = {
+  labelKey: ChannelKey;
+  value: string;
+  href: string;
+  external: boolean;
+  copyValue?: string;
+};
+
+const CHANNELS: Channel[] = [
   {
-    id: "email",
-    labelKey: "email" as const,
+    labelKey: "email",
     value: profile.email,
     href: `mailto:${profile.email}`,
     external: false,
+    copyValue: profile.email,
   },
   {
-    id: "whatsapp",
-    labelKey: "whatsapp" as const,
+    labelKey: "whatsapp",
     value: profile.whatsapp,
     href: `https://wa.me/${profile.whatsapp.replace(/\D/g, "")}`,
     external: true,
+    copyValue: profile.whatsapp,
   },
   {
-    id: "github",
-    labelKey: "github" as const,
+    labelKey: "github",
     value: profile.github.replace("https://github.com/", ""),
     href: profile.github,
     external: true,
   },
   {
-    id: "linkedin",
-    labelKey: "linkedin" as const,
+    labelKey: "linkedin",
     value: profile.linkedin.replace("https://linkedin.com", ""),
     href: profile.linkedin,
     external: true,
   },
-] as const;
+  ...(profile.meetingLink
+    ? [
+        {
+          labelKey: "schedule" as const,
+          value: profile.meetingLink.replace(/^https?:\/\//, ""),
+          href: profile.meetingLink,
+          external: true,
+        },
+      ]
+    : []),
+];
 
 const BUS_WIDTH = 1000;
-const NODE_X = [0.125, 0.375, 0.625, 0.875];
+const NODE_X = CHANNELS.map((_, i) => (i + 0.5) / CHANNELS.length);
+const desktopGridColumns = CHANNELS.length === 5 ? "lg:grid-cols-5" : "lg:grid-cols-4";
 
 export function ContactSection() {
   const t = useTranslations("contact");
@@ -45,6 +64,7 @@ export function ContactSection() {
   const reducedMotion = useReducedMotion();
   const [active, setActive] = useState<number | null>(null);
   const [paused, setPaused] = useState(false);
+  const [copiedId, setCopiedId] = useState<ChannelKey | null>(null);
 
   const availability = profile.availability[locale];
   const location = profile.location[locale];
@@ -60,6 +80,12 @@ export function ContactSection() {
     return () => window.clearInterval(timer);
   }, [reducedMotion, paused]);
 
+  useEffect(() => {
+    if (!copiedId) return;
+    const timer = window.setTimeout(() => setCopiedId(null), 1600);
+    return () => window.clearTimeout(timer);
+  }, [copiedId]);
+
   const handleEnter = (index: number) => {
     setPaused(true);
     setActive(index);
@@ -68,6 +94,19 @@ export function ContactSection() {
   const handleLeave = () => {
     setPaused(false);
     setActive(null);
+  };
+
+  const handleCopy = async (event: MouseEvent, channel: Channel) => {
+    if (!channel.copyValue) return;
+    event.preventDefault();
+    event.stopPropagation();
+    try {
+      await navigator.clipboard.writeText(channel.copyValue);
+      setCopiedId(channel.labelKey);
+    } catch {
+      // Clipboard API unavailable (unsupported browser/context) — the
+      // channel link itself (mailto:/wa.me) remains a working fallback.
+    }
   };
 
   return (
@@ -125,7 +164,7 @@ export function ContactSection() {
                 const lit = active === index;
                 return (
                   <circle
-                    key={CHANNELS[index].id}
+                    key={CHANNELS[index].labelKey}
                     cx={rx * BUS_WIDTH}
                     cy="14"
                     r={lit ? 4 : 2.5}
@@ -146,35 +185,53 @@ export function ContactSection() {
             </svg>
           </div>
 
-          <div className="contact-bus-grid relative grid grid-cols-2 border-t border-[var(--border-subtle)]/40 lg:grid-cols-4">
-            {CHANNELS.map((channel, index) => (
-              <motion.a
-                key={channel.id}
-                href={channel.href}
-                aria-label={t("openChannel", { channel: t(channel.labelKey) })}
-                {...(channel.external
-                  ? { target: "_blank", rel: "noopener noreferrer" }
-                  : {})}
-                onMouseEnter={() => handleEnter(index)}
-                onMouseLeave={handleLeave}
-                onFocus={() => handleEnter(index)}
-                onBlur={handleLeave}
-                className={`contact-bus-node group cursor-pointer ${active === index ? "is-active" : ""} ${index > 0 ? "border-[var(--border-subtle)]/40 lg:border-l" : ""} ${index % 2 === 1 ? "border-l" : ""} ${index >= 2 ? "border-t lg:border-t-0" : ""}`}
-              >
-                <div className="flex items-center justify-between gap-2">
-                  <span className="hud-label transition-colors group-hover:text-[var(--accent-primary)]">
-                    {t(channel.labelKey)}
+          <div className={`contact-bus-grid relative grid grid-cols-2 gap-px border-t border-[var(--border-subtle)]/40 bg-[var(--border-subtle)]/30 ${desktopGridColumns}`}>
+            {CHANNELS.map((channel, index) => {
+              const isCopied = copiedId === channel.labelKey;
+              return (
+                <motion.div
+                  key={channel.labelKey}
+                  onMouseEnter={() => handleEnter(index)}
+                  onMouseLeave={handleLeave}
+                  className={`contact-bus-node group relative bg-[var(--bg-space)] ${active === index ? "is-active" : ""}`}
+                >
+                  <a
+                    href={channel.href}
+                    aria-label={t("openChannel", { channel: t(channel.labelKey) })}
+                    {...(channel.external
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                    onFocus={() => handleEnter(index)}
+                    onBlur={handleLeave}
+                    className="absolute inset-0 cursor-pointer"
+                  />
+                  <div className="pointer-events-none flex items-center justify-between gap-2">
+                    <span className="hud-label transition-colors group-hover:text-[var(--accent-primary)]">
+                      {t(channel.labelKey)}
+                    </span>
+                    <span className="flex items-center gap-2">
+                      {channel.copyValue && (
+                        <button
+                          type="button"
+                          onClick={(event) => handleCopy(event, channel)}
+                          aria-label={t("copyValue", { channel: t(channel.labelKey) })}
+                          className="pointer-events-auto relative z-10 hud-label shrink-0 transition-colors hover:text-[var(--accent-primary)]"
+                        >
+                          {isCopied ? t("copied") : t("copy")}
+                        </button>
+                      )}
+                      <span className="contact-bus-open shrink-0 hud-label">
+                        {t("openLabel")}
+                        <span aria-hidden>{channel.external ? " ↗" : " →"}</span>
+                      </span>
+                    </span>
+                  </div>
+                  <span className="contact-bus-value glitch-hover pointer-events-none mt-1.5 block truncate text-sm font-medium text-[var(--text-primary)] transition-colors group-hover:text-[var(--accent-primary)]">
+                    {channel.value}
                   </span>
-                  <span className="contact-bus-open shrink-0 hud-label">
-                    {t("openLabel")}
-                    <span aria-hidden>{channel.external ? " ↗" : " →"}</span>
-                  </span>
-                </div>
-                <span className="contact-bus-value glitch-hover mt-1.5 block truncate text-sm font-medium text-[var(--text-primary)] transition-colors group-hover:text-[var(--accent-primary)]">
-                  {channel.value}
-                </span>
-              </motion.a>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
 
           <p className="border-t border-[var(--border-subtle)]/35 px-4 py-2.5 hud-label">

@@ -3,6 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { ProjectDetail } from "@/components/portfolio/ProjectDetail";
 import { getProject, projects } from "@/lib/portfolio";
+import { getAlternates } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
 
@@ -26,10 +27,10 @@ export async function generateMetadata({
   return {
     title: `${project.title} — Matheus Fernandes`,
     description: project.summary,
+    alternates: getAlternates(locale as Locale, `/projects/${slug}`),
     openGraph: {
       title: project.title,
       description: project.summary,
-      images: [{ url: project.thumbnail }],
     },
   };
 }

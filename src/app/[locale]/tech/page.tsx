@@ -2,6 +2,7 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getTechPosts, formatDate } from "@/lib/content";
+import { getAlternates } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
 
@@ -15,6 +16,7 @@ export async function generateMetadata({
   return {
     title: t("siteName"),
     description: t("tagline"),
+    alternates: getAlternates(locale as Locale, "/tech"),
   };
 }
 

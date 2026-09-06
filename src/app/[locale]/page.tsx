@@ -18,7 +18,7 @@ import {
   getAiProjects,
   getProfile,
 } from "@/lib/portfolio";
-import { getPersonJsonLd } from "@/lib/seo";
+import { getPersonJsonLd, getAlternates } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata({
@@ -32,6 +32,7 @@ export async function generateMetadata({
   return {
     title: profile.displayName + " — " + profile.title,
     description: profile.summary,
+    alternates: getAlternates(locale as Locale, ""),
     openGraph: {
       title: profile.displayName + " — " + profile.title,
       description: profile.summary,

@@ -9,6 +9,7 @@ import {
   getAlternatePost,
 } from "@/lib/content";
 import { reflectionPosts } from "#site/content";
+import { getAlternates } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
 
@@ -27,11 +28,29 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const post = getReflectionPost(slug, locale as Locale);
+  const loc = locale as Locale;
+  const post = getReflectionPost(slug, loc);
   if (!post) return {};
+  const alternate = getAlternatePost(
+    reflectionPosts,
+    post.translationSlug,
+    loc === "pt" ? "en" : "pt",
+  );
+  const paths = {
+    [loc]: `/reflections/${post.slug}`,
+    ...(alternate ? { [alternate.locale]: `/reflections/${alternate.slug}` } : {}),
+  };
+
   return {
     title: `${post.title} — Cosmic Journal`,
     description: post.description,
+    alternates: getAlternates(loc, paths),
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: "article",
+      publishedTime: post.date,
+    },
   };
 }
 

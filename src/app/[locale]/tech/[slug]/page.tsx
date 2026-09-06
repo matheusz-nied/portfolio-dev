@@ -9,6 +9,7 @@ import {
   getAlternatePost,
 } from "@/lib/content";
 import { techPosts } from "#site/content";
+import { getAlternates } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
 
@@ -25,11 +26,29 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const post = getTechPost(slug, locale as Locale);
+  const loc = locale as Locale;
+  const post = getTechPost(slug, loc);
   if (!post) return {};
+  const alternate = getAlternatePost(
+    techPosts,
+    post.translationSlug,
+    loc === "pt" ? "en" : "pt",
+  );
+  const paths = {
+    [loc]: `/tech/${post.slug}`,
+    ...(alternate ? { [alternate.locale]: `/tech/${alternate.slug}` } : {}),
+  };
+
   return {
     title: `${post.title} — Transmission Log`,
     description: post.description,
+    alternates: getAlternates(loc, paths),
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: "article",
+      publishedTime: post.date,
+    },
   };
 }
 

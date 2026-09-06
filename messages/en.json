@@ -119,10 +119,14 @@
     "openLabel": "Open",
     "selectHint": "Select a channel above",
     "openChannel": "Open {channel}",
+    "copy": "Copy",
+    "copied": "Copied ✓",
+    "copyValue": "Copy {channel}",
     "email": "Email",
     "whatsapp": "WhatsApp",
     "github": "GitHub",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "schedule": "Schedule a call"
   },
   "footer": {
     "techPortal": "Transmission Log",

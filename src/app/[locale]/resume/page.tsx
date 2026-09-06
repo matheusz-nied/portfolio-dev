@@ -2,6 +2,7 @@ import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { ResumeView } from "@/components/portfolio/ResumeView";
 import { getProfile } from "@/lib/portfolio";
+import { getAlternates } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata({
@@ -14,6 +15,7 @@ export async function generateMetadata({
   return {
     title: `Resume — ${profile.name}`,
     description: profile.summary,
+    alternates: getAlternates(locale as Locale, "/resume"),
   };
 }
 

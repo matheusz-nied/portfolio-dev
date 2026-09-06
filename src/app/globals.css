@@ -1137,7 +1137,7 @@ body {
 }
 
 .contact-bus-node:hover .contact-bus-open,
-.contact-bus-node:focus-visible .contact-bus-open,
+.contact-bus-node:focus-within .contact-bus-open,
 .contact-bus-node.is-active .contact-bus-open {
   opacity: 0.9;
 }
@@ -1151,21 +1151,21 @@ body {
 }
 
 .contact-bus-node:hover .contact-bus-value,
-.contact-bus-node:focus-visible .contact-bus-value,
+.contact-bus-node:focus-within .contact-bus-value,
 .contact-bus-node.is-active .contact-bus-value {
   border-bottom-color: rgba(var(--signal-accent-rgb), 0.55);
 }
 
 .contact-bus-node.is-active,
 .contact-bus-node:hover,
-.contact-bus-node:focus-visible {
+.contact-bus-node:focus-within {
   background: rgba(var(--signal-accent-rgb), 0.06);
   outline: none;
   box-shadow: inset 0 0 0 1px rgba(var(--signal-accent-rgb), 0.18);
   transform: translateY(-1px);
 }
 
-.contact-bus-node:focus-visible {
+.contact-bus-node:focus-within {
   box-shadow:
     inset 0 0 0 1px rgba(var(--signal-accent-rgb), 0.35),
     0 0 0 2px rgba(var(--signal-accent-rgb), 0.12);

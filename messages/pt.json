@@ -117,12 +117,16 @@
     "syncTag": "ONLINE",
     "nodesConnected": "{count} canais",
     "openLabel": "Abrir",
-    "selectHint": "Selecione um canal acime",
+    "selectHint": "Selecione um canal acima",
     "openChannel": "Abrir {channel}",
+    "copy": "Copiar",
+    "copied": "Copiado ✓",
+    "copyValue": "Copiar {channel}",
     "email": "Email",
     "whatsapp": "WhatsApp",
     "github": "GitHub",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "schedule": "Agendar"
   },
   "footer": {
     "techPortal": "Transmission Log",

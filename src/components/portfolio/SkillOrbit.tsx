@@ -100,10 +100,7 @@ function ScrambleTitle({
   const keyRef = useRef("");
 
   useEffect(() => {
-    if (!active || reducedMotion) {
-      setDisplay(text);
-      return;
-    }
+    if (!active || reducedMotion) return;
 
     if (keyRef.current === text) return;
     keyRef.current = text;
@@ -133,7 +130,7 @@ function ScrambleTitle({
     return () => clearInterval(timer);
   }, [active, reducedMotion, text]);
 
-  return <>{display}</>;
+  return <>{!active || reducedMotion ? text : display}</>;
 }
 
 function InjectCommand({
@@ -145,15 +142,11 @@ function InjectCommand({
 }) {
   const t = useTranslations("skills");
   const full = t("injectCommand", { sector });
-  const [visible, setVisible] = useState(full);
+  const [visible, setVisible] = useState("");
 
   useEffect(() => {
-    if (reducedMotion) {
-      setVisible(full);
-      return;
-    }
+    if (reducedMotion) return;
 
-    setVisible("");
     let i = 0;
     const timer = setInterval(() => {
       i += 1;
@@ -170,7 +163,7 @@ function InjectCommand({
       <span className="text-[var(--text-muted)]/40">:</span>
       <span className="text-[var(--accent-primary)]/80">~/stack</span>
       <span className="text-[var(--text-muted)]">$ </span>
-      {visible}
+      {reducedMotion ? full : visible}
       {!reducedMotion && (
         <span className="skill-inject-cursor ml-0.5 inline-block h-[1em] w-[7px] translate-y-px bg-[var(--accent-primary)]/75" />
       )}
@@ -195,7 +188,13 @@ export function SkillOrbit({ groups }: SkillOrbitProps) {
     ? groups.findIndex((g) => g.id === hoveredId)
     : activeIndex;
 
-  const sessionId = useRef(`NR-${hashString(groups.map((g) => g.id).join("-")).toString(16).toUpperCase().slice(0, 6)}`);
+  const [sessionId] = useState(
+    () =>
+      `NR-${hashString(groups.map((g) => g.id).join("-"))
+        .toString(16)
+        .toUpperCase()
+        .slice(0, 6)}`,
+  );
 
   const selectCategory = useCallback(
     (id: string) => {
@@ -273,7 +272,7 @@ export function SkillOrbit({ groups }: SkillOrbitProps) {
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[var(--text-muted)]">
           <span>
             <span className="text-[var(--text-muted)]/55">{t("sessionLabel")}</span>{" "}
-            <span className="text-[var(--accent-primary)]">{sessionId.current}</span>
+            <span className="text-[var(--accent-primary)]">{sessionId}</span>
           </span>
           <span>
             <span className="text-[var(--text-muted)]/55">{t("iceLabel")}</span>{" "}
