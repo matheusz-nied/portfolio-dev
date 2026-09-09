@@ -72,7 +72,7 @@ export default async function PortfolioPage({
             <div className="portfolio-sections mx-auto">
               <ProjectsSection items={projects} />
               <ExperienceSection items={experience} />
-              <SkillsSection items={skills} />
+              <SkillsSection items={skills} projects={projects.map(({ id, title, stack }) => ({ id, title, stack }))} />
               <AiSection items={aiProjects} />
               <ContactSection />
             </div>
