@@ -36,7 +36,7 @@ export function PortfolioFooter() {
 
   return (
     <footer className="portfolio-footer border-t border-[var(--border-subtle)] px-6 py-6">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-4 gap-y-4">
+      <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-x-4 gap-y-4">
         <BlogPortalLinks />
         <nav
           className="footer-socials"
@@ -62,7 +62,7 @@ export function PortfolioFooter() {
           type="button"
           onClick={openTerminal}
           title={tt("shortcutHint")}
-          className="font-[family-name:var(--font-mono)] text-xs text-[var(--text-muted)]/50 transition-colors hover:text-[var(--accent-primary)]"
+          className="justify-self-end font-[family-name:var(--font-mono)] text-xs text-[var(--text-muted)]/50 transition-colors hover:text-[var(--accent-primary)]"
         >
           <span className="text-[var(--text-muted)]">$</span> {tt("openTrigger")}
         </button>
