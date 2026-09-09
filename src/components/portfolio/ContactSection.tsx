@@ -38,7 +38,7 @@ const CHANNELS: Channel[] = [
   },
   {
     labelKey: "linkedin",
-    value: profile.linkedin.replace("https://linkedin.com", ""),
+    value: profile.linkedin.replace(/^https?:\/\/(www\.)?linkedin\.com/, "").replace(/\/$/, ""),
     href: profile.linkedin,
     external: true,
   },

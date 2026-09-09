@@ -17,7 +17,7 @@
     "closeMenu": "Close menu"
   },
   "hero": {
-    "ctaPrimary": "Learn more",
+    "ctaPrimary": "Explore projects",
     "downloadCv": "Download CV",
     "quickLinks": "Profile shortcuts",
     "scanRole": "Role",
@@ -30,7 +30,11 @@
     "languagesLabel": "Languages",
     "stackLabel": "Stack",
     "expValue": "{years}+ years",
-    "layerExperience": "Experience"
+    "layerExperience": "Experience",
+    "intro": "Hello, I’m",
+    "statement": "Code with purpose.",
+    "statementAccent": "Products with identity.",
+    "explore": "Explore the portfolio"
   },
   "recruiter": {
     "title": "Recruiter Mode",
@@ -172,7 +176,7 @@
     "unknown": "Unknown command. Type 'help'.",
     "resume": "Full-Stack Developer · 2+ years · matheustae@hotmail.com",
     "projects": "1. Orbit  2. Memora  3. Orbitarium  4. Lumen  5. Professional work",
-    "contact": "Email: matheustae@hotmail.com | WhatsApp: +55 62 99439-5965 | GitHub: github.com/matheusz-nied | LinkedIn: /in/matheusznied"
+    "contact": "Email: matheustae@hotmail.com | WhatsApp: +55 62 99439-5965 | GitHub: github.com/matheusz-nied | LinkedIn: /in/matheusz-nied"
   },
   "constellation": {
     "revealed": "Curiosity is the best skill of an engineer."

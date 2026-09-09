@@ -58,7 +58,7 @@ export default async function PortfolioPage({
   const jsonLd = getPersonJsonLd(loc);
 
   return (
-    <div className="theme-portfolio relative min-h-screen">
+    <div className="theme-portfolio portfolio-home relative min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -69,9 +69,9 @@ export default async function PortfolioPage({
           <PortfolioNav />
           <main>
             <Hero />
-            <div className="mx-auto max-w-5xl">
-              <ExperienceSection items={experience} />
+            <div className="portfolio-sections mx-auto">
               <ProjectsSection items={projects} />
+              <ExperienceSection items={experience} />
               <SkillsSection items={skills} />
               <AiSection items={aiProjects} />
               <ContactSection />

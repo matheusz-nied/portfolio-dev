@@ -22,6 +22,7 @@ export function ProjectsSection({ items }: ProjectsSectionProps) {
       <div className="mx-auto max-w-5xl">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
+            <p className="section-index">01 / SELECTED WORK</p>
             <h2 className="section-title">{t("title")}</h2>
             <p className="section-subtitle">{t("subtitle")}</p>
           </div>
@@ -52,7 +53,7 @@ export function ProjectsSection({ items }: ProjectsSectionProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
-                className={`bg-[var(--bg-space)] ${project.featured && i === 0 ? "md:col-span-2" : ""}`}
+                className={`bg-[var(--bg-space)] ${project.featured && i === 0 ? "project-featured md:col-span-2" : ""}`}
               >
                 <Link
                   href={`/projects/${project.id}`}
@@ -82,7 +83,7 @@ export function ProjectsSection({ items }: ProjectsSectionProps) {
                       alt={project.title}
                       fill
                       className={`${project.imageFit === "contain" ? "object-contain p-5" : "object-cover"} transition-transform duration-500 group-hover:scale-[1.03]`}
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      sizes="(max-width: 768px) 100vw, 560px"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-space)]/90 via-[var(--bg-space)]/20 to-transparent" />
                     {!reducedMotion && (

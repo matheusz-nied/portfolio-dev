@@ -192,7 +192,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className={`hero-field relative flex min-h-[88vh] w-full items-center overflow-hidden py-12 md:min-h-[90vh] ${synced ? "hero-field-synced" : ""}`}
+      className={`hero-field portfolio-hero relative flex w-full items-center overflow-hidden ${synced ? "hero-field-synced" : ""}`}
       onMouseMove={handleFieldMove}
       onMouseLeave={() => {
         setFieldActive(false);
@@ -283,7 +283,7 @@ export function Hero() {
                   stroke="var(--accent-primary)"
                   strokeWidth="0.5"
                   strokeOpacity="0.4"
-                  initial={{ opacity: 0 }}
+                  initial={false}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.35 }}
                 />
@@ -320,19 +320,20 @@ export function Hero() {
         )}
       </AnimatePresence>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-5xl items-center gap-10 px-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12">
+      <div className="hero-layout relative z-10 mx-auto grid w-full items-center px-6">
         <div className="max-w-xl">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.18em] text-[var(--text-muted)]/45">
+            <p className="hero-eyebrow">
               {profile.title[locale]}
             </p>
 
+            <p className="hero-intro">{t("intro")}</p>
             <h1
-              className="hero-name mt-3 font-[family-name:var(--font-display)] text-[clamp(3rem,9vw,5.25rem)] font-semibold leading-[0.88] tracking-tight"
+              className="hero-name hero-display"
               aria-label={profile.name}
             >
               {NAME_SEGMENTS.map((segment) => {
@@ -358,6 +359,12 @@ export function Hero() {
                   <span
                     key={segment.key}
                     role="button"
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        handleLetterEnter(index);
+                      }
+                    }}
                     aria-label={harmonics[getHarmonicIndex(index)].label}
                     onMouseEnter={() => handleLetterEnter(index)}
                     onMouseLeave={() => setHoveredLetter(null)}
@@ -371,6 +378,8 @@ export function Hero() {
                 );
               })}
             </h1>
+
+            <p className="hero-statement">{t("statement")} <span>{t("statementAccent")}</span></p>
 
             {!synced && (
               <div className="hero-letter-track mt-4" aria-hidden>
@@ -388,7 +397,7 @@ export function Hero() {
             )}
 
             <motion.p
-              initial={{ opacity: 0, y: 10 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.1 }}
               className="mt-5 max-w-md text-base leading-relaxed text-[var(--text-muted)]"
@@ -397,12 +406,12 @@ export function Hero() {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 8 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.18 }}
               className="mt-10"
             >
-              <a href="#experience" className="hero-hud-cta group">
+              <a href="#projects" className="hero-hud-cta hero-primary group">
                 <span className="hero-hud-cta-corners" aria-hidden />
                 <span className="hero-hud-cta-prefix">01</span>
                 <span className="hero-hud-cta-label">{t("ctaPrimary")}</span>
@@ -443,12 +452,27 @@ export function Hero() {
           </motion.div>
         </div>
 
-        <div className="relative flex min-h-[220px] items-center lg:min-h-[320px]">
+        <div className="hero-art-panel">
+          <div className="hero-art-meta" aria-hidden><span>KC / SIGNAL CORE</span><span>001 — ∞</span></div>
+          <div className="hero-sigil" aria-hidden>
+            <svg viewBox="0 0 440 440" fill="none">
+              <defs><linearGradient id="sigil-green" x1="80" y1="60" x2="360" y2="380" gradientUnits="userSpaceOnUse"><stop stopColor="#ccf4c0"/><stop offset=".5" stopColor="#6ec492"/><stop offset="1" stopColor="#28543b"/></linearGradient></defs>
+              <g className="sigil-orbit"><circle cx="220" cy="220" r="192" stroke="currentColor" strokeOpacity=".2" strokeDasharray="2 9"/><path d="M220 16V40M220 400V424M16 220H40M400 220H424" stroke="currentColor" strokeOpacity=".6"/></g>
+              <circle cx="220" cy="220" r="163" stroke="currentColor" strokeOpacity=".15"/>
+              <path d="M107 299V141L151 115L220 222L289 115L333 141V299L290 325V197L220 298L150 197V325Z" fill="url(#sigil-green)" fillOpacity=".12" stroke="url(#sigil-green)" strokeWidth="1.5"/>
+              <path d="M107 141L150 167L220 274L290 167L333 141M150 167V325M290 167V325M220 222V274" stroke="url(#sigil-green)" strokeOpacity=".7"/>
+              <path d="M64 110V64H110M330 64H376V110M376 330V376H330M110 376H64V330" stroke="currentColor" strokeOpacity=".35"/>
+              <circle cx="220" cy="58" r="3" fill="currentColor"/><circle cx="382" cy="220" r="3" fill="currentColor"/>
+            </svg>
+            <span className="sigil-caption">BUILD · REFINE · REPEAT</span>
+          </div>
+          <div className="hero-art-readout">
+          <span className="hero-status-dot" aria-hidden />
           <AnimatePresence mode="wait">
             {synced ? (
               <motion.div
                 key="synced-layer"
-                initial={{ opacity: 0, y: 8 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 className="max-w-sm space-y-4 lg:ml-auto"
@@ -482,7 +506,7 @@ export function Hero() {
             ) : (
               <motion.div
                 key="idle"
-                initial={{ opacity: 0 }}
+                initial={false}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className="max-w-xs lg:ml-auto lg:text-right"
@@ -496,7 +520,9 @@ export function Hero() {
               </motion.div>
             )}
           </AnimatePresence>
+          </div>
         </div>
+        <div className="hero-bottom"><span>{profile.location[locale]}</span><span>{profile.topStack.slice(0, 3).join(" / ")}</span><a href="#projects">{t("explore")} <span aria-hidden>↓</span></a></div>
       </div>
     </section>
   );

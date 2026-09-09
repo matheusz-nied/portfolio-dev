@@ -10,8 +10,8 @@ export function PortfolioNav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const links = [
-    { href: "#experience", label: t("experience") },
     { href: "#projects", label: t("projects") },
+    { href: "#experience", label: t("experience") },
     { href: "#skills", label: t("skills") },
     { href: "#ai", label: t("ai") },
     { href: "#contact", label: t("contact") },
@@ -21,13 +21,13 @@ export function PortfolioNav() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[var(--border-subtle)] bg-[var(--bg-space)]/88 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-3.5">
+    <header className="portfolio-nav sticky top-0 z-40 border-b border-[var(--border-subtle)] bg-[var(--bg-space)]/88 backdrop-blur-xl">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5">
         <Link
           href="/"
           className="font-[family-name:var(--font-display)] text-base font-semibold tracking-tight text-[var(--text-primary)]"
         >
-          KC
+          <span className="brand-mark">K<span>C</span><span className="brand-cursor" aria-hidden>_</span></span>
         </Link>
 
         <div className="hidden items-center gap-7 md:flex">
