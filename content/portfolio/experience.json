@@ -1,6 +1,7 @@
 [
   {
     "id": "umobi-fullstack", "company": "Umobi",
+    "stack": ["Flutter", "Angular", "PHP", "Laravel", "Filament"],
     "role": { "pt": "Desenvolvedor Full Stack", "en": "Full-Stack Developer" },
     "period": { "start": "2026-01", "end": null },
     "highlights": {
@@ -10,6 +11,7 @@
   },
   {
     "id": "umobi-mobile-freelance", "company": "Umobi",
+    "stack": ["Flutter", "Figma", "APIs REST"],
     "role": { "pt": "Desenvolvedor Mobile (Freelance)", "en": "Mobile Developer (Freelance)" },
     "period": { "start": "2024-08", "end": "2025-11" },
     "highlights": {
@@ -19,6 +21,7 @@
   },
   {
     "id": "cett-ufg-web", "company": "Fundação RTVE — CETT/UFG",
+    "stack": ["Django", "PostgreSQL", "Flutter", "APIs REST"],
     "role": { "pt": "Desenvolvedor Web", "en": "Web Developer" },
     "period": { "start": "2024-03", "end": "2025-12" },
     "highlights": {

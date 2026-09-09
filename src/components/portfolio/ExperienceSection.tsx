@@ -1,45 +1,42 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { ExperienceLog } from "@/components/portfolio/ExperienceLog";
 import type { getExperience } from "@/lib/portfolio";
+import styles from "./ExperienceSection.module.css";
 
 type ExperienceItem = ReturnType<typeof getExperience>[number];
 
-interface ExperienceSectionProps {
-  items: ExperienceItem[];
-}
-
-export function ExperienceSection({ items }: ExperienceSectionProps) {
+export function ExperienceSection({ items }: { items: ExperienceItem[] }) {
   const t = useTranslations("experience");
+  const firstYear = items.length ? Math.min(...items.map((item) => Number(item.period.startYear))) : null;
+  const current = items.find((item) => item.period.end === null);
+  const companies = new Set(items.map((item) => item.company)).size;
 
   return (
-    <section id="experience" className="px-6 py-20">
-      <div className="mx-auto max-w-5xl">
-        <h2 className="section-title">{t("title")}</h2>
-        <p className="section-subtitle">{t("subtitle")}</p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-12"
-        >
-          <ExperienceLog
-            items={items}
-            presentLabel={t("present")}
-            logPrompt={t("logPrompt")}
-            archiveCount={t("archiveCount")}
-            liveLabel={t("liveLabel")}
-            scanHint={t("scanHint")}
-            lockedHint={t("lockedHint")}
-            telemetryLock={t("telemetryLock")}
-            telemetrySnr={t("telemetrySnr")}
-            telemetryCoords={t("telemetryCoords")}
-          />
-        </motion.div>
+    <section id="experience" aria-labelledby="experience-title" className="px-6 py-20">
+      <div className={styles.layout}>
+        <div className={styles.intro}>
+          <p className="section-index">02 / CAREER LOG</p>
+          <h2 id="experience-title" className="section-title">{t("title")}</h2>
+          <p className="section-subtitle">{t("subtitle")}</p>
+          <dl className={styles.stats}>
+            {firstYear && <div><dt>{t("since")}</dt><dd>{firstYear}</dd></div>}
+            <div><dt>{t("companies")}</dt><dd>{String(companies).padStart(2, "0")}</dd></div>
+          </dl>
+          {current && (
+            <div className={styles.currentCompany}>
+              <p><span className={styles.liveDot} aria-hidden />{t("currently")}</p>
+              <span>{current.company}</span>
+              <p className={styles.currentRole}>{current.role}</p>
+            </div>
+          )}
+          <Link href="/resume" className={styles.resumeLink}>
+            {t("resumeLink")} <span aria-hidden>↗</span>
+          </Link>
+        </div>
+        <ExperienceLog items={items} />
       </div>
     </section>
   );
