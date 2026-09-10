@@ -50,3 +50,23 @@ export function formatDate(date: string, locale: Locale) {
     day: "numeric",
   });
 }
+
+export function getAdjacentTechPosts(slug: string, locale: Locale) {
+  const posts = getTechPosts(locale);
+  const index = posts.findIndex((p) => p.slug === slug);
+  if (index === -1) return { prev: null, next: null };
+  return {
+    next: posts[index - 1] ?? null,
+    prev: posts[index + 1] ?? null,
+  };
+}
+
+export function getAdjacentReflectionPosts(slug: string, locale: Locale) {
+  const posts = getReflectionPosts(locale);
+  const index = posts.findIndex((p) => p.slug === slug);
+  if (index === -1) return { prev: null, next: null };
+  return {
+    next: posts[index - 1] ?? null,
+    prev: posts[index + 1] ?? null,
+  };
+}

@@ -1,17 +1,37 @@
 .theme-reflections {
-  --refl-bg: #0f0e11;
-  --refl-surface: #161418;
-  --refl-text: #ddd8e2;
-  --refl-muted: #9690a0;
-  --refl-accent: #b0a0c4;
-  --refl-warm: #c4a894;
-  --refl-border: rgba(176, 160, 196, 0.12);
-  --signal-accent-rgb: 176, 160, 196;
+  --refl-bg: #030405;
+  --refl-surface: #0e1115;
+  --refl-heading: #ffffff;
+  --refl-text: #eceff3;
+  --refl-muted: #b4beca;
+  --refl-accent: #d7e9ff;
+  --refl-warm: #ffffff;
+  --refl-border: rgba(215, 233, 255, 0.2);
+  --signal-accent-rgb: 180, 214, 255;
+  background: var(--refl-bg);
+}
+
+/* Cool orbital light and sparse stars, concentrated around the reading column. */
+.theme-reflections .netrun-root::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background:
-    radial-gradient(
-      ellipse 80% 50% at 50% -15%,
-      rgba(140, 120, 160, 0.05),
-      transparent 55%
-    ),
-    var(--refl-bg);
+    radial-gradient(ellipse 45% 65% at 100% 15%, rgba(79, 139, 210, 0.16), transparent 75%),
+    radial-gradient(ellipse 30% 50% at 0% 85%, rgba(88, 129, 176, 0.1), transparent 75%);
+}
+
+.theme-reflections .netrun-root::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 22px 31px, rgba(255, 255, 255, 0.7) 50%, transparent 100%),
+    radial-gradient(1px 1px at 91px 139px, rgba(195, 221, 255, 0.45) 50%, transparent 100%);
+  background-size: 227px 263px, 347px 389px;
+  mask-image: linear-gradient(90deg, #000, transparent 28%, transparent 72%, #000);
+}
+
+.theme-reflections:has(.prose-reflections) .netrun-root {
+  opacity: 0.65;
 }

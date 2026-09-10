@@ -36,5 +36,6 @@ export default async function Image({
     subtitle: post?.description,
     footerLeft: "Matheus Fernandes",
     footerRight: post ? `${post.readingTime} min` : undefined,
+    theme: "reflections",
   });
 }

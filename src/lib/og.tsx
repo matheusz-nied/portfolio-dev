@@ -5,11 +5,28 @@ import { getSiteUrl } from "@/lib/seo";
 export const ogSize = { width: 1200, height: 630 };
 export const ogContentType = "image/png";
 
-const BG = "#0b0d0c";
-const ACCENT = "#8fbaa0";
-const TEXT_PRIMARY = "#dde3df";
-const TEXT_MUTED = "#8a948c";
-const BORDER = "rgba(143, 186, 160, 0.35)";
+const THEMES = {
+  default: {
+    bg: "#0b0d0c",
+    accent: "#8fbaa0",
+    textPrimary: "#dde3df",
+    textMuted: "#8a948c",
+    border: "rgba(143, 186, 160, 0.35)",
+    glow: "rgba(143,186,160,0.16)",
+    bgFallback: "rgba(11,13,12,0)",
+  },
+  reflections: {
+    bg: "#0e1117",
+    accent: "#b8aee6",
+    textPrimary: "#e6e9f2",
+    textMuted: "#a9b1c4",
+    border: "rgba(184, 174, 230, 0.35)",
+    glow: "rgba(110,120,190,0.18)",
+    bgFallback: "rgba(14,17,23,0)",
+  },
+} as const;
+
+export type OgTheme = keyof typeof THEMES;
 
 const OG_EYEBROWS = {
   portfolio: { pt: "PORTFÓLIO", en: "PORTFOLIO" },
@@ -35,10 +52,19 @@ export interface OgImageProps {
   subtitle?: string | null;
   footerLeft: string;
   footerRight?: string | null;
+  theme?: OgTheme;
 }
 
-function OgTemplate({ eyebrow, title, subtitle, footerLeft, footerRight }: OgImageProps) {
+function OgTemplate({
+  eyebrow,
+  title,
+  subtitle,
+  footerLeft,
+  footerRight,
+  theme = "default",
+}: OgImageProps) {
   const host = new URL(getSiteUrl()).host;
+  const palette = THEMES[theme];
 
   return (
     <div
@@ -48,9 +74,8 @@ function OgTemplate({ eyebrow, title, subtitle, footerLeft, footerRight }: OgIma
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        backgroundColor: BG,
-        backgroundImage:
-          "radial-gradient(circle at 12% -10%, rgba(143,186,160,0.16), rgba(11,13,12,0) 55%)",
+        backgroundColor: palette.bg,
+        backgroundImage: `radial-gradient(circle at 12% -10%, ${palette.glow}, ${palette.bgFallback} 55%)`,
         padding: "70px",
         fontFamily: "sans-serif",
         position: "relative",
@@ -64,7 +89,7 @@ function OgTemplate({ eyebrow, title, subtitle, footerLeft, footerRight }: OgIma
           right: 0,
           height: "6px",
           display: "flex",
-          backgroundColor: ACCENT,
+          backgroundColor: palette.accent,
           opacity: 0.75,
         }}
       />
@@ -78,7 +103,7 @@ function OgTemplate({ eyebrow, title, subtitle, footerLeft, footerRight }: OgIma
             fontSize: 22,
             letterSpacing: 5,
             textTransform: "uppercase",
-            color: ACCENT,
+            color: palette.accent,
           }}
         >
           <div
@@ -87,12 +112,12 @@ function OgTemplate({ eyebrow, title, subtitle, footerLeft, footerRight }: OgIma
               width: 10,
               height: 10,
               borderRadius: 999,
-              backgroundColor: ACCENT,
+              backgroundColor: palette.accent,
             }}
           />
           {eyebrow}
         </div>
-        <div style={{ display: "flex", fontSize: 20, color: TEXT_MUTED, letterSpacing: 2 }}>
+        <div style={{ display: "flex", fontSize: 20, color: palette.textMuted, letterSpacing: 2 }}>
           {host}
         </div>
       </div>
@@ -103,14 +128,14 @@ function OgTemplate({ eyebrow, title, subtitle, footerLeft, footerRight }: OgIma
             display: "flex",
             fontSize: title.length > 40 ? 54 : 66,
             fontWeight: 700,
-            color: TEXT_PRIMARY,
+            color: palette.textPrimary,
             lineHeight: 1.15,
           }}
         >
           {title}
         </div>
         {subtitle && (
-          <div style={{ display: "flex", fontSize: 27, color: TEXT_MUTED, lineHeight: 1.5 }}>
+          <div style={{ display: "flex", fontSize: 27, color: palette.textMuted, lineHeight: 1.5 }}>
             {subtitle.length > 140 ? `${subtitle.slice(0, 140)}…` : subtitle}
           </div>
         )}
@@ -121,14 +146,14 @@ function OgTemplate({ eyebrow, title, subtitle, footerLeft, footerRight }: OgIma
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          borderTop: `1px solid ${BORDER}`,
+          borderTop: `1px solid ${palette.border}`,
           paddingTop: 26,
           fontSize: 22,
-          color: TEXT_MUTED,
+          color: palette.textMuted,
         }}
       >
         <div style={{ display: "flex" }}>{footerLeft}</div>
-        {footerRight && <div style={{ display: "flex", color: ACCENT }}>{footerRight}</div>}
+        {footerRight && <div style={{ display: "flex", color: palette.accent }}>{footerRight}</div>}
       </div>
     </div>
   );

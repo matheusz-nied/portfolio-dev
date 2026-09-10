@@ -486,24 +486,325 @@ body {
   transition: none !important;
 }
 
+/* Shared by the article description and body so their typography stays identical. */
+.article-copy {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.625;
+  letter-spacing: normal;
+}
+
+.article-description {
+  font-size: 1rem;
+}
+
+/* ── Article Typography & Reader Styles ── */
+
 .prose-tech {
   max-width: none;
   width: 100%;
-  line-height: 1.8;
-  font-family: var(--font-sans), system-ui, sans-serif;
+  color: #e2e8f0;
 }
+
+.prose-tech p {
+  color: #cbd5e1;
+  line-height: inherit;
+  margin-bottom: 1.6rem;
+  letter-spacing: normal;
+}
+
+.prose-tech :where(h1, h2, h3, h4) {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  color: #f8fafc;
+  scroll-margin-top: 6rem;
+}
+
+.prose-tech h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose-tech h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(110, 196, 146, 0.18);
+  color: #f1f5f9;
+}
+
+@media (min-width: 640px) {
+  .prose-tech h2 {
+    font-size: 1.375rem;
+  }
+}
+
+.prose-tech h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.4;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  color: #e2e8f0;
+}
+
+.prose-tech strong,
+.prose-tech b {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.prose-tech a {
+  color: var(--tech-accent, #6ec492);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(110, 196, 146, 0.4);
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.prose-tech a:hover {
+  color: #8ce4b0;
+  text-decoration-color: #6ec492;
+}
+
+.prose-tech a.heading-anchor {
+  text-decoration: none;
+  color: inherit;
+}
+
+.prose-tech a.heading-anchor:hover {
+  color: var(--tech-accent, #6ec492);
+}
+
+.prose-tech ul {
+  margin: 1.5rem 0;
+  padding-left: 1.25rem;
+  list-style-type: disc;
+}
+
+.prose-tech ul > li::marker {
+  color: var(--tech-accent, #6ec492);
+}
+
+.prose-tech ol {
+  margin: 1.5rem 0;
+  padding-left: 1.25rem;
+  list-style-type: decimal;
+}
+
+.prose-tech ol > li::marker {
+  color: var(--tech-accent, #6ec492);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+.prose-tech li {
+  margin-bottom: 0.65rem;
+  color: #cbd5e1;
+  line-height: inherit;
+}
+
+.prose-tech blockquote {
+  margin: 2rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--tech-accent, #6ec492);
+  background: rgba(110, 196, 146, 0.05);
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: #e2e8f0;
+  font-style: normal;
+}
+
+.prose-tech blockquote p {
+  margin-bottom: 0;
+  color: #cbd5e1;
+}
+
+.prose-tech hr {
+  margin: 3rem 0;
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(110, 196, 146, 0.25), transparent);
+}
+
+.prose-tech :not(pre) > code {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85em;
+  font-weight: 500;
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.35rem;
+  background: rgba(110, 196, 146, 0.1);
+  border: 1px solid rgba(110, 196, 146, 0.22);
+  color: #8ce4b0;
+  word-break: break-word;
+}
+
+.prose-tech :not(pre) > code::before,
+.prose-tech :not(pre) > code::after {
+  content: "" !important;
+}
+
+/* ── Reflections: same reading geometry as Transmission Log ── */
 
 .prose-reflections {
   max-width: none;
   width: 100%;
-  line-height: 1.85;
-  font-family: var(--font-serif), Georgia, serif;
+  color: var(--refl-text);
 }
 
-.prose-tech :where(h1, h2, h3) {
+.prose-reflections p {
+  color: var(--refl-text);
+  line-height: inherit;
+  margin-bottom: 1.6rem;
+  letter-spacing: normal;
+}
+
+.prose-reflections :where(h1, h2, h3, h4) {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  color: var(--refl-heading);
+  scroll-margin-top: 6rem;
+}
+
+.prose-reflections h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose-reflections h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--refl-border);
+  color: var(--refl-heading);
+}
+
+@media (min-width: 640px) {
+  .prose-reflections h2 {
+    font-size: 1.375rem;
+  }
+}
+
+.prose-reflections h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.4;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--refl-text);
+}
+
+.prose-reflections strong,
+.prose-reflections b {
+  font-weight: 600;
+  color: var(--refl-heading);
+}
+
+.prose-reflections a {
+  color: var(--refl-accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(215, 233, 255, 0.5);
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.prose-reflections a:hover {
+  color: var(--refl-heading);
+  text-decoration-color: var(--refl-accent);
+}
+
+.prose-reflections a.heading-anchor {
+  text-decoration: none;
+  color: inherit;
+}
+
+.prose-reflections a.heading-anchor:hover {
+  color: var(--refl-accent);
+}
+
+.prose-reflections ul {
+  margin: 1.5rem 0;
+  padding-left: 1.25rem;
+  list-style-type: disc;
+}
+
+.prose-reflections ul > li::marker {
+  color: var(--refl-accent);
+}
+
+.prose-reflections ol {
+  margin: 1.5rem 0;
+  padding-left: 1.25rem;
+  list-style-type: decimal;
+}
+
+.prose-reflections ol > li::marker {
+  color: var(--refl-accent);
   font-family: var(--font-mono), monospace;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+.prose-reflections li {
+  margin-bottom: 0.65rem;
+  color: var(--refl-text);
+  line-height: inherit;
+}
+
+.prose-reflections blockquote {
+  margin: 2rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--refl-accent);
+  background: var(--refl-surface);
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: var(--refl-text);
+  font-style: normal;
+}
+
+.prose-reflections blockquote p {
+  margin-bottom: 0;
+  color: var(--refl-text);
+}
+
+.prose-reflections hr {
+  margin: 3rem 0;
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--refl-border), transparent);
+}
+
+.prose-reflections :not(pre) > code {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85em;
   font-weight: 500;
-  letter-spacing: -0.01em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.35rem;
+  background: var(--refl-surface);
+  border: 1px solid var(--refl-border);
+  color: var(--refl-heading);
+  word-break: break-word;
+}
+
+.prose-reflections :not(pre) > code::before,
+.prose-reflections :not(pre) > code::after {
+  content: "" !important;
 }
 
 @keyframes skill-node-pulse {

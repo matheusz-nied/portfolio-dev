@@ -1,3 +1,5 @@
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import { defineConfig, s } from "velite";
 
@@ -47,6 +49,25 @@ export default defineConfig({
     },
   },
   mdx: {
-    rehypePlugins: [rehypeSlug],
+    rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: "wrap",
+          properties: {
+            className: ["heading-anchor"],
+          },
+        },
+      ],
+      [
+        rehypePrettyCode,
+        {
+          theme: "tokyo-night",
+          keepBackground: false,
+          defaultLang: "plaintext",
+        },
+      ],
+    ],
   },
 });

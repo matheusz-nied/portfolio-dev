@@ -191,7 +191,17 @@
     "readTime": "{minutes} min read",
     "tags": "Tags",
     "noPosts": "No transmissions found.",
-    "footerHint": "Type sudo cat to access hidden transmissions"
+    "footerHint": "Type sudo cat to access hidden transmissions",
+    "backToBlog": "← Transmission Log",
+    "previousPost": "Previous transmission",
+    "nextPost": "Next transmission",
+    "copyLink": "Copy link",
+    "copiedLink": "Link copied!",
+    "backToTop": "Back to top",
+    "share": "Share",
+    "endOfPost": "// END OF TRANSMISSION",
+    "copyCode": "Copy",
+    "copiedCode": "Copied!"
   },
   "reflections": {
     "siteName": "Cosmic Journal",
@@ -201,7 +211,17 @@
     "readTime": "{minutes} min read",
     "noPosts": "No entries found.",
     "footnote": "Personal note",
-    "scrollHint": "Keep scrolling to the end..."
+    "scrollHint": "Keep scrolling to the end...",
+    "backToBlog": "← Cosmic Journal",
+    "previousPost": "Previous entry",
+    "nextPost": "Next entry",
+    "copyLink": "Copy link",
+    "copiedLink": "Link copied!",
+    "backToTop": "Back to top",
+    "share": "Share",
+    "endOfPost": "✦ End of entry ✦",
+    "copyCode": "Copy",
+    "copiedCode": "Copied!"
   },
   "terminal": {
     "openTrigger": "terminal",

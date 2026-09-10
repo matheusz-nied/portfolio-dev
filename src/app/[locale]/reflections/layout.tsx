@@ -12,19 +12,19 @@ export default async function ReflectionsLayout({
   const t = await getTranslations("reflections");
 
   return (
-    <div className="theme-reflections relative min-h-screen">
+    <div className="theme-reflections relative flex min-h-screen flex-col">
       <SignalMeshBackground />
-      <div className="relative z-10">
-      <header className="border-b border-[var(--refl-border)] px-6 py-8">
+      <div className="relative z-10 flex min-h-screen flex-col">
+      <header className="border-b border-[var(--refl-border)] px-6 py-6">
         <div className="mx-auto flex max-w-5xl items-center justify-between">
           <div>
             <Link
               href="/reflections"
-              className="font-[family-name:var(--font-serif)] text-2xl font-medium text-[var(--refl-text)]"
+              className="font-[family-name:var(--font-mono)] text-base font-medium tracking-tight text-[var(--refl-text)]"
             >
               {t("siteName")}
             </Link>
-            <p className="mt-1.5 text-sm text-[var(--refl-muted)]">{t("tagline")}</p>
+            <p className="mt-1 text-sm text-[var(--refl-muted)]">{t("tagline")}</p>
           </div>
           <div className="flex items-center gap-4">
             <Link
@@ -37,7 +37,7 @@ export default async function ReflectionsLayout({
           </div>
         </div>
       </header>
-      <main className="mx-auto w-full max-w-5xl px-6 py-14">{children}</main>
+      <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-12">{children}</main>
       <ReflectionFootnote />
       </div>
     </div>
