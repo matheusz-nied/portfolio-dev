@@ -108,7 +108,14 @@ export function DitherBlock({
     draw();
     const observer = new ResizeObserver(draw);
     observer.observe(wrap);
-    return () => observer.disconnect();
+    // Colours are baked into the canvas, so repaint when the theme flips.
+    const themed = wrap.closest(".theme-tech");
+    const themeObserver = new MutationObserver(draw);
+    if (themed) themeObserver.observe(themed, { attributes: true, attributeFilter: ["data-tl-theme"] });
+    return () => {
+      observer.disconnect();
+      themeObserver.disconnect();
+    };
   }, [dense, seed, scale]);
 
   return (

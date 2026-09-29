@@ -216,7 +216,8 @@
     "topicsLead": "Os assuntos a que este log sempre volta.",
     "navPortfolio": "Command Center",
     "onThisPage": "Nesta página",
-    "articleNav": "Transmissões adjacentes"
+    "articleNav": "Transmissões adjacentes",
+    "toggleTheme": "Alternar tema claro / escuro"
   },
   "reflections": {
     "siteName": "Cosmic Journal",
