@@ -1,45 +1,61 @@
 import { Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
 import { TechFooterEasterEgg } from "@/components/easter-eggs/TechFooterEasterEgg";
-import { SignalMeshBackground } from "@/components/portfolio/SignalMeshBackground";
-import { getTranslations } from "next-intl/server";
+import { FrameRule } from "@/components/transmission/FrameRule";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export default async function TechLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("tech");
+  const tn = await getTranslations("nav");
 
   return (
-    <div className="theme-tech relative flex min-h-screen flex-col">
-      <SignalMeshBackground />
-      <div className="relative z-10 flex min-h-screen flex-col">
-      <header className="border-b border-[var(--tech-border)] px-6 py-6">
-        <div className="mx-auto flex max-w-5xl items-center justify-between">
-          <div>
-            <Link
-              href="/tech"
-              className="font-[family-name:var(--font-mono)] text-base font-medium tracking-tight text-[var(--tech-text)]"
-            >
-              {t("siteName")}
-            </Link>
-            <p className="mt-1 text-sm text-[var(--tech-muted)]">{t("tagline")}</p>
-          </div>
-          <div className="flex items-center gap-4">
-            <Link
-              href="/"
-              className="text-sm text-[var(--tech-muted)] transition-colors hover:text-[var(--tech-text)]"
-            >
-              {t("backToPortfolio")}
-            </Link>
+    <div className="theme-tech tl-shell">
+      <header className="tl-topbar">
+        <div className="tl-topbar-inner">
+          <Link href="/tech" className="tl-logo">
+            <span className="tl-logo-mark" aria-hidden="true" />
+            <span>
+              Transmission<span className="tl-logo-tail">_log</span>
+            </span>
+          </Link>
+
+          <nav className="tl-nav" aria-label={t("siteName")}>
+            <Link href="/tech">Log</Link>
+            <Link href="/reflections">{tn("reflectionsBlog")}</Link>
+          </nav>
+
+          <div className="tl-topbar-actions">
             <LanguageSwitcher variant="tech" />
+            <Link href="/" className="tl-pill">
+              {t("navPortfolio")}
+            </Link>
           </div>
         </div>
       </header>
-      <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-12">{children}</main>
-      <TechFooterEasterEgg />
-      </div>
+
+      <main className="tl-frame">
+        {children}
+
+        <FrameRule />
+      </main>
+
+      <footer className="tl-footer">
+        <div className="tl-footer-inner">
+          <div className="tl-footer-cell">© {new Date().getFullYear()} Matheus Fernandes</div>
+          <TechFooterEasterEgg />
+          <div className="tl-footer-cell">
+            <Link href="/">{t("navPortfolio")} ↗</Link>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -14,6 +14,7 @@ interface AdjacentPostsProps {
   labels: {
     prev: string;
     next: string;
+    nav?: string;
   };
 }
 
@@ -28,9 +29,37 @@ export function AdjacentPosts({
 
   const isTech = variant === "tech";
 
+  if (isTech) {
+    return (
+      <nav aria-label={labels.nav ?? "Artigos adjacentes"} className="tl-adjacent">
+        {prev ? (
+          <Link href={`${basePath}/${prev.slug}`} className="tl-adjacent-cell" data-side="prev">
+            <span className="tl-hud">
+              <span aria-hidden="true">←</span>
+              {labels.prev}
+            </span>
+            <span className="tl-adjacent-title line-clamp-2">{prev.title}</span>
+          </Link>
+        ) : (
+          <div className="tl-adjacent-cell hidden sm:flex" aria-hidden="true" />
+        )}
+
+        {next && (
+          <Link href={`${basePath}/${next.slug}`} className="tl-adjacent-cell" data-side="next">
+            <span className="tl-hud">
+              {labels.next}
+              <span aria-hidden="true">→</span>
+            </span>
+            <span className="tl-adjacent-title line-clamp-2">{next.title}</span>
+          </Link>
+        )}
+      </nav>
+    );
+  }
+
   return (
     <nav
-      aria-label="Artigos adjacentes"
+      aria-label={labels.nav ?? "Artigos adjacentes"}
       className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2"
     >
       {prev ? (

@@ -13,6 +13,7 @@ const postSchema = s
     tags: s.array(s.string()).default([]),
     published: s.boolean().default(true),
     hidden: s.boolean().default(false),
+    toc: s.toc({ maxDepth: 3 }),
     code: s.mdx(),
   })
   .transform((data, { meta }) => {

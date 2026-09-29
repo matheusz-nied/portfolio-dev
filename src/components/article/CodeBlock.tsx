@@ -74,17 +74,17 @@ export function CodeBlock({
   };
 
   return (
-    <div className="not-prose group my-8 overflow-hidden rounded-xl border border-[rgba(var(--signal-accent-rgb),0.16)] bg-[#0b0d13] shadow-2xl shadow-black/60 transition-all duration-200 hover:border-[rgba(var(--signal-accent-rgb),0.4)]">
+    <div className="tl-code not-prose group my-8 overflow-hidden rounded-xl border border-[rgba(var(--signal-accent-rgb),0.16)] bg-[#0b0d13] shadow-2xl shadow-black/60 transition-all duration-200 hover:border-[rgba(var(--signal-accent-rgb),0.4)]">
       {/* Code Header Bar */}
-      <div className="flex items-center justify-between border-b border-white/[0.08] bg-black/40 px-4 py-2.5">
+      <div className="tl-code-head flex items-center justify-between border-b border-white/[0.08] bg-black/40 px-4 py-2.5">
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1.5 opacity-70 transition-opacity group-hover:opacity-100">
+          <div className="tl-code-dots flex items-center gap-1.5 opacity-70 transition-opacity group-hover:opacity-100">
             <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]/80 inline-block" />
             <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]/80 inline-block" />
             <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]/80 inline-block" />
           </div>
           {displayLang && (
-            <span className="font-mono text-[0.6875rem] font-medium tracking-wider uppercase text-white/50 bg-white/[0.06] px-2 py-0.5 rounded">
+            <span className="tl-code-lang font-mono text-[0.6875rem] font-medium tracking-wider uppercase text-white/50 bg-white/[0.06] px-2 py-0.5 rounded">
               {displayLang}
             </span>
           )}
@@ -95,7 +95,7 @@ export function CodeBlock({
           type="button"
           onClick={handleCopy}
           aria-label={copied ? copiedLabel : copyLabel}
-          className={`flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-mono transition-all ${
+          className={`tl-code-copy flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-mono transition-all ${
             copied
               ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
               : "text-white/60 hover:text-white hover:bg-white/[0.08] border border-transparent"
@@ -150,7 +150,7 @@ export function CodeBlock({
       </div>
 
       {/* Code body */}
-      <div className="relative overflow-x-auto p-4 font-mono text-[0.875rem] leading-[1.7] text-slate-200 selection:bg-white/20">
+      <div className="tl-code-scroll relative overflow-x-auto p-4 font-mono text-[0.875rem] leading-[1.7] text-slate-200 selection:bg-white/20">
         <pre
           ref={preRef}
           data-language={language}

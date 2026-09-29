@@ -4,6 +4,7 @@
 @import "../styles/themes/portfolio.css";
 @import "../styles/themes/tech.css";
 @import "../styles/themes/reflections.css";
+@import "../styles/transmission-log.css";
 
 @theme inline {
   --font-sans: var(--font-geist-sans);

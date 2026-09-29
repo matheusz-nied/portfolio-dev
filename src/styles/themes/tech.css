@@ -1,19 +1,23 @@
 .theme-tech {
-  --tech-bg: #080d0a;
-  --tech-surface: #0f1612;
-  --tech-border: rgba(110, 196, 146, 0.12);
-  --tech-text: #e0ebe4;
-  --tech-muted: #8a9e90;
+  --tech-bg: #050807;
+  --tech-surface: #0a100c;
+  --tech-border: rgba(110, 196, 146, 0.14);
+  --tech-text: #e6eee9;
+  --tech-muted: #8fa196;
   --tech-accent: #6ec492;
   --tech-accent-soft: rgba(110, 196, 146, 0.85);
   --tech-dim: rgba(12, 20, 16, 0.6);
   --tech-glow: none;
   --signal-accent-rgb: 110, 196, 146;
-  background:
-    radial-gradient(
-      ellipse 70% 40% at 50% 0%,
-      rgba(110, 196, 146, 0.05),
-      transparent 50%
-    ),
-    var(--tech-bg);
+
+  /* Transmission Log frame system */
+  --tl-frame: 1180px;
+  --tl-line: rgba(110, 196, 146, 0.09);
+  --tl-line-strong: rgba(110, 196, 146, 0.2);
+  --tl-row: 84px;
+  --tl-measure: 40rem;
+  --tl-body: #c3cec7;
+  --tl-heading: #f1f6f3;
+
+  background: var(--tech-bg);
 }

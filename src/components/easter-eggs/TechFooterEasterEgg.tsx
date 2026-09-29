@@ -10,9 +10,9 @@ export function TechFooterEasterEgg() {
   const [input, setInput] = useState("");
 
   return (
-    <footer className="mt-auto border-t border-[var(--tech-border)] px-6 py-8">
+    <div className="tl-footer-cell">
       <form
-        className="mx-auto flex max-w-5xl items-center gap-2 text-sm"
+        className="tl-prompt"
         onSubmit={(e) => {
           e.preventDefault();
           if (input.trim().toLowerCase() === "sudo cat") {
@@ -21,17 +21,16 @@ export function TechFooterEasterEgg() {
           setInput("");
         }}
       >
-        <span className="font-[family-name:var(--font-mono)] text-[var(--tech-muted)]">
-          $
-        </span>
+        <span aria-hidden="true">$</span>
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder={t("footerHint")}
-          className="flex-1 bg-transparent text-[var(--tech-muted)] outline-none placeholder:text-[var(--tech-muted)]/40"
+          aria-label={t("footerHint")}
+          autoComplete="off"
           spellCheck={false}
         />
       </form>
-    </footer>
+    </div>
   );
 }

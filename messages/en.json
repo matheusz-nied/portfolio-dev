@@ -201,7 +201,22 @@
     "share": "Share",
     "endOfPost": "// END OF TRANSMISSION",
     "copyCode": "Copy",
-    "copiedCode": "Copied!"
+    "copiedCode": "Copied!",
+    "heroEyebrow": "Transmission Log",
+    "heroLead": "Technical transmissions from",
+    "heroAccent": "deep space",
+    "heroTag": "Transmission Log.",
+    "heroDescription": "Field notes on AI, web performance and the systems in between. Written to be read slowly.",
+    "ctaLatest": "Read latest",
+    "entries": "{count, plural, one {# entry} other {# entries}}",
+    "latestLabel": "Latest",
+    "colTitle": "Transmission",
+    "colDate": "Logged",
+    "topicsLabel": "Indexed topics",
+    "topicsLead": "What this log keeps coming back to.",
+    "navPortfolio": "Command Center",
+    "onThisPage": "On this page",
+    "articleNav": "Adjacent transmissions"
   },
   "reflections": {
     "siteName": "Cosmic Journal",

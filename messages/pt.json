@@ -201,7 +201,22 @@
     "share": "Compartilhar",
     "endOfPost": "// FIM DA TRANSMISSÃO",
     "copyCode": "Copiar",
-    "copiedCode": "Copiado!"
+    "copiedCode": "Copiado!",
+    "heroEyebrow": "Transmission Log",
+    "heroLead": "Transmissões técnicas do",
+    "heroAccent": "espaço profundo",
+    "heroTag": "Transmission Log.",
+    "heroDescription": "Notas de campo sobre IA, performance web e os sistemas no meio do caminho. Escritas para serem lidas com calma.",
+    "ctaLatest": "Ler a mais recente",
+    "entries": "{count, plural, one {# entrada} other {# entradas}}",
+    "latestLabel": "Última",
+    "colTitle": "Transmissão",
+    "colDate": "Registrada",
+    "topicsLabel": "Tópicos indexados",
+    "topicsLead": "Os assuntos a que este log sempre volta.",
+    "navPortfolio": "Command Center",
+    "onThisPage": "Nesta página",
+    "articleNav": "Transmissões adjacentes"
   },
   "reflections": {
     "siteName": "Cosmic Journal",

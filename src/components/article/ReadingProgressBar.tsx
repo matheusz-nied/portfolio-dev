@@ -37,14 +37,16 @@ export function ReadingProgressBar({ variant }: ReadingProgressBarProps) {
   }, []);
 
   const barStyles = {
-    tech: "bg-gradient-to-r from-[#6ec492] via-[#5eead4] to-[#6ec492] shadow-[0_0_8px_rgba(110,196,146,0.5)]",
+    tech: "bg-[var(--tech-accent)]",
     reflections:
       "bg-gradient-to-r from-[#a8ceff] via-white to-[#d7e9ff] shadow-[0_0_8px_rgba(180,214,255,0.5)]",
   };
 
   return (
     <div
-      className="fixed inset-x-0 top-0 z-50 h-[3px] bg-transparent pointer-events-none"
+      className={`fixed inset-x-0 top-0 z-50 bg-transparent pointer-events-none ${
+        variant === "tech" ? "h-[2px]" : "h-[3px]"
+      }`}
       aria-hidden="true"
     >
       <div

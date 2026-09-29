@@ -17,6 +17,13 @@ export function getTechPost(slug: string, locale: Locale) {
   return techPosts.find((p) => p.slug === slug && p.locale === locale);
 }
 
+/** Chronological entry number ("001" = oldest published post); hidden posts have none. */
+export function getTechPostNumber(slug: string, locale: Locale) {
+  const chronological = getTechPosts(locale).reverse();
+  const index = chronological.findIndex((p) => p.slug === slug);
+  return index === -1 ? "???" : String(index + 1).padStart(3, "0");
+}
+
 export function getHiddenTechPost(locale: Locale) {
   return techPosts.find(
     (p) => p.locale === locale && p.hidden && p.translationSlug === "hidden-transmission",
@@ -48,6 +55,8 @@ export function formatDate(date: string, locale: Locale) {
     year: "numeric",
     month: "long",
     day: "numeric",
+    // Post dates are calendar dates; without this they shift a day in negative-offset zones.
+    timeZone: "UTC",
   });
 }
 

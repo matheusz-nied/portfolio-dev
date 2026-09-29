@@ -17,7 +17,7 @@ export function LanguageSwitcher({ variant = "portfolio" }: LanguageSwitcherProp
   const styles = {
     portfolio:
       "text-xs text-[var(--text-muted)] hover:text-[var(--text-primary)] border border-[var(--border-subtle)] px-2.5 py-1 rounded-md transition-colors",
-    tech: "text-xs text-[var(--tech-muted)] hover:text-[var(--tech-text)] border border-[var(--tech-border)] px-2.5 py-1 rounded-md transition-colors",
+    tech: "tl-lang",
     reflections:
       "text-xs text-[var(--refl-muted)] hover:text-[var(--refl-text)] border border-[var(--refl-border)] px-2.5 py-1 rounded-md transition-colors",
   };
