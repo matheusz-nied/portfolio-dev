@@ -22,17 +22,14 @@ export function ReflectionFootnote() {
   }, []);
 
   if (!visible) {
-    return (
-      <p className="py-10 text-center text-xs text-[var(--refl-muted)]/50">
-        {t("scrollHint")}
-      </p>
-    );
+    return <p className="cj-hint">{t("scrollHint")}</p>;
   }
 
   return (
-    <aside className="mx-auto max-w-4xl px-6 py-12 text-center">
-      <p className="font-[family-name:var(--font-serif)] text-sm italic text-[var(--refl-muted)]">
-        {t("footnote")}: {tc("revealed")}
+    <aside>
+      <p className="cj-footnote">
+        <small>{t("footnote")}</small>
+        {tc("revealed")}
       </p>
     </aside>
   );

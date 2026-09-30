@@ -1,37 +1,51 @@
+/* Cosmic Journal — a Renaissance codex.
+   Dark: lapis-lazuli night with gold leaf. Light: vellum with iron-gall ink.
+   The light theme is toggled by ThemeToggle and stored in localStorage. */
 .theme-reflections {
-  --refl-bg: #030405;
-  --refl-surface: #0e1115;
-  --refl-heading: #ffffff;
-  --refl-text: #eceff3;
-  --refl-muted: #b4beca;
-  --refl-accent: #d7e9ff;
-  --refl-warm: #ffffff;
-  --refl-border: rgba(215, 233, 255, 0.2);
-  --signal-accent-rgb: 180, 214, 255;
-  background: var(--refl-bg);
+  --cj-bg: #090d1b;
+  --cj-paper: #0f1528;
+  --cj-paper-2: #151d36;
+  --cj-ink: #e6dfce;
+  --cj-heading: #f7f0df;
+  --cj-muted: #a9a290;
+  --cj-gold: #d9b25e;
+  --cj-rubric: #dd7560;
+  --cj-line: rgba(217, 178, 94, 0.2);
+  --cj-line-strong: rgba(217, 178, 94, 0.42);
+  --cj-code-bg: #0b1020;
+  --cj-vignette: rgba(2, 4, 12, 0.55);
+  --cj-grain: 0.05;
+
+  /* Legacy tokens still read by shared components (footnote, CodeBlock, etc.). */
+  --refl-bg: var(--cj-bg);
+  --refl-surface: var(--cj-paper);
+  --refl-heading: var(--cj-heading);
+  --refl-text: var(--cj-ink);
+  --refl-muted: var(--cj-muted);
+  --refl-accent: var(--cj-gold);
+  --refl-warm: var(--cj-rubric);
+  --refl-border: var(--cj-line);
+  --signal-accent-rgb: 217, 178, 94;
+
+  color-scheme: dark;
+  background: var(--cj-bg);
 }
 
-/* Cool orbital light and sparse stars, concentrated around the reading column. */
-.theme-reflections .netrun-root::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 45% 65% at 100% 15%, rgba(79, 139, 210, 0.16), transparent 75%),
-    radial-gradient(ellipse 30% 50% at 0% 85%, rgba(88, 129, 176, 0.1), transparent 75%);
-}
+.theme-reflections[data-cj-theme="light"] {
+  --cj-bg: #f7f1e3;
+  --cj-paper: #f1e9d4;
+  --cj-paper-2: #eadfc4;
+  --cj-ink: #2b2117;
+  --cj-heading: #1b140c;
+  --cj-muted: #6a5b47;
+  --cj-gold: #8a6118;
+  --cj-rubric: #8f2d22;
+  --cj-line: rgba(74, 52, 24, 0.22);
+  --cj-line-strong: rgba(74, 52, 24, 0.42);
+  --cj-code-bg: #1c1610;
+  --cj-vignette: rgba(120, 84, 32, 0.16);
+  --cj-grain: 0.07;
+  --signal-accent-rgb: 138, 97, 24;
 
-.theme-reflections .netrun-root::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(1px 1px at 22px 31px, rgba(255, 255, 255, 0.7) 50%, transparent 100%),
-    radial-gradient(1px 1px at 91px 139px, rgba(195, 221, 255, 0.45) 50%, transparent 100%);
-  background-size: 227px 263px, 347px 389px;
-  mask-image: linear-gradient(90deg, #000, transparent 28%, transparent 72%, #000);
-}
-
-.theme-reflections:has(.prose-reflections) .netrun-root {
-  opacity: 0.65;
+  color-scheme: light;
 }

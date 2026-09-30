@@ -5,6 +5,7 @@
 @import "../styles/themes/tech.css";
 @import "../styles/themes/reflections.css";
 @import "../styles/transmission-log.css";
+@import "../styles/cosmic-journal.css";
 
 @theme inline {
   --font-sans: var(--font-geist-sans);
@@ -447,10 +448,6 @@ body {
   background: linear-gradient(90deg, var(--tech-accent), transparent);
 }
 
-.theme-reflections .section-title::after {
-  background: linear-gradient(90deg, var(--refl-accent), transparent);
-}
-
 @keyframes subtle-shift {
   0%,
   100% {
@@ -651,160 +648,6 @@ body {
 
 .prose-tech :not(pre) > code::before,
 .prose-tech :not(pre) > code::after {
-  content: "" !important;
-}
-
-/* ── Reflections: same reading geometry as Transmission Log ── */
-
-.prose-reflections {
-  max-width: none;
-  width: 100%;
-  color: var(--refl-text);
-}
-
-.prose-reflections p {
-  color: var(--refl-text);
-  line-height: inherit;
-  margin-bottom: 1.6rem;
-  letter-spacing: normal;
-}
-
-.prose-reflections :where(h1, h2, h3, h4) {
-  font-family: var(--font-sans), system-ui, sans-serif;
-  color: var(--refl-heading);
-  scroll-margin-top: 6rem;
-}
-
-.prose-reflections h1 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.25;
-  margin-top: 2.5rem;
-  margin-bottom: 1.25rem;
-}
-
-.prose-reflections h2 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.35;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--refl-border);
-  color: var(--refl-heading);
-}
-
-@media (min-width: 640px) {
-  .prose-reflections h2 {
-    font-size: 1.375rem;
-  }
-}
-
-.prose-reflections h3 {
-  font-size: 1.125rem;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  line-height: 1.4;
-  margin-top: 2.25rem;
-  margin-bottom: 0.75rem;
-  color: var(--refl-text);
-}
-
-.prose-reflections strong,
-.prose-reflections b {
-  font-weight: 600;
-  color: var(--refl-heading);
-}
-
-.prose-reflections a {
-  color: var(--refl-accent);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-color: rgba(215, 233, 255, 0.5);
-  transition: color 0.15s ease, text-decoration-color 0.15s ease;
-}
-
-.prose-reflections a:hover {
-  color: var(--refl-heading);
-  text-decoration-color: var(--refl-accent);
-}
-
-.prose-reflections a.heading-anchor {
-  text-decoration: none;
-  color: inherit;
-}
-
-.prose-reflections a.heading-anchor:hover {
-  color: var(--refl-accent);
-}
-
-.prose-reflections ul {
-  margin: 1.5rem 0;
-  padding-left: 1.25rem;
-  list-style-type: disc;
-}
-
-.prose-reflections ul > li::marker {
-  color: var(--refl-accent);
-}
-
-.prose-reflections ol {
-  margin: 1.5rem 0;
-  padding-left: 1.25rem;
-  list-style-type: decimal;
-}
-
-.prose-reflections ol > li::marker {
-  color: var(--refl-accent);
-  font-family: var(--font-mono), monospace;
-  font-size: 0.85em;
-  font-weight: 600;
-}
-
-.prose-reflections li {
-  margin-bottom: 0.65rem;
-  color: var(--refl-text);
-  line-height: inherit;
-}
-
-.prose-reflections blockquote {
-  margin: 2rem 0;
-  padding: 1rem 1.25rem;
-  border-left: 3px solid var(--refl-accent);
-  background: var(--refl-surface);
-  border-radius: 0 0.5rem 0.5rem 0;
-  color: var(--refl-text);
-  font-style: normal;
-}
-
-.prose-reflections blockquote p {
-  margin-bottom: 0;
-  color: var(--refl-text);
-}
-
-.prose-reflections hr {
-  margin: 3rem 0;
-  border: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--refl-border), transparent);
-}
-
-.prose-reflections :not(pre) > code {
-  font-family: var(--font-mono), monospace;
-  font-size: 0.85em;
-  font-weight: 500;
-  padding: 0.15rem 0.45rem;
-  border-radius: 0.35rem;
-  background: var(--refl-surface);
-  border: 1px solid var(--refl-border);
-  color: var(--refl-heading);
-  word-break: break-word;
-}
-
-.prose-reflections :not(pre) > code::before,
-.prose-reflections :not(pre) > code::after {
   content: "" !important;
 }
 

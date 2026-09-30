@@ -36,6 +36,13 @@ export function getReflectionPosts(locale: Locale) {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
+/** Chronological entry number (1 = oldest published reflection). */
+export function getReflectionNumber(slug: string, locale: Locale) {
+  const chronological = getReflectionPosts(locale).reverse();
+  const index = chronological.findIndex((p) => p.slug === slug);
+  return index === -1 ? 0 : index + 1;
+}
+
 export function getReflectionPost(slug: string, locale: Locale) {
   return reflectionPosts.find((p) => p.slug === slug && p.locale === locale);
 }

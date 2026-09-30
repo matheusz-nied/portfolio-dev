@@ -1452,15 +1452,15 @@
   height: 16px;
 }
 
-.tl-theme .tl-icon-sun {
+.tl-theme .theme-icon-sun {
   display: none;
 }
 
-.theme-tech[data-tl-theme="light"] .tl-theme .tl-icon-sun {
+.theme-tech[data-tl-theme="light"] .tl-theme .theme-icon-sun {
   display: block;
 }
 
-.theme-tech[data-tl-theme="light"] .tl-theme .tl-icon-moon {
+.theme-tech[data-tl-theme="light"] .tl-theme .theme-icon-moon {
   display: none;
 }
 

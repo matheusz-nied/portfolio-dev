@@ -11,6 +11,8 @@ export interface TocItem {
 interface ArticleTocProps {
   items: TocItem[];
   label: string;
+  /** CSS class prefix: "tl" (Transmission Log) or "cj" (Cosmic Journal). */
+  classPrefix?: "tl" | "cj";
 }
 
 interface FlatItem {
@@ -26,7 +28,7 @@ function flatten(items: TocItem[], depth: 2 | 3 = 2): FlatItem[] {
   ]);
 }
 
-export function ArticleToc({ items, label }: ArticleTocProps) {
+export function ArticleToc({ items, label, classPrefix = "tl" }: ArticleTocProps) {
   const flat = useMemo(() => flatten(items), [items]);
   const [active, setActive] = useState<string | null>(null);
 
@@ -55,8 +57,8 @@ export function ArticleToc({ items, label }: ArticleTocProps) {
 
   return (
     <nav aria-label={label}>
-      <p className="tl-hud">{label}</p>
-      <div className="tl-toc">
+      <p className={`${classPrefix}-hud`}>{label}</p>
+      <div className={`${classPrefix}-toc`}>
         {flat.map((item) => (
           <a
             key={item.id}
